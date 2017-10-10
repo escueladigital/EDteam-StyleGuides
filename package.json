@@ -1,0 +1,31 @@
+{
+  "name": "EDteam Style Guides",
+  "version": "1.0.0",
+  "description": "Guias de estilo de EDteam, construidas sobre EDboilerplate",
+  "main": "gulpfile.babel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alvaro Felipe",
+  "license": "GPL-2.0",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.13",
+    "browserify": "^14.4.0",
+    "cssnano": "^3.10.0",
+    "ed-grid": "^2.0.2",
+    "ed-ui": "0.0.5",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.4.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-watch": "^4.3.11",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
