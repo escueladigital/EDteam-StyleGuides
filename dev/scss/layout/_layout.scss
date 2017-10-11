@@ -1,0 +1,26 @@
+.main-header {
+  height : 64px;
+  border-bottom : 1px solid #ccc;
+  display : flex;
+  align-items: center;
+}
+
+.header-links a {
+  display : inline-block;
+  margin-left : 1em;
+}
+
+.main-page,
+.main-footer {
+  margin-top : 3em;
+}
+
+section {
+  margin-bottom : 2.5em;
+}
+
+.main-footer {
+  background : $darkColor;
+  color: #fff;
+  padding : 1em 0;
+}

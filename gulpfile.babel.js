@@ -25,7 +25,8 @@ const postcssPlugins = [
 ];
 
 const sassOptions = {
-  outputStyle: 'expanded'
+  outputStyle: 'compressed',
+  includePaths: ['node_modules']
 };
 
 gulp.task('styles', () =>

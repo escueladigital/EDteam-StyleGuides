@@ -2,10 +2,16 @@
   This boilerplate is based in ITCSS and SMACSS
 */
 
+// Google Fonts
+@import "https://fonts.googleapis.com/css?family=Lato:400,400i|Open+Sans:700";
+
 // Config
 @import "config/functions";
 @import "config/variables";
 @import "config/mixins";
+
+// Libraries
+@import "ed-grid/ed-grid";
 
 // Base and elements (generic)
 @import "base/base";
@@ -19,6 +25,9 @@
   // Crea los archivos adicionales que necesites (uno por componente)
 @import "components/buttons";
 @import "components/menus";
+@import "components/logo";
+@import "components/lists";
+@import "components/code";
 
 // Theme (colors and fonts)
 @import "theme/typography";
@@ -27,3 +36,4 @@
   // Todos los hacks que hayas necesitado para solucionar conflictos
   // o resolver situaciones extremas. Se espera poder mejorarlos luego.
 @import "hacks/hacks";
+

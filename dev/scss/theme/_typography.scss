@@ -1,0 +1,37 @@
+// Aplicar tamaños de fuente
+body {
+  font-family : $body-font;
+  font-size : fontSize(normal);
+  font-weight : 400;
+  line-height : 1.5;
+  color: rgba($darkColor,.8);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font;
+  font-weight : 700;
+  color: rgba($darkColor,.9);
+}
+
+h1 {
+  margin-top : 0;
+  margin-bottom : 1em;
+}
+
+h2 {
+  margin-top : 1.5em;
+  margin-bottom : .75em;
+}
+
+// Set font sizes
+.bigger      { @include bigger }
+h1, .t1      { @include t1 }
+h2, .t2      { @include t2 }
+h3, .t3      { @include t3 }
+h4           { font-size: fontSize(normal) }
+h5, .small   { font-size: fontSize(small) }
+h6, .smaller { font-size: fontSize(smaller) }
+
+.small, .smaller {
+  line-height : 1.6;
+}

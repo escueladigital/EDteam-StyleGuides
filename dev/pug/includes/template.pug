@@ -6,5 +6,19 @@ html(lang="es")
     meta(name="viewport" content="initial-scale=1.0, width=device-width")
     link(rel="stylesheet" href="css/styles.css")
   body
-    block main
+    include header
+    .ed-container.main-page
+      aside.ed-item.l-25.main-sidebar
+        ul.data-list
+          li Tipografia
+          li Botones
+          li Formularios
+          li Tablas
+          li Listas
+      main.ed-item.l-75.main-main
+        block main
+    footer.main-footer
+      .ed-container
+        .ed-item
+          p Footer
     script(src="js/scripts.js")

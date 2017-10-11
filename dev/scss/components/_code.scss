@@ -1,0 +1,7 @@
+:not(pre) code {
+  color   : $thirdColor;
+  display : inline-block;
+  border  : 1px solid $borderColor;
+  padding : .1em .5em;
+  margin  : 0 .5em;
+}

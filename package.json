@@ -1,5 +1,5 @@
 {
-  "name": "EDteam Style Guides",
+  "name": "EDteamStyleGuides",
   "version": "1.0.0",
   "description": "Guias de estilo de EDteam, construidas sobre EDboilerplate",
   "main": "gulpfile.babel.js",
