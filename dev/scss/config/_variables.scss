@@ -35,12 +35,13 @@ $fontSizes: (
 
 
 // Colors
-$firstColor  : #1d73c9;
-$secondColor : #25c9ff;
-$thirdColor  : #ce4139;
+$firstColor  : #007BDF;
+$secondColor : #00CBFF;
+$thirdColor  : #FF3C32;
 $accentColor : #fba905;
 $darkColor   : #282d31;
 
 // Complementary colors:
-$borderColor: rgba($darkColor,.1);
-$textColor: rgba($darkColor,.8);
+$borderColor: #DFE0E0;
+$textColor: #53575A;
+$bodyBg: #FCFCFC;
