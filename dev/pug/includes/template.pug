@@ -1,24 +1,21 @@
 doctype html
 html(lang="es")
   head
-    title My awesome title
+    title EDteam Style Guides
     meta(charset="utf-8")
     meta(name="viewport" content="initial-scale=1.0, width=device-width")
+    link(rel="stylesheet" href="https://file.myfontastic.com/K22U9jkaoYfUVye4gPLuEX/icons.css")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700")
     link(rel="stylesheet" href="css/styles.css")
   body
     include header
     .ed-container.main-page
-      aside.ed-item.l-25.main-sidebar
-        ul.data-list
-          li Tipografia
-          li Botones
-          li Formularios
-          li Tablas
-          li Listas
+      aside.ed-item.l-25.main-sidebar.sidebar-first
+        include topics-menu
       main.ed-item.l-75.main-main
         block main
     footer.main-footer
       .ed-container
         .ed-item
-          p Footer
+          p.small EDteam Style Guide por <a href="http://alvarofelipe.net" target="_blank">Álvaro Felipe</a>
     script(src="js/scripts.js")
