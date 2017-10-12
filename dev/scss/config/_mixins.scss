@@ -1,11 +1,12 @@
 // typography
 
 @mixin bigger {
-  font-size: fontSize(t1);
+  font-size: fontSize(t2);
   font-weight : 700;
   font-family : $header-font;
   line-height : 1.2;
-  @include from(l) {  font-size: fontSize(bigger) }
+  @include from(l) {  font-size: fontSize(t1) }
+  @include from(xl) {  font-size: fontSize(bigger) }
 }
 
 @mixin t1 {
@@ -16,12 +17,23 @@
 
 @mixin t2 {
   font-size: fontSize(t3);
-  line-height : 1.2;
-  @include from(l) { font-size: fontSize(t2) }
+  line-height : 1.3;
+  @include from(l) {
+    font-size: fontSize(t2);
+    line-height : 1.2;
+  }
 }
 
 @mixin t3 {
   font-size: fontSize(normal);
   line-height : 1.3;
   @include from(l) { font-size: fontSize(t3) }
+}
+
+
+@mixin clearMenu {
+  list-style: none;
+  margin-top : 0;
+  margin-bottom : 0;
+  padding-left : 0;
 }
