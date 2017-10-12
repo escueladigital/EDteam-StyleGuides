@@ -4,13 +4,13 @@ body {
   font-size : fontSize(normal);
   font-weight : 400;
   line-height : 1.5;
-  color: rgba($darkColor,.8);
+  color: $textColor;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $header-font;
   font-weight : 700;
-  color: rgba($darkColor,.9);
+  letter-spacing: -0.01em;
 }
 
 h1 {
@@ -18,8 +18,8 @@ h1 {
   margin-bottom : 1em;
 }
 
-h2 {
-  margin-top : 1.5em;
+h2, h3, h4, h5, h6 {
+  margin-top : 2em;
   margin-bottom : .75em;
 }
 
@@ -34,4 +34,43 @@ h6, .smaller { font-size: fontSize(smaller) }
 
 .small, .smaller {
   line-height : 1.6;
+}
+
+blockquote {
+  font-style: italic;
+  letter-spacing: .01em;
+  margin : 1em 0 1em 2em;
+  position : relative;
+  &::before {
+    content: "\"";
+    font-size : 3em;
+    position : absolute;
+    top : .5em;
+    left : -.5em;
+    line-height : 0;
+  }
+}
+
+// Enlaces
+// Menu links doesn't have underline
+a {
+  color: $secondColor;
+
+  main & {
+    text-decoration : underline;
+
+    &:hover {
+      text-decoration : none;
+    }
+  }
+}
+
+::selection {
+  background : $secondColor;
+  color: #fff;
+}
+
+// Para una cómoda lectura
+p {
+  max-width : 60em;
 }
