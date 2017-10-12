@@ -1,0 +1,65 @@
+/*
+MENU VERTICAL
+Siempre es vertical, por ejemplo, un menu en el sidebar.
+Su estructura es
+    <nav class="vertical-menu" id="vertical-menu">
+      <ul>
+        <li><a href="#">Item de menu</a></li>
+        <li><a href="#">Item de menu</a></li>
+      </ul>
+    </nav>
+
+  En movil se activa con un toggle cuyo titulo será pasado por el atributo data-content:
+  En el ejemplo es un div pero puede ser cualquier elemento
+  (debe estar fuera del nav)
+    <div id="vertical-menu-toggle" class="vertical-menu-toggle to-l" data-content="Menu"></div>
+
+  Entra por la derecha justo debajo de main-header
+*/
+
+.vertical-menu-toggle {
+  background-size : 100% 34%;
+  font-size : fontSize(small);
+  display : flex;
+  &::before {
+    content: "";
+    display : block;
+    width : .5em;
+    height : 1.2em;
+    background-image: radial-gradient(circle, $textColor 2px, transparent 2px);
+    background-size : 100% 34%;
+    margin-right : .2em;
+  }
+  &::after {
+    content: attr(data-content)
+  }
+}
+
+.vertical-menu {
+  @include to(l) {
+    max-height : 0;
+    transition: max-height .5s;
+    overflow : hidden;
+
+    &.show {
+      max-height : 1000px;
+      margin-bottom : 1em;
+    }
+  }
+
+  ul {
+    @include clearMenu;
+  }
+
+  li {
+    padding : 1em 0;
+    border-bottom : 1px solid $borderColor;
+    font-size : fontSize(small);
+    color: $textColor;
+  }
+
+  a {
+    color: inherit;
+    display : block;
+  }
+}
