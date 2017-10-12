@@ -6,4 +6,11 @@
 
 body {
   margin : 0;
+  background : $bodyBg;
+}
+
+
+strong,
+em {
+  font-weight : 700;
 }
