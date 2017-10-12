@@ -1,16 +1,26 @@
 .main-header {
   height : 64px;
-  border-bottom : 1px solid #ccc;
+  border-bottom : 1px solid $borderColor;
   display : flex;
   align-items: center;
+  background : #fff;
+  position : fixed;
+  top : 0;
+  width : 100%;
+  left : 0;
 }
 
-.header-links a {
-  display : inline-block;
-  margin-left : 1em;
+body {
+  margin-top : 64px;
 }
 
-.main-page,
+.main-page {
+  margin-top : calc(64px + 2em);
+
+  @include from(l) {
+    margin-top : calc(64px + 3em);
+  }
+}
 .main-footer {
   margin-top : 3em;
 }
@@ -23,4 +33,9 @@ section {
   background : $darkColor;
   color: #fff;
   padding : 1em 0;
+}
+
+
+.sidebar-first {
+  margin-bottom : 1em;
 }

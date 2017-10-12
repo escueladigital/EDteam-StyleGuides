@@ -1,0 +1,65 @@
+.colors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+  grid-gap: 1.5em;
+  margin-bottom: 2em;
+}
+
+.color {
+  &__sample {
+    padding-bottom: 100%;
+    height: 0;
+    &.color--body {
+      border : 1px solid $borderColor;
+    }
+  }
+
+  &--primary {
+    background: $firstColor;
+  }
+
+  &--secondary {
+    background: $secondColor;
+  }
+
+  &--tertiary {
+    background: $thirdColor;
+  }
+
+  &--accent {
+    background: $accentColor;
+  }
+
+  &--dark {
+    background: $darkColor;
+  }
+
+  &--border {
+    background: $borderColor;
+  }
+
+  &--text {
+    background : $textColor;
+  }
+
+  &--body {
+    background : $bodyBg;
+  }
+
+  &__info {
+    text-align: center;
+    border: 1px solid $borderColor;
+    border-top: none;
+    padding: 1em;
+    background : #fff;
+  }
+
+  &__name,
+  &__code {
+    margin: 0;
+  }
+
+  &__name {
+    font-weight: 700;
+  }
+}
