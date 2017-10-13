@@ -31,11 +31,11 @@ const sassOptions = {
 
 gulp.task('styles', () =>
   gulp.src('./dev/scss/styles.scss')
-    .pipe(sourcemaps.init({ loadMaps: true }))
+    // .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(plumber())
     .pipe(sass(sassOptions))
     .pipe(postcss(postcssPlugins))
-    .pipe(sourcemaps.write('.'))
+    // .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./public/css'))
     .pipe(server.stream({match: '**/*.css'}))
 );
@@ -49,7 +49,9 @@ gulp.task('pug', () =>
 
 gulp.task('scripts', () =>
   browserify('./dev/js/index.js')
-    .transform(babelify)
+    .transform(babelify, {
+      global: true
+    })
     .bundle()
     .on('error', function(err){
       console.error(err);
