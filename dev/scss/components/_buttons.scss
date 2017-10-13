@@ -1,0 +1,96 @@
+[class*="button"]{
+  @include button;
+  border : none;
+  &.center {
+    display : table;
+    margin : 1em auto;
+  }
+  &.full {
+    display : block;
+    margin : 1em 0;
+    text-align : center;
+    width : 100%;
+  }
+}
+
+.button--secondary {
+  background: $secondColor;
+  color: #fff;
+
+  &:hover {
+    background: darken($secondColor,7);
+  }
+}
+
+.button--tertiary {
+  background: $thirdColor;
+
+  &:hover {
+    background: darken($thirdColor,7);
+  }
+}
+
+.button--cta {
+  background: $accentColor;
+  color: #fff;
+
+  &:hover {
+    background: darken($accentColor,7);
+  }
+}
+
+.button--dark {
+  background: $darkColor;
+
+  &:hover {
+    background: darken($darkColor,7);
+  }
+}
+
+[class*="button--ghost"] {
+  color: $firstColor;
+  background: none;
+  border: 1px solid;
+
+  &:hover {
+    background: $firstColor;
+    color: #fff;
+    border-color: transparent;
+  }
+}
+
+.button--ghost--secondary {
+  color: $secondColor;
+
+  &:hover {
+    background: $secondColor;
+    color: #fff;
+  }
+}
+
+.button--ghost--tertiary {
+  color: $thirdColor;
+
+  &:hover {
+    background: $thirdColor;
+    color: #fff;
+  }
+}
+
+.button--ghost--cta {
+  color: $accentColor;
+
+  &:hover {
+    background: $accentColor;
+    color: #fff;
+  }
+}
+
+.button--ghost--dark {
+  color: $darkColor;
+
+  &:hover {
+    background: $darkColor;
+    color: #fff;
+  }
+}
