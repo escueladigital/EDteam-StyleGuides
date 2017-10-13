@@ -11,3 +11,15 @@ export const menu = (toggleId, navId) => {
 
 menu('main-menu-toggle', 'main-menu');
 menu('vertical-menu-toggle', 'vertical-menu');
+
+const activeMenuItem = containerId => {
+  let links = [...document.querySelectorAll(`#${containerId} a`)];
+  const curentUrl = document.location.href;
+  links.map( link => {
+    if (link.href === curentUrl) {
+      link.classList.add('active')
+    }
+  });
+};
+
+activeMenuItem('vertical-menu');

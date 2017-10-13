@@ -1,4 +1,1 @@
-import {saludo, despedida} from "./modules/example";
-
-saludo();
-despedida();
+import {menu} from "./modules/menu";
