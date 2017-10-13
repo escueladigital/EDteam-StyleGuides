@@ -15,7 +15,7 @@
     "browser-sync": "^2.18.13",
     "browserify": "^14.4.0",
     "cssnano": "^3.10.0",
-    "ed-grid": "^2.0.2",
+    "ed-grid": "^2.1.4",
     "ed-ui": "0.0.5",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
