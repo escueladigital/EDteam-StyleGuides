@@ -1,27 +1,10 @@
-$dev: false;
-$cssCore: false;
-$cssHelpers: true;
-
-// font sizes:
-$fontSizeBase: 1.15em !default; // Lato is a small font, need 1.15em = 18.4px for legibility
-$fontSizeRatio: 1.3;
-
-// Breakpoint para tamaño movil
-$mobileBreakpoint: 1024px;
+$dev        : false;
+$cssCore    : false;
+$cssHelpers : true;
 
 // Typography
-$body-font: Lato, 'sans-serif'; // only 400 and 400i
-$header-font: 'Open Sans', 'sans-serif'; // only 700
-
-//$fontSizes: (
-//  bigger  : $fontSizeBase * pow($fontSizeRatio,4),
-//  t1      : $fontSizeBase * pow($fontSizeRatio,3),
-//  t2      : $fontSizeBase * pow($fontSizeRatio,2),
-//  t3      : $fontSizeBase * pow($fontSizeRatio,1),
-//  normal  : $fontSizeBase,
-//  small   : $fontSizeBase * 0.85,
-//  smaller : $fontSizeBase * 0.8,
-//);
+$body-font   : Lato, 'sans-serif'; // only 400 and 400i
+$header-font : 'Open Sans', 'sans-serif'; // only 700
 
 $fontSizes: (
   bigger  : rem(42px),
@@ -33,15 +16,23 @@ $fontSizes: (
   smaller : rem(13px),
 );
 
-
 // Colors
 $firstColor  : #007BDF;
 $secondColor : #00CBFF;
 $thirdColor  : #FF3C32;
-$accentColor : #fba905;
-$darkColor   : #282d31;
+$accentColor : #FBA905;
+$darkColor   : #282D31;
 
 // Complementary colors:
-$borderColor: #DFE0E0;
-$textColor: #53575A;
-$bodyBg: #FCFCFC;
+$borderColor : #DFE0E0;
+$textColor   : #53575A;
+$bodyBg      : #FCFCFC;
+
+// Map zIndex
+$z-index: (
+  back    : -10,
+  normal  : 1,
+  tooltip : 10,
+  fixed   : 100,
+  modal   : 1000
+);
