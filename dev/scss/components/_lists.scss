@@ -1,13 +1,57 @@
-.data-list {
+ul, ol {
+  margin-top : 1em;
+  margin-bottom : 1em;
+  padding-left : 2em;
+  margin-left : 0;
+
+  li {
+    padding-left : .2em;
+    margin-bottom : .25em;
+  }
+}
+
+.data-list,
+.feature-list {
   @include clearMenu;
   margin-top : 2em;
   margin-bottom : 2em;
 
   li {
-    display : flex;
-    justify-content: space-between;
-    align-items: center;
     border-bottom : 1px solid $borderColor;
     padding : .5em 0;
   }
+}
+
+.data-list {
+  li {
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h1,h2,h3,h4,h5,h6,p, [class*="button"] {
+    margin : 0;
+  }
+}
+
+.feature-list {
+  padding-left : 0;
+  li {
+    padding : .5em 0 .5em 1.5em;
+    list-style: none;
+    position : relative;
+
+    @include icon(check,before);
+    &::before {
+      position : absolute;
+      top : .8em;
+      left : 0;
+      color: $firstColor;
+    }
+  }
+
+  &.secondary li::before { color: $secondColor }
+  &.tertiary li::before  { color: $thirdColor  }
+  &.accent li::before    { color: $accentColor }
+  &.dark li::before      { color: $darkColor   }
 }
