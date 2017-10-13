@@ -1,0 +1,163 @@
+extends ../includes/template
+append config
+  -currentPage = 'cards'
+block main
+  h1 Cards
+  p Las tarjetas se usan para mostrar contenido resumido o destacado del resto. Por ejemplo, una cuadricula con posts recientes o un curso en el catalogo.
+
+  h2 Tarjeta genérica (predeterminada)
+  p Las tarjetas ocupan todo el ancho disponible, por lo que sus dimensiones dependerán del layout que se construya.
+
+  .ed-container
+    .ed-item.l-50.to-center
+      .card
+        .card__img
+          img(src="https://ed.team/sites/default/files/styles/16_9_large/public/2017-10/npm_0.jpg")
+        .card__content
+          .card__title
+            p Titulo de la tarjeta
+          .card__body
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas. Cras non facilisis justo. Nunc in faucibus risus.
+          .card__footer
+            p Publicado el 5 de febrero de 2017
+
+  h2 Tarjeta horizontal
+
+  .ed-container
+    .ed-item.l-80.to-center
+      .card--horizontal
+        .card__img
+          img(src="https://ed.team/sites/default/files/styles/16_9_large/public/2017-10/npm_0.jpg")
+        .card__content
+          .card__title
+            p Titulo de la tarjeta
+          .card__body
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas. Cras non facilisis justo. Nunc in faucibus risus.
+          .card__footer
+            p Publicado el 5 de febrero de 2017
+
+  h2 Estructura html
+  p El elemento <code>article</code> que contiene la tarjeta puede tener la clase <code>card</code> o <code>card--horizontal</code>
+
+  pre
+    code
+      | &lt;article class=&quot;card--horizontal&quot;&gt;
+      |   &lt;header class=&quot;card__img&quot;&gt;
+      |     &lt;img src=&quot;imagen.jpg&quot;/&gt;
+      |   &lt;/header&gt;
+      |   &lt;div class=&quot;card__content&quot;&gt;
+      |     &lt;div class=&quot;card__title&quot;&gt;
+      |       &lt;p&gt;Titulo de la tarjeta&lt;/p&gt;
+      |     &lt;/div&gt;
+      |     &lt;div class=&quot;card__body&quot;&gt;
+      |       &lt;p&gt;Cuerpo de la tarjeta.&lt;/p&gt;
+      |     &lt;/div&gt;
+      |     &lt;footer class=&quot;card__footer&quot;&gt;
+      |       &lt;p&gt;Pie de la tarjeta&lt;/p&gt;
+      |     &lt;/footer&gt;
+      |   &lt;/div&gt;
+      | &lt;/article&gt;
+
+  h2 Variaciones (tipos de tarjetas)
+
+  h3 Post (predeterminado)
+  .ed-container
+    .ed-item.l-50.to-center
+      .card
+        .card__img
+          img(src="https://ed.team/sites/default/files/styles/16_9_large/public/2017-10/npm_0.jpg")
+        .card__content
+          .card__title
+            p Cómo publicar tus propios módulos en npm
+          .card__date
+            p 28.jun.2017
+          .card__body
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas.
+          .card__footer
+            .card__author-img
+              img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2016-11/alvaro_0.jpg?itok=SlW5NOar")
+            .card__author-name
+              p Álvaro Felipe
+            .card__tag
+              a(href="#") JavaScript
+
+  h3 Post horizontal
+
+  .ed-container
+    .ed-item.l-80.to-center
+      .card--horizontal
+        .card__img
+          img(src="https://ed.team/sites/default/files/styles/16_9_large/public/2017-10/npm_0.jpg")
+        .card__content
+          .card__title
+            p Cómo publicar tus propios módulos en npm
+          .card__date
+            p 28.jun.2017
+          .card__body
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas.
+          .card__footer
+            .card__author-img
+              img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2016-11/alvaro_0.jpg?itok=SlW5NOar")
+            .card__author-name
+              p Álvaro Felipe
+            .card__tag
+              a(href="#") JavaScript
+
+  h3 Curso
+
+  .ed-container
+    .ed-item.l-50.to-center
+      .card
+        .card__img
+          img(src="https://ed.team/sites/default/files/styles/medium/public/courses/images/desarrollo_0.png?itok=lbTPPZ_J")
+        .card__content
+          .card__title
+            p Gestión y desarrollo de proyectos web
+          .card__body
+            p Aprende a vender, planificar y desarrollar un proyecto web en equipo.
+          .card__footer
+            .card__teachers
+              .card__teacher
+                .card__teacher-img
+                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2016-11/alvaro_0.jpg?itok=SlW5NOar")
+                .card__teacher-name
+                  p Álvaro Felipe
+              .card__teacher
+                .card__teacher-img
+                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2016-11/alexyslozada.jpg?itok=XQ9D6LUX")
+                .card__teacher-name
+                  p Alexys Lozada
+              .card__teacher
+                .card__teacher-img
+                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2017-04/daniel2017-2.jpg?itok=2SHcVeNM")
+                .card__teacher-name
+                  p Daniel Romero
+              .card__teacher
+                .card__teacher-img
+                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2016-11/jonmircha.jpg?itok=E55nLr6L")
+                .card__teacher-name
+                  p Jon Mircha
+            .card__price.button--ghost--tertiary.center.smaller 80.00 USD
+    .ed-item.l-50.to-center
+      .card
+        .card__img
+          img(src="https://ed.team/sites/default/files/styles/medium/public/courses/images/go-poster-720_1.jpg?itok=K9Amr-_Z")
+        .card__content
+          .card__title
+            p Go Desde Cero
+          .card__body
+            p Go es un lenguaje creado por Google pensado en sistemas backend de alto rendimiento. Permite compilar para cualquier sistema operativo.
+          .card__footer
+            .card__teachers
+              .card__teacher
+                .card__teacher-img
+                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2016-11/alexyslozada.jpg?itok=XQ9D6LUX")
+                .card__teacher-name
+                  p Alexys Lozada
+              .card__teacher
+                .card__teacher-img
+                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2017-04/daniel2017-2.jpg?itok=2SHcVeNM")
+                .card__teacher-name
+                  p Daniel Romero
+            .card__price.button--ghost--tertiary.center.smaller 80.00 USD
+

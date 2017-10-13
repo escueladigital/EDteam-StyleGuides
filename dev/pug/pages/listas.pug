@@ -1,0 +1,57 @@
+extends ../includes/template
+append config
+  -currentPage = 'listas'
+
+block main
+  h1 Listas
+  p Apariencia predeterminada de las listas
+  .ed-container
+    .ed-item.l-50
+      p.strong Listas no ordenadas (ul)
+      ul
+        li Elemento de lista número 1
+        li Elemento de lista número 2
+        li Elemento de lista número 3
+        li Elemento de lista número 4
+        li Elemento de lista número 5
+
+    .ed-item.l-50
+      p.strong Listas ordenadas (ol)
+      ol
+        li Elemento de lista número 1
+        li Elemento de lista número 2
+        li Elemento de lista número 3
+        li Elemento de lista número 4
+        li Elemento de lista número 5
+
+  h2 Listas de características
+
+  p Úselas para enumerar características de un producto o servicio. Use la clase
+    | <code>feature-list</code> en el elemento <code>ul</code>. Para cambiar el
+    | color de los iconos use las clases <code>secondary</code> <code>tertiary</code>
+    | <code>accent</code> o <code>dark</code>.
+  p Por defecto, sin añadir una clase para el color, se usa el azul principal de EDteam.
+
+  ul.feature-list.accent
+    li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas. Cras non facilisis justo. Nunc in faucibus risus. Pellentesque felis diam, condimentum vitae mattis ut, sollicitudin a libero. Pellentesque malesuada pharetra justo, nec fringilla tortor adipiscing at. Maecenas accumsan, enim id mattis blandit, urna enim bibendum est, at volutpat massa neque vitae libero. Phasellus cursus leo hendrerit neque consequat gravida.
+    li Item list 2
+    li Item list 3
+    li Item list 4
+    li Item list 5
+
+  h2 Listas de datos
+
+  p Úselas para mostrar datos y acompañados de un título (como una lista de definición). Los dos hijos directos de cada <code>li</code>
+    | se acomodan a lado y lado del layout (no importa que tipo de elementos sean).
+  p Use la clase <code>data-list</code> en el elemento <code>ul</code>
+
+  ul.data-list
+    li
+      p.strong Dominios permitidos
+      p 10 dominios .com
+    li
+      p.strong Ventas acumuladas en 2017
+      p $ 1 786 000 000
+    li
+      p.strong Mostrar un botón
+      a(href="#").button--cta.small Inscribete ahora

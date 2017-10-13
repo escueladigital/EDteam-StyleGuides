@@ -1,0 +1,46 @@
+extends ../includes/template
+append config
+  -currentPage = 'botones'
+block main
+  h1 Botones
+
+  p Los botones usan la clase <code>button</code> o alguna variacion de <code>button--</code>. En
+    | los siguientes botones se indica las clases que debe llevar
+
+  a.button.center class="button center"
+  a.button.full class="button full"
+  a.button class="button"
+  a.button--secondary class="button--secondary"
+  a.button--tertiary class="button--tertiary"
+  a.button--cta class="button--cta"
+  a.button--dark class="button--dark"
+
+  a.button--ghost class="button--ghost"
+  a.button--ghost--secondary class="button--ghost--secondary"
+  a.button--ghost--tertiary class="button--ghost--tertiary"
+  a.button--ghost--cta class="button--ghost--cta"
+  a.button--ghost--dark class="button--ghost--dark"
+
+  p Si se necesita un grupo de botones centrados, basta agruparlos en un contedor
+    | que tenga la propiedad <code>text-align:center</code> o la clase
+    | <code>center</code>. Ejemplo:
+
+  .center
+    a.button--tertiary class="button--tertiary"
+    a.button--cta class="button--cta"
+
+  p Tenga en cuenta que no necesita agregar dos clases para variaciones estilo BEM:
+  ul
+    li <code>class="button button--secondary"</code> Incorrecto
+    li <code>class="button--secondary"</code> Correcto
+
+  p Para cambiar el tamaño de los botones basta cambiar el tamaño de la fuente, por lo
+    | que pueden usarse las clases indicadas en la sección de <a href="tipografia.html">tipografia</a>. Ejemplos:
+
+  a.button--cta.smaller.center class="button--cta smaller"
+  a.button--cta.small.center class="button--cta smaller"
+  a.button--cta.center class="button--cta"
+  a.button--cta.t3.center class="button--cta t3"
+  a.button--cta.t2.center class="button--cta t2"
+  a.button--cta.t1.center class="button--cta t1"
+  a.button--cta.bigger.center class="button--cta bigger"

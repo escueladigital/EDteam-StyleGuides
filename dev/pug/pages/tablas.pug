@@ -1,0 +1,238 @@
+extends ../includes/template
+append config
+  -currentPage = 'tablas'
+block main
+  h1 Tablas
+
+  mixin celdas(factor)
+    - for (var i = 1; i <= 12; i++)
+      td= i * factor
+
+  p Las tablas deben encerrarse dentro de un contenedor con la clase <code>
+    | table-container</code> para asegurar que sean responsive.
+
+  h2 Tabla predeterminada
+  p No requiere clases
+  .table-container
+    table
+      tr
+        th
+        th Enero
+        th Febrero
+        th Marzo
+        th Abril
+        th Mayo
+        th Junio
+        th Julio
+        th Agosto
+        th Setiembre
+        th Octubre
+        th Noviembre
+        th Diciembre
+      tr
+        td Ventas
+        +celdas(10045)
+      tr
+        td Gastos
+        +celdas(2761)
+      tr
+        td Impuestos
+        +celdas(976)
+      tr
+        td Ventas
+        +celdas(10045)
+      tr
+        td Gastos
+        +celdas(2761)
+      tr
+        td Impuestos
+        +celdas(976)
+
+
+  h2 Tabla secundaria
+  p Añada la clase <code>table--secondary</code> al elemento <code>&lt;table&gt;&lt/table&gt;</code>
+  .table-container
+    table.table--secondary
+      tr
+        th
+        th Enero
+        th Febrero
+        th Marzo
+        th Abril
+        th Mayo
+        th Junio
+        th Julio
+        th Agosto
+        th Setiembre
+        th Octubre
+        th Noviembre
+        th Diciembre
+      tr
+        td Ventas
+        +celdas(10045)
+      tr
+        td Gastos
+        +celdas(2761)
+      tr
+        td Impuestos
+        +celdas(976)
+      tr
+        td Ventas
+        +celdas(10045)
+      tr
+        td Gastos
+        +celdas(2761)
+      tr
+        td Impuestos
+        +celdas(976)
+
+
+  h2 Tabla terciaria
+  p Añada la clase <code>table--tertiary</code> al elemento <code>&lt;table&gt;&lt/table&gt;</code>
+  .table-container
+    table.table--tertiary
+      tr
+        th
+        th Enero
+        th Febrero
+        th Marzo
+        th Abril
+        th Mayo
+        th Junio
+        th Julio
+        th Agosto
+        th Setiembre
+        th Octubre
+        th Noviembre
+        th Diciembre
+      tr
+        td Ventas
+        +celdas(10045)
+      tr
+        td Gastos
+        +celdas(2761)
+      tr
+        td Impuestos
+        +celdas(976)
+      tr
+        td Ventas
+        +celdas(10045)
+      tr
+        td Gastos
+        +celdas(2761)
+      tr
+        td Impuestos
+        +celdas(976)
+
+
+  h2 Tabla con énfasis
+  p Añada la clase <code>table--accent</code> al elemento <code>&lt;table&gt;&lt/table&gt;</code>
+  .table-container
+    table.table--accent.first-column
+      tr
+        th
+        th Enero
+        th Febrero
+        th Marzo
+        th Abril
+        th Mayo
+        th Junio
+        th Julio
+        th Agosto
+        th Setiembre
+        th Octubre
+        th Noviembre
+        th Diciembre
+      tr
+        td Ventas
+        +celdas(10045)
+      tr
+        td Gastos
+        +celdas(2761)
+      tr
+        td Impuestos
+        +celdas(976)
+      tr
+        td Ventas
+        +celdas(10045)
+      tr
+        td Gastos
+        +celdas(2761)
+      tr
+        td Impuestos
+        +celdas(976)
+
+
+  h2 Tabla oscura
+  p Añada la clase <code>table--dark</code> al elemento <code>&lt;table&gt;&lt/table&gt;</code>
+  .table-container
+    table.table--dark.first-column
+      tr
+        th
+        th Enero
+        th Febrero
+        th Marzo
+        th Abril
+        th Mayo
+        th Junio
+        th Julio
+        th Agosto
+        th Setiembre
+        th Octubre
+        th Noviembre
+        th Diciembre
+      tr
+        td Ventas
+        +celdas(10045)
+      tr
+        td Gastos
+        +celdas(2761)
+      tr
+        td Impuestos
+        +celdas(976)
+      tr
+        td Ventas
+        +celdas(10045)
+      tr
+        td Gastos
+        +celdas(2761)
+      tr
+        td Impuestos
+        +celdas(976)
+
+  h2 First column
+  p Añada la clase <code>first-column</code> al elemento <code>&lt;table&gt;&lt/table&gt;</code> para resaltar la primera columna
+  .table-container
+    table.first-column
+      tr
+        th
+        th Enero
+        th Febrero
+        th Marzo
+        th Abril
+        th Mayo
+        th Junio
+        th Julio
+        th Agosto
+        th Setiembre
+        th Octubre
+        th Noviembre
+        th Diciembre
+      tr
+        td Ventas
+        +celdas(10045)
+      tr
+        td Gastos
+        +celdas(2761)
+      tr
+        td Impuestos
+        +celdas(976)
+      tr
+        td Ventas
+        +celdas(10045)
+      tr
+        td Gastos
+        +celdas(2761)
+      tr
+        td Impuestos
+        +celdas(976)

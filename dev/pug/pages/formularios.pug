@@ -1,0 +1,50 @@
+extends ../includes/template
+append config
+  -currentPage = 'formularios'
+block main
+  h1 Formularios
+  p Para maquetar formularios utilice EDgrid, aplicando la clase <code>ed-container</code> a la etiqueta <code>form</code>
+    | y encerrando los componentes del formulario dentro de los <code>ed-item</code> que se requieran.
+  p Se recomienda usar label o placeholder, pero no ambos.
+  p Los inputs de tipo radio o checbox deben ser hijos directos de la etiqueta <code>label</code>
+  p Agrupe los inputs radio o checbox en un contenedor de clase <code>checbox-container</code> o <code>radio-container</code>
+
+  h2 Modelo de formulario
+  form
+    .ed-container
+      .ed-item.l-40
+        label Nombre de usuario
+        input
+      .ed-item.l-60
+        label Su contraseña
+        input
+      .ed-item.l-30
+        .checkbox-container
+          p.small Ejemplos de checkbox
+          label
+            input(type="checkbox")
+            | Elige esta opcion
+          label
+            input(type="checkbox")
+            | Elige esta opcion
+      .ed-item.l-70
+        .radio-container
+          p.small Ejemplos de radio buttons
+          label
+            input(type="radio" name="radio")
+            | Elige esta otra opcion
+          label
+            input(type="radio" name="radio")
+            | Elige esta otra opcion
+      .ed-item
+        label Selecciona tu país
+        select
+          option Colombia
+          option Bolivia
+          option Argentina
+          option Perú
+          option México
+      .ed-item
+        textarea(placeholder="Escriba su mensaje")
+      .ed-item
+        input(type="submit" value="Enviar").button.full.small
