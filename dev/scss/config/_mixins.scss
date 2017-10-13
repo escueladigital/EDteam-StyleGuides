@@ -37,3 +37,24 @@
   margin-bottom : 0;
   padding-left : 0;
 }
+
+ @mixin button {
+   display: inline-block;
+   padding: .8em 1.6em;
+   background: $firstColor;
+   color: #fff;
+   margin: 1em;
+   cursor: pointer;
+   text-decoration : none;
+   border-radius : .25em;
+   transition: all .25s;
+
+   &:hover {
+     background: darken($firstColor,5);
+     text-decoration : none;
+   }
+
+   &:active {
+     transform: scale(.975)
+   }
+ }
