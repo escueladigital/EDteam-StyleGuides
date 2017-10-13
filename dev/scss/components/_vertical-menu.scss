@@ -20,7 +20,9 @@ Su estructura es
 .vertical-menu-toggle {
   background-size : 100% 34%;
   font-size : fontSize(small);
-  display : flex;
+  @include to(l) {
+    display : flex;
+  }
   &::before {
     content: "";
     display : block;
@@ -61,5 +63,17 @@ Su estructura es
   a {
     color: inherit;
     display : block;
+
+    &.active {
+      display : flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $thirdColor;
+      @include icon(right,after);
+
+      &:hover {
+        text-decoration : none;
+      }
+    }
   }
 }
