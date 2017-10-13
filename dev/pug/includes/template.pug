@@ -1,13 +1,17 @@
+block config
+  include config
 doctype html
 html(lang="es")
   head
-    title EDteam Style Guides
+    title= currentPage.slice(0,1).toUpperCase() + currentPage.slice(1) + " | " + siteName
     meta(charset="utf-8")
     meta(name="viewport" content="initial-scale=1.0, width=device-width")
+    meta(name="description" content=description)
     link(rel="stylesheet" href="https://file.myfontastic.com/K22U9jkaoYfUVye4gPLuEX/icons.css")
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700")
-    link(rel="stylesheet" href="css/styles.css")
-  body
+    link(rel="stylesheet" href="css/styles.css?13-oct")
+    link(rel="shortcut icon" href="img/favicon.png")
+  body(class=currentPage)
     include header
     .ed-container.main-page
       aside.ed-item.l-25.main-sidebar.sidebar-first
@@ -18,4 +22,4 @@ html(lang="es")
       .ed-container
         .ed-item
           p.small EDteam Style Guide por <a href="http://alvarofelipe.net" target="_blank">Álvaro Felipe</a>
-    script(src="js/scripts.js")
+    script(src="js/scripts.js?13-oct")
