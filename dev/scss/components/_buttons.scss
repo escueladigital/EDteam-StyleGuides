@@ -1,4 +1,5 @@
-[class*="button"]{
+.button,
+[class*="button--"]{
   @include button;
   &.center {
     @include button-center;
