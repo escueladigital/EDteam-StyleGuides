@@ -1,42 +1,23 @@
 [class*="button"]{
   @include button;
-  border : none;
   &.center {
-    display : table;
-    margin : 1em auto;
+    @include button-center;
   }
   &.full {
-    display : block;
-    margin : 1em 0;
-    text-align : center;
-    width : 100%;
+    @include button-full;
   }
 }
 
 .button--secondary {
-  background: $secondColor;
-  color: #fff;
-
-  &:hover {
-    background: darken($secondColor,7);
-  }
+  @include button-secondary;
 }
 
 .button--tertiary {
-  background: $thirdColor;
-
-  &:hover {
-    background: darken($thirdColor,7);
-  }
+  @include button-tertiary;
 }
 
 .button--cta {
-  background: $accentColor;
-  color: #fff;
-
-  &:hover {
-    background: darken($accentColor,7);
-  }
+  @include button-cta;
 }
 
 .button--dark {
@@ -48,49 +29,21 @@
 }
 
 [class*="button--ghost"] {
-  color: $firstColor;
-  background: none;
-  border: 1px solid;
-
-  &:hover {
-    background: $firstColor;
-    color: #fff;
-    border-color: transparent;
-  }
+  @include button-ghost;
 }
 
 .button--ghost--secondary {
-  color: $secondColor;
-
-  &:hover {
-    background: $secondColor;
-    color: #fff;
-  }
+  @include button-ghost-secondary;
 }
 
 .button--ghost--tertiary {
-  color: $thirdColor;
-
-  &:hover {
-    background: $thirdColor;
-    color: #fff;
-  }
+  @include button-ghost-tertiary;
 }
 
 .button--ghost--cta {
-  color: $accentColor;
-
-  &:hover {
-    background: $accentColor;
-    color: #fff;
-  }
+  @include button-cta;
 }
 
 .button--ghost--dark {
-  color: $darkColor;
-
-  &:hover {
-    background: $darkColor;
-    color: #fff;
-  }
+  @include button-ghost-dark;
 }

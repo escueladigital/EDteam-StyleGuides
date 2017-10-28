@@ -38,23 +38,108 @@
   padding-left : 0;
 }
 
- @mixin button {
-   display: inline-block;
-   padding: .8em 1.6em;
-   background: $firstColor;
-   color: #fff;
-   margin: 1em;
-   cursor: pointer;
-   text-decoration : none;
-   border-radius : .25em;
-   transition: all .25s;
+@mixin button {
+  display: inline-block;
+  padding: .8em 1.6em;
+  background: $firstColor;
+  color: #fff;
+  margin: 1em;
+  cursor: pointer;
+  text-decoration : none;
+  border-radius : .25em;
+  transition: all .25s;
+  border : none;
 
-   &:hover {
-     background: darken($firstColor,5);
-     text-decoration : none;
-   }
+  &:hover {
+    background: darken($firstColor,5);
+    text-decoration : none;
+  }
 
-   &:active {
-     transform: scale(.975)
-   }
- }
+  &:active {
+    transform: scale(.975)
+  }
+}
+
+@mixin button-center {
+  display : table;
+  margin : 1em auto;
+}
+
+@mixin button-full {
+  display : block;
+  margin : 1em 0;
+  text-align : center;
+  width : 100%;
+}
+
+@mixin button-secondary {
+  background: $secondColor;
+
+  &:hover {
+    background: darken($secondColor,7);
+  }
+}
+
+@mixin button-tertiary {
+  background: $thirdColor;
+
+  &:hover {
+    background: darken($thirdColor,7);
+  }
+}
+
+@mixin button-cta {
+  background: $accentColor;
+
+  &:hover {
+    background: darken($accentColor,7);
+  }
+}
+
+@mixin button-ghost {
+  color: $firstColor;
+  background: none;
+  border: 1px solid;
+
+  &:hover {
+    background: $firstColor;
+    color: #fff;
+    border-color: transparent;
+  }
+}
+
+@mixin button-ghost-secondary {
+  color: $secondColor;
+
+  &:hover {
+    background: $secondColor;
+    color: #fff;
+  }
+}
+
+@mixin button-ghost-tertiary {
+  color: $thirdColor;
+
+  &:hover {
+    background: $thirdColor;
+    color: #fff;
+  }
+}
+
+@mixin button-ghost-cta {
+  color: $accentColor;
+
+  &:hover {
+    background: $accentColor;
+    color: #fff;
+  }
+}
+
+@mixin button-ghost-dark {
+  color: $darkColor;
+
+  &:hover {
+    background: $darkColor;
+    color: #fff;
+  }
+}
