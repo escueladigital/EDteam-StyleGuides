@@ -22,11 +22,7 @@
 }
 
 .button--dark {
-  background: $darkColor;
-
-  &:hover {
-    background: darken($darkColor,7);
-  }
+  @include button-dark;
 }
 
 [class*="button--ghost"] {
