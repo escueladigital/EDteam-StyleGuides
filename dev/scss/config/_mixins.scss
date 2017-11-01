@@ -49,6 +49,7 @@
   border-radius : .25em;
   transition: all .25s;
   border : none;
+  text-align : center;
 
   &:hover {
     background: darken($firstColor,5);
@@ -93,6 +94,14 @@
 
   &:hover {
     background: darken($accentColor,7);
+  }
+}
+
+@mixin button-dark {
+  background: $darkColor;
+
+  &:hover {
+    background: darken($darkColor,7);
   }
 }
 
