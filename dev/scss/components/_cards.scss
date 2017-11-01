@@ -1,24 +1,31 @@
 .card {
-  display : flex;
-  flex-direction: column;
-  height : 100%;
+  display        : flex;
+  flex-direction : column;
+  height         : 100%;
 
   &__img img {
     display : block;
+    width : 100%;
+    height : auto;
   }
 
   &__content {
-    padding : 1em;
-    border : 1px solid $borderColor;
-    border-top-width: 0;
-    background : #fff;
-    flex: 1;
-    display : flex;
-    flex-direction: column;
+    padding          : 1em;
+    border           : 1px solid $borderColor;
+    border-top-width : 0;
+    background       : #FFF;
+    flex             : 1;
+    display          : flex;
+    flex-direction   : column;
   }
 
   &__title {
     font-weight : 700;
+    margin-bottom : .2em;
+    a {
+      color           : inherit;
+      text-decoration : none;
+    }
   }
 
   &__body {
@@ -26,12 +33,12 @@
   }
 
   &__footer {
-    font-size : fontSize(smaller);
-    border-top : 1px solid $borderColor;
+    font-size   : fontSize(smaller);
+    border-top  : 1px solid $borderColor;
     padding-top : 1em;
-    display : flex;
-    align-items: center;
-    margin-top : auto;
+    display     : flex;
+    align-items : center;
+    margin-top  : auto;
 
     p:last-child {
       margin-bottom : 0;
@@ -42,18 +49,19 @@
     }
   }
 
-  &__author-img img,
-  &__teacher-img img {
-    width : 2rem;
-    height : 2rem;
-    display : block;
-    border-radius : 50%;
-    margin-right : .5em;
+  &__user-img {
+    flex: none;
+    img {
+      width         : 2rem;
+      height        : 2rem;
+      display       : block;
+      border-radius : 50%;
+      margin-right  : .5em;
+    }
   }
 
-  &__author-name,
-  &__teacher-name {
-    line-height : 0;
+  &__user-name {
+    line-height : 1;
   }
 
   &__tag {
@@ -64,68 +72,63 @@
     }
   }
 
-  &__teacher {
-    display : flex;
-    align-items: center;
-    margin-bottom : .5em;
-  }
-
   &__date {
     font-size : fontSize(smaller);
-    opacity : .8;
+    opacity   : .8;
     p {
       margin : -1.2em 0 1em;
     }
   }
 
-  .card__price {
-    @include icon(cart,before,.3em);
+  &__price {
+    //@include icon(cart,before,.3em);
+    @include button;
+    @include button-ghost;
+    @include button-ghost-tertiary;
   }
-
 }
-
 
 .card--horizontal {
   display : flex;
 
   .card {
     &__img {
-      flex: 0 0 50%;
+      flex : 0 0 50%;
 
       img {
-        width : 100%;
-        height : 100%;
-        object-fit: cover;
+        width      : 100%;
+        height     : 100%;
+        object-fit : cover;
       }
 
     }
 
     &__content {
-      flex: 0 0 50%;
-      border-left : none;
-      border-top-width: 1px;
+      flex             : 0 0 50%;
+      border-left      : none;
+      border-top-width : 1px;
     }
   }
 }
 
 .card--user {
   //background : linear-gradient(#fff calc(60px + 1em), $borderColor calc(60px + 1em));
-  border : 1px solid $borderColor;
+  border  : 1px solid $borderColor;
   padding : 1em;
 
   img {
-    width : 120px;
-    height : auto;
-    max-width : 90%;
-    display : block;
-    margin : auto;
+    width         : 120px;
+    height        : auto;
+    max-width     : 90%;
+    display       : block;
+    margin        : auto;
     border-radius : 50%;
-    border : 4px solid #fff;
+    border        : 4px solid #FFF;
   }
 
   .user__name {
     padding-top : .5em;
-    text-align : center;
+    text-align  : center;
     //font-size : fontSize(t3);
   }
 }
