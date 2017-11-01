@@ -36,7 +36,8 @@ body {
   @include navToggle(20px, $textColor);
 }
 
-.main-menu {
+
+@mixin main-menu {
   font-size : fontSize(small);
 
   @include to(l) {
@@ -77,4 +78,9 @@ body {
   a {
     color : inherit;
   }
+}
+
+
+.main-menu {
+  @include main-menu;
 }
