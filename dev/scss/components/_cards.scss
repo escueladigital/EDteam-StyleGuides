@@ -2,11 +2,13 @@
   display        : flex;
   flex-direction : column;
   height         : 100%;
+  box-shadow     : 0 10px 10px -10px $borderColor;
 
   &__img img {
     display : block;
     width : 100%;
     height : auto;
+    border-radius : .25rem .25rem 0 0;
   }
 
   &__content {
@@ -17,7 +19,9 @@
     flex             : 1;
     display          : flex;
     flex-direction   : column;
+    border-radius : 0 0 .25rem .25rem;
   }
+
 
   &__title {
     font-weight : 700;
@@ -30,6 +34,7 @@
 
   &__body {
     font-size : fontSize(small);
+    margin-bottom : .5rem;
   }
 
   &__footer {
@@ -81,7 +86,6 @@
   }
 
   &__price {
-    //@include icon(cart,before,.3em);
     @include button;
     @include button-ghost;
     @include button-ghost-tertiary;
@@ -112,7 +116,6 @@
 }
 
 .card--user {
-  //background : linear-gradient(#fff calc(60px + 1em), $borderColor calc(60px + 1em));
   border  : 1px solid $borderColor;
   padding : 1em;
 
@@ -129,6 +132,5 @@
   .user__name {
     padding-top : .5em;
     text-align  : center;
-    //font-size : fontSize(t3);
   }
 }
