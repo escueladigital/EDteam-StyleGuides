@@ -26,13 +26,3 @@
 @function rem($px) {
   @return ($px / 16px) * 1rem;
 }
-
-// Funcion z-index
-@function zIndex($z) {
-  @if map-has_key($z-index,$z) {
-    @return map-get($z-index,$z)
-  }
-  @else {
-    @error "The valid values are back, normal, tooltip, fixed and modal"
-  }
-}
