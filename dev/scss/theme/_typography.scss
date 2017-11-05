@@ -1,7 +1,7 @@
 // Aplicar tamaños de fuente
 body {
+  @include font-base;
   font-family : $body-font;
-  font-size   : fontSize(normal);
   font-weight : 400;
   line-height : 1.6;
   color       : $textColor;
@@ -20,8 +20,8 @@ h1, .t1 {
 
 h2, h3, h4, h5, h6,
 .t2, .t3 {
-  margin-top    : 1em;
-  margin-bottom : .75em;
+  margin-top    : 1.5em;
+  margin-bottom : .4em;
 }
 
 // Set font sizes
