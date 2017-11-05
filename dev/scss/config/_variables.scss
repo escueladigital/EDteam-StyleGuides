@@ -11,9 +11,9 @@ $fontSizes: (
   t1      : rem(36px),
   t2      : rem(30px),
   t3      : rem(24px),
-  normal  : rem(18px),
-  small   : rem(15px),
-  smaller : rem(13px),
+  normal  : rem(20px),
+  small   : rem(16px),
+  smaller : rem(14px),
 );
 
 // Colors
@@ -28,11 +28,9 @@ $borderColor : #DFE0E0;
 $textColor   : #53575A;
 $bodyBg      : #FCFCFC;
 
-// Map zIndex
-$z-index: (
-  back    : -10,
-  normal  : 1,
-  tooltip : 10,
-  fixed   : 100,
-  modal   : 1000
-);
+// z-ndex
+$z-back    : -10;
+$z-normal  : 1;
+$z-tooltip : 10;
+$z-fixed   : 100;
+$z-modal   : 1000;
