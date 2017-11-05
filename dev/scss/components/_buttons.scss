@@ -7,6 +7,10 @@
   &.full {
     @include button-full;
   }
+
+  &.button--smal {
+    @include button-small;
+  }
 }
 
 .button--secondary {

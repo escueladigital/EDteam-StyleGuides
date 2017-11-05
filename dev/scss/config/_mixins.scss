@@ -30,6 +30,10 @@
   @include from(l) { font-size: fontSize(t3) }
 }
 
+@mixin font-base {
+  font-size : fontSize(small);
+  @include from(l) { font-size: fontSize(normal) }
+}
 
 @mixin clearMenu {
   list-style: none;
@@ -47,18 +51,22 @@
   cursor: pointer;
   text-decoration : none;
   border-radius : .25em;
-  transition: all .25s;
+  transition: transform .1s;
   border : none;
   text-align : center;
 
   &:hover {
-    background: darken($firstColor,5);
+    background: darken($firstColor,10);
     text-decoration : none;
   }
 
   &:active {
-    transform: scale(.975)
+    transform: scale(.99)
   }
+}
+
+@mixin button-small {
+  padding : .3em .8em;
 }
 
 @mixin button-center {
@@ -77,7 +85,7 @@
   background: $secondColor;
 
   &:hover {
-    background: darken($secondColor,7);
+    background: darken($secondColor,3);
   }
 }
 
@@ -85,7 +93,7 @@
   background: $thirdColor;
 
   &:hover {
-    background: darken($thirdColor,7);
+    background: darken($thirdColor,6);
   }
 }
 
@@ -93,7 +101,7 @@
   background: $accentColor;
 
   &:hover {
-    background: darken($accentColor,7);
+    background: darken($accentColor,2);
   }
 }
 
@@ -101,7 +109,7 @@
   background: $darkColor;
 
   &:hover {
-    background: darken($darkColor,7);
+    background: darken($darkColor,10);
   }
 }
 
