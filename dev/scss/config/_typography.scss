@@ -1,0 +1,52 @@
+// Typography config
+// This file doesn't generate any css
+// CSS for typography will be generate from theme/_typography.scss file.
+
+// Convert pixels to rem
+@function rem($px) {
+  @return ($px / 16px) * 1rem;
+}
+
+// Font families
+$body-font   : Lato, 'sans-serif'; // only 400 and 400i
+$heading-font : 'Open Sans', 'sans-serif'; // only 700
+
+// Font sizes
+$fontSizes: (
+  t1      : rem(36px),
+  t2      : rem(30px),
+  t3      : rem(24px),
+  normal  : rem(20px),
+  small   : rem(16px),
+  smaller : rem(14px),
+);
+
+// Get font size from map
+@function fontSize($size) {
+  @if map-has-key($fontSizes, $size) {
+    @return map-get($fontSizes,$size)
+  } @else {
+    @error '$size is not valid, valid values are t1, t2, t3, normal, small, smaller'
+  }
+}
+
+// Mixins
+@mixin t1 {
+  font-size: fontSize(t1);
+  @include to(l) { font-size: fontSize(t2) }
+}
+
+@mixin t2 {
+  font-size: fontSize(t2);
+  @include to(l) { font-size: fontSize(t3) }
+}
+
+@mixin t3 {
+  font-size: fontSize(t3);
+  @include to(l) { font-size: fontSize(normal) }
+}
+
+@mixin font-base {
+  font-size : fontSize(normal);
+  @include to(l) { font-size: fontSize(small) }
+}

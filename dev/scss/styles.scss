@@ -5,7 +5,10 @@
 // Config
 @import "config/functions";
 @import "config/variables";
+
+// Mixins
 @import "config/mixins";
+@import "config/typography";
 
 // Libraries
 @import "ed-grid/ed-grid";

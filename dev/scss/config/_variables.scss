@@ -2,20 +2,6 @@ $dev        : false;
 $cssCore    : false;
 $cssHelpers : true;
 
-// Typography
-$body-font   : Lato, 'sans-serif'; // only 400 and 400i
-$header-font : 'Open Sans', 'sans-serif'; // only 700
-
-$fontSizes: (
-  bigger  : rem(42px),
-  t1      : rem(36px),
-  t2      : rem(30px),
-  t3      : rem(24px),
-  normal  : rem(20px),
-  small   : rem(16px),
-  smaller : rem(14px),
-);
-
 // Colors
 $firstColor  : #007BDF;
 $secondColor : #00CBFF;

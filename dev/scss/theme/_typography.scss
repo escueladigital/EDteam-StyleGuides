@@ -8,61 +8,68 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family    : $header-font;
+  font-family    : $heading-font;
   font-weight    : 700;
   letter-spacing : -0.01em;
 }
 
-h1, .t1 {
-  margin-top    : 0;
-  margin-bottom : 1em;
-}
-
-h2, h3, h4, h5, h6,
-.t2, .t3 {
-  margin-top    : 1.5em;
-  margin-bottom : .4em;
-}
+// classes for font-family
+.body-font { font-family : $body-font }
+.heading-font { font-family : $heading-font }
 
 // Set font sizes
-.bigger {
-  @include bigger
-}
+h1, .t1      { @include t1 }
+h2, .t2      { @include t2 }
+h3, .t3      { @include t3 }
+h4           { font-size : fontSize(normal) }
+h5, .small   { font-size : fontSize(small) }
+h6, .smaller { font-size : fontSize(smaller) }
 
+
+// Vertical rythm
 h1, .t1 {
-  @include t1
+  margin-top    : 0;
+  margin-bottom : rem(32px);
 }
 
 h2, .t2 {
-  @include t2
+  margin-top    : rem(64px);
+  margin-bottom : rem(16px);
 }
 
 h3, .t3 {
-  @include t3
+  margin-top    : rem(48px);
+  margin-bottom : rem(16px);
 }
 
-h4 {
-  font-size : fontSize(normal)
+h4, h5, h6 {
+  margin-top : rem(32px);
+  margin-bottom : rem(8px);
 }
 
-h5, .small {
-  font-size : fontSize(small)
+p, iframe, video, figure, blockquote {
+  margin-top : 0;
+  margin-bottom : rem(32px);
 }
 
-h6, .smaller {
-  font-size : fontSize(smaller)
+.small {
+  margin-bottom : rem(16px);
 }
 
-.small, .smaller {
-  line-height : 1.6;
+h1, .t1 {
+  + .subtitle {
+    font-size     : fontSize(smaller);
+    margin-top    : -1.5rem;
+    margin-bottom : 2rem;
+  }
 }
 
+// Blockquote
 blockquote {
   @include t3;
-  line-height    : inherit;
   font-style     : italic;
   letter-spacing : .01em;
-  margin         : 2em 0 2em 2em;
+  margin-left    : rem(64px);
   position       : relative;
   opacity        : .9;
 
@@ -76,7 +83,6 @@ blockquote {
     line-height    : 0;
     letter-spacing : -0.5em;
   }
-
 }
 
 // Enlaces
@@ -85,10 +91,10 @@ a {
   color : $secondColor;
 
   main & {
-    text-decoration : underline;
+    text-decoration : none;
 
     &:hover {
-      text-decoration : none;
+      text-decoration : underline;
     }
   }
 }
