@@ -1,0 +1,60 @@
+.main-banner {
+  background    : $firstColor;
+  color         : #FFF;
+  clip-path     : polygon(0 0, 100% 0, 100% 100%, 0 94%);
+  margin-bottom : 4rem;
+  position      : relative;
+
+  &.main-banner--secondary { background : $secondColor  }
+  &.main-banner--tertiary  { background : $thirdColor  }
+  &.main-banner--accent    { background : $accentColor }
+  &.main-banner--dark      { background : $darkColor   }
+}
+
+.main-banner__img {
+  position   : absolute;
+  top        : 0;
+  left       : 0;
+  width      : 100%;
+  height     : 100%;
+  object-fit : cover;
+  opacity    : .1;
+}
+
+.main-banner__data {
+  text-align    : center;
+  margin-top    : 2rem;
+  margin-bottom : 3rem;
+  position      : relative;
+
+  @include from(l) {
+    margin-top    : 8rem;
+    margin-bottom : rem(180px);
+  }
+
+  [class*='button'] {
+    //margin : 0;
+  }
+}
+
+.main-banner__author {
+  color: #fff;
+  margin-top : -1.5rem;
+
+  a {
+    color: inherit;
+  }
+
+  &-img {
+    width : 6rem;
+    height : 6rem;
+    border-radius : 50%;
+    border : 2px solid;
+    display : block;
+    margin : 0 auto;
+  }
+
+  &-name {
+    font-size : fontSize(small);
+  }
+}

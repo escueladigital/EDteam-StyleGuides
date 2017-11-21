@@ -1,0 +1,34 @@
+extends ../includes/template
+append config
+  -currentPage = 'top-bar'
+
+block topbar
+  .topbar
+    .ed-container
+      .ed-item.l-50
+        p Características > Topbar
+      .ed-item.l-50.main-end
+        form
+          input(placeholder="Encuentra algo")
+        a(href="#").button--cta Modelo de boton
+
+block main
+  h1 Top bar
+  p La barra superior (topbar) se usa para mostrar breadcrumbs, filtros o botones con llamadas a la acción.
+  p La estructura recomendada es la siguiente (el CSS está definido para esa estructura), aunque con EDgrid puede hacerse variaciones.
+
+  pre
+   code.language-markup
+    | &lt;div class=&quot;topbar&quot;&gt;
+    |   &lt;div class=&quot;ed-container&quot;&gt;
+    |     &lt;div class=&quot;ed-item l-50&quot;&gt;
+    |       &lt;p&gt;Características > Topbar&lt;/p&gt;
+    |     &lt;/div&gt;
+    |     &lt;div class=&quot;ed-item l-50 main-end&quot;&gt;
+    |       &lt;input placeholder=&quot;Encuentra algo&quot;&gt;
+    |       &lt;a class=&quot;button--cta&quot; href=&quot;#&quot;&gt;Modelo de boton&lt;/a&gt;
+    |     &lt;/div&gt;
+    |   &lt;/div&gt;
+    | &lt;/div&gt;
+
+  p Para cambiar de color a la topbar use las siguientes clases <code>.topbar--secondary</code>, <code>.topbar--tertiary</code>, <code>.topbar--accent</code> o <code>.topbar--dark</code>.

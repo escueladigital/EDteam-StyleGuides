@@ -1,8 +1,9 @@
 extends ../includes/template
 append config
   -currentPage = 'inicio'
+block banner
+  +banner("https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb", 'EDteam Styleguides', 'La presente guía de estilos define los componentes de diseño de EDteam y cómo implementarlos en nuestros productos.', '', true, false)
 block main
-  h1 EDteam Style Guide
   p Esta guia define el concepto visual, patrones de diseño y estructura para proyectos web en EDteam.
   p Esta guia se encuentra en constante actualización.
 
@@ -14,48 +15,56 @@ block main
       .color__info.smaller
         p.color__name Principal
         p.color__code #007BDF
+        p.color__code <code>$firstColor</code>
 
     .color
       .color__sample.color--secondary
       .color__info.smaller
         p.color__name Secundario
         p.color__code #00CBFF
+        p.color__code <code>$secondColor</code>
 
     .color
       .color__sample.color--tertiary
       .color__info.smaller
         p.color__name Terciario
         p.color__code #FF3C32
+        p.color__code <code>$thirdColor</code>
 
     .color
       .color__sample.color--accent
       .color__info.smaller
         p.color__name Enfasis
         p.color__code #FBA905
+        p.color__code <code>$accentColor</code>
 
     .color
       .color__sample.color--dark
       .color__info.smaller
         p.color__name Oscuro
         p.color__code #282D31
+        p.color__code <code>$darkColor</code>
 
     .color
       .color__sample.color--border
       .color__info.smaller
         p.color__name Bordes
         p.color__code #DFE0E0
+        p.color__code <code>$borderColor</code>
 
     .color
       .color__sample.color--text
       .color__info.smaller
         p.color__name Texto
         p.color__code #53575A
+        p.color__code <code>$textColor</code>
 
     .color
       .color__sample.color--body
       .color__info.smaller
         p.color__name Body bg
         p.color__code #FCFCFC
+        p.color__code <code>$bodyBg</code>
 
   h2 Tipografía
 
@@ -65,10 +74,10 @@ block main
     li
       strong Open Sans (700)
       br
-      span.small Encabezados (h1,h2...h6), logo de EDteam y otros logos (EDgrid p.ej.)
+      span.small Encabezados, logo de EDteam y otros logos (EDgrid p.ej.) <code>$body-font</code>
     li
       strong Lato (400, 400i, 700)
       br
-      span.small Contenidos, párrafos.
+      span.small Contenidos, párrafos <code>$heading-font</code>
 
   p En la sección de <a href="tipografia.html">tipografía</a> se explica detalladamente su uso.

@@ -1,136 +1,234 @@
-.card {
-  display        : flex;
-  flex-direction : column;
-  height         : 100%;
-  box-shadow     : 0 10px 10px -10px $borderColor;
+//.card {
+//  display        : flex;
+//  flex-direction : column;
+//  height         : 100%;
+//  box-shadow     : 0 10px 10px -10px $borderColor;
+//
+//  &__img img {
+//    display : block;
+//    width : 100%;
+//    height : auto;
+//    border-radius : .25rem .25rem 0 0;
+//  }
+//
+//  &__content {
+//    padding          : 1em;
+//    border           : 1px solid $borderColor;
+//    border-top-width : 0;
+//    background       : #FFF;
+//    flex             : 1;
+//    display          : flex;
+//    flex-direction   : column;
+//    border-radius : 0 0 .25rem .25rem;
+//  }
+//
+//
+//  &__title {
+//    font-weight : 700;
+//    margin-bottom : .2em;
+//    a {
+//      color           : inherit;
+//      text-decoration : none;
+//    }
+//  }
+//
+//  &__body {
+//    font-size : fontSize(small);
+//    margin-bottom : .5rem;
+//  }
+//
+//  &__footer {
+//    font-size   : fontSize(smaller);
+//    border-top  : 1px solid $borderColor;
+//    padding-top : 1em;
+//    display     : flex;
+//    align-items : center;
+//    margin-top  : auto;
+//
+//    p:last-child {
+//      margin-bottom : 0;
+//    }
+//
+//    [class*="button"] {
+//      margin : 0 0 0 auto;
+//    }
+//  }
+//
+//  &__user-img {
+//    flex: none;
+//    img {
+//      width         : 2rem;
+//      height        : 2rem;
+//      display       : block;
+//      border-radius : 50%;
+//      margin-right  : .5em;
+//    }
+//  }
+//
+//  &__user-name {
+//    line-height : 1;
+//  }
+//
+//  &__tag {
+//    margin-left : auto;
+//
+//    a {
+//      text-decoration : none;
+//    }
+//  }
+//
+//  &__date {
+//    font-size : fontSize(smaller);
+//    opacity   : .8;
+//    p {
+//      margin : -1.2em 0 1em;
+//    }
+//  }
+//
+//  &__price {
+//    @include button;
+//    @include button-ghost;
+//    @include button-ghost-tertiary;
+//  }
+//}
+//
+//.card--horizontal {
+//  display : flex;
+//
+//  .card {
+//    &__img {
+//      flex : 0 0 50%;
+//
+//      img {
+//        width      : 100%;
+//        height     : 100%;
+//        object-fit : cover;
+//      }
+//
+//    }
+//
+//    &__content {
+//      flex             : 0 0 50%;
+//      border-left      : none;
+//      border-top-width : 1px;
+//    }
+//  }
+//}
+//
+//.card--user {
+//  border  : 1px solid $borderColor;
+//  padding : 1em;
+//
+//  img {
+//    width         : 120px;
+//    height        : auto;
+//    max-width     : 90%;
+//    display       : block;
+//    margin        : auto;
+//    border-radius : 50%;
+//    border        : 4px solid #FFF;
+//  }
+//
+//  .user__name {
+//    padding-top : .5em;
+//    text-align  : center;
+//  }
+//}
 
-  &__img img {
+.card {
+  @include widget;
+  @include round;
+  margin-bottom : 2rem;
+
+  p, [class*="button"]  {
+    margin : 0;
+  }
+}
+
+.card__img {
+  img {
     display : block;
-    width : 100%;
-    height : auto;
     border-radius : .25rem .25rem 0 0;
   }
+}
 
-  &__content {
-    padding          : 1em;
-    border           : 1px solid $borderColor;
-    border-top-width : 0;
-    background       : #FFF;
-    flex             : 1;
-    display          : flex;
-    flex-direction   : column;
-    border-radius : 0 0 .25rem .25rem;
-  }
+.card__content {
+  font-size : fontSize(small);
+  padding : 1rem;
+}
 
+.card__title {
+  font-family : $heading-font;
+  font-weight : 700;
+  margin-bottom : 1rem;
 
-  &__title {
-    font-weight : 700;
-    margin-bottom : .2em;
-    a {
-      color           : inherit;
-      text-decoration : none;
-    }
-  }
-
-  &__body {
-    font-size : fontSize(small);
-    margin-bottom : .5rem;
-  }
-
-  &__footer {
-    font-size   : fontSize(smaller);
-    border-top  : 1px solid $borderColor;
-    padding-top : 1em;
-    display     : flex;
-    align-items : center;
-    margin-top  : auto;
-
-    p:last-child {
-      margin-bottom : 0;
-    }
-
-    [class*="button"] {
-      margin : 0 0 0 auto;
-    }
-  }
-
-  &__user-img {
-    flex: none;
-    img {
-      width         : 2rem;
-      height        : 2rem;
-      display       : block;
-      border-radius : 50%;
-      margin-right  : .5em;
-    }
-  }
-
-  &__user-name {
-    line-height : 1;
-  }
-
-  &__tag {
-    margin-left : auto;
-
-    a {
-      text-decoration : none;
-    }
-  }
-
-  &__date {
-    font-size : fontSize(smaller);
-    opacity   : .8;
-    p {
-      margin : -1.2em 0 1em;
-    }
-  }
-
-  &__price {
-    @include button;
-    @include button-ghost;
-    @include button-ghost-tertiary;
+  + .card__subtitle {
+    margin-top : -1rem;
   }
 }
 
-.card--horizontal {
+.card__subtitle {
+  font-size : fontSize(smaller);
+  opacity : .5;
+  margin-bottom : .5rem;
+}
+
+.card__footer {
+  margin-top : 1rem;
+  font-size : fontSize(smaller);
+  border-top : 1px solid $borderColor;
+  padding-top : 1rem;
   display : flex;
+  justify-content: space-between;
+}
 
-  .card {
-    &__img {
-      flex : 0 0 50%;
+.card__user {
+  display : flex;
+  align-items: center;
 
-      img {
-        width      : 100%;
-        height     : 100%;
-        object-fit : cover;
-      }
-
-    }
-
-    &__content {
-      flex             : 0 0 50%;
-      border-left      : none;
-      border-top-width : 1px;
-    }
+  a {
+    color: $textColor;
   }
 }
 
-.card--user {
-  border  : 1px solid $borderColor;
-  padding : 1em;
-
+.card__user-img {
   img {
-    width         : 120px;
-    height        : auto;
-    max-width     : 90%;
-    display       : block;
-    margin        : auto;
-    border-radius : 50%;
-    border        : 4px solid #FFF;
+    @include circle;
+    width : 2rem;
+    height : 2rem;
+    display : block;
+    margin-right : .5rem;
+  }
+}
+
+// Card mini
+[class*="card--mini"] {
+  .card__title {
+    margin-bottom : .25rem;
+  }
+  .card__body {
+    font-size : fontSize(smaller);
+    padding-top : .5rem;
+    border-top : 1px solid $accentColor;
   }
 
-  .user__name {
-    padding-top : .5em;
-    text-align  : center;
+  .card__footer {
+    border-top : none;
+    padding-top : 0;
+    //display : block;
+    //background : url(../img/EDteam-isotipo.svg) bottom right / 3rem no-repeat;
+  }
+}
+
+// Card mini horizontal
+.card--mini-horizontal {
+  @include from(l) {
+    display : flex;
+  }
+
+  .card__img {
+    img {
+      border-radius : .25rem 0 0 .25rem;
+    }
   }
 }

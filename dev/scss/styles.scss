@@ -3,7 +3,6 @@
 */
 
 // Config
-@import "config/functions";
 @import "config/variables";
 
 // Mixins
@@ -36,6 +35,8 @@
 @import "components/forms";
 @import "components/cards";
 @import "components/post";
+@import "components/main-banner";
+@import "components/topbar";
 
 // Theme (colors and fonts)
 @import "theme/typography";

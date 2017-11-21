@@ -56,7 +56,7 @@ p.small, p.smaller { margin-bottom : rem(16px) }
 
 h1, .t1 {
   + .subtitle {
-    font-size     : fontSize(smaller);
+    font-size     : fontSize(small);
     margin-top    : -1.5rem;
     margin-bottom : 2rem;
   }

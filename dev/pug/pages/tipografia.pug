@@ -2,9 +2,11 @@ extends ../includes/template
 
 append config
   -currentPage = 'tipografia'
+block banner
+  block banner
+    +banner("https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb", 'Tipografía', '', 'tertiary')
 
 block main
-  h1 Tipografía
   p EDteam utiliza dos familias tipográficas:
   ul
     li

@@ -1,9 +1,12 @@
 extends ../includes/template
 append config
   -currentPage = 'botones'
-block main
-  h1 Botones
 
+block banner
+  block banner
+    +banner("https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb", 'Botones', '', 'accent')
+
+block main
   p Los botones usan la clase <code>button</code> o alguna variacion de <code>button--</code>. En
     |  los siguientes botones se indica las clases que debe llevar
   .show-buttons

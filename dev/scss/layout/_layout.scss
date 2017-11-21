@@ -8,7 +8,11 @@
   top : 0;
   width : 100%;
   left : 0;
-  z-index : zIndex(fixed);
+  z-index : $z-fixed;
+
+  + .main-section {
+    margin-top : 2rem;
+  }
 }
 
 body {
@@ -16,16 +20,6 @@ body {
   display : flex;
   flex-direction : column;
   min-height : calc(100vh - 64px);
-}
-
-.main-page {
-  margin-top : 2em;
-  margin-bottom : 2em;
-
-  @include from(l) {
-    margin-top : 3em;
-    margin-bottom : 3em;
-  }
 }
 
 .main-section {

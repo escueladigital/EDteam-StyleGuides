@@ -1,0 +1,60 @@
+extends ../includes/template
+append config
+  -currentPage = 'banner'
+
+block banner
+  block banner
+    +banner("https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb", 'Banner', '', 'tertiary')
+
+block main
+  p El banner es la caja grande con inclinación inferior que aparece inmediatamente debajo del header del sitio.
+  p Su estructura es la siguiente:
+
+  pre
+    code.language-markup
+      | &lt;div class=&quot;main-banner&quot;&gt;
+      |   &lt;div class=&quot;ed-container&quot;&gt;
+      |     &lt;div class=&quot;ed-item l-75 to-center&quot;&gt;
+      |       &lt;img class=&quot;main-banner__img&quot; src=&quot;tu-imagen.jpg&quot;&gt;
+      |       &lt;div class=&quot;main-banner__data&quot;&gt;
+      |         &lt;h1&gt;Título del banner&lt;/h1&gt;
+      |         &lt;p class=&quot;subtitle&quot;&gt; Subtítulo del banner&lt;/p&gt; &lt;!-- opcional --&gt;
+      |         &lt;a href=&quot;#&quot; class=&quot;button center&quot;&gt;Botón del banner&lt;/a&gt; &lt;!-- opcional --&gt;
+      |       &lt;/div&gt;
+      |     &lt;/div&gt;
+      |   &lt;/div&gt;
+      | &lt;/div&gt;
+
+  ul
+    li El elemento <code>&lt;img&gt;</code> será usado como fondo.
+    li Use las clases <code>.main-banner--secondary</code>, <code>.main-banner--tertiary</code>, <code>.main-banner--accent</code> y <code>.main-banner--dark</code> en el contenedor principal para definir el color (por defecto azul).
+    li El subtítulo y el botón son opcionales. Si los añade, use las clases indicadas.
+
+  h2 Añadir autor al banner (posts del blog u otros usos)
+  p Para añadir un autor, inmediatamente después del titulo en el banner, añada un contenedor con la clase <code>.main-banner__author</code> que contenga dos hijos con las clases <code>.main-banner__author-img</code> y <code>.main-banner__author-name</code> para la imagen y el nombre respectivamente. En el banner de esta página puede ver un ejemplo de como queda.
+  p Modelo de código:
+
+  pre
+    code.language-markup
+      | &lt;div class=&quot;main-banner&quot;&gt;
+      |   &lt;div class=&quot;ed-container&quot;&gt;
+      |     &lt;div class=&quot;ed-item l-75 to-center&quot;&gt;
+      |       &lt;img class=&quot;main-banner__img&quot; src=&quot;tu-imagen.jpg&quot;&gt;
+      |       &lt;div class=&quot;main-banner__data&quot;&gt;
+      |         &lt;h1&gt;Título del banner&lt;/h1&gt;
+
+      |         &lt;div class=&quot;main-banner__author&quot;&gt;
+      |           &lt;a href=&quot;#&quot;&gt;
+      |             &lt;img class=&quot;main-banner__author-img&quot; src=&quot;author.jpg&quot;&gt;
+      |           &lt;/a&gt;
+      |           &lt;a href=&quot;#&quot;&gt;
+      |             &lt;div class=&quot;main-banner__author-name&quot;&gt;Alexys Lozada&lt;/div&gt;
+      |           &lt;/a&gt;
+      |         &lt;/div&gt;
+      |       &lt;/div&gt;
+      |     &lt;/div&gt;
+      |   &lt;/div&gt;
+      | &lt;/div&gt;
+
+  h2 Banner y título (h1)
+  p Este banner contiene un elemento <code>h1</code> por lo que evite añadir otro título del mismo nivel en las páginas que contengan un banner.

@@ -40,17 +40,22 @@ ul, ol {
     list-style: none;
     position : relative;
 
-    @include icon(check,before);
+    //@include icon(check,before);
     &::before {
+      content: '';
+      width : 1rem;
+      height : 1rem;
+      display : block;
       position : absolute;
-      top : .8em;
+      top : .9em;
       left : 0;
       color: $firstColor;
+      background : url(../img/icon-check.svg);
     }
   }
 
-  &.secondary li::before { color: $secondColor }
-  &.tertiary li::before  { color: $thirdColor  }
-  &.accent li::before    { color: $accentColor }
-  &.dark li::before      { color: $darkColor   }
+  //&.secondary li::before { color: $secondColor }
+  //&.tertiary li::before  { color: $thirdColor  }
+  //&.accent li::before    { color: $accentColor }
+  //&.dark li::before      { color: $darkColor   }
 }

@@ -1,5 +1,6 @@
 block config
   include config
+include main-banner
 doctype html
 html(lang="es")
   head
@@ -7,13 +8,15 @@ html(lang="es")
     meta(charset="utf-8")
     meta(name="viewport" content="initial-scale=1.0, width=device-width")
     meta(name="description" content=description)
-    link(rel="stylesheet" href="https://file.myfontastic.com/K22U9jkaoYfUVye4gPLuEX/icons.css")
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700")
-    link(rel="stylesheet" href="css/styles.css?13-oct")
+    link(rel="stylesheet" href="css/prism.css?dark")
+    link(rel="stylesheet" href="css/styles.css?21-nov-2")
     link(rel="shortcut icon" href="img/favicon.png")
   body(class=currentPage)
     include header
-    .ed-container.main-page
+    block topbar
+    block banner
+    .ed-container.main-section
       aside.ed-item.l-25.main-sidebar.sidebar-first
         include topics-menu
       main.ed-item.l-75.main-main
@@ -22,4 +25,5 @@ html(lang="es")
       .ed-container
         .ed-item
           p.small EDteam Style Guide por <a href="http://alvarofelipe.net" target="_blank">Álvaro Felipe</a>
-    script(src="js/scripts.js?13-oct")
+    script(src="js/scripts.js?21-nov")
+    script(src="js/prism.js?v2")

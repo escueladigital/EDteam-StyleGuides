@@ -2,8 +2,11 @@ extends ../includes/template
 append config
   -currentPage = 'listas'
 
+block banner
+  block banner
+    +banner("https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb", 'Listas', '', 'secondary')
+
 block main
-  h1 Listas
   p Apariencia predeterminada de las listas
   .ed-container
     .ed-item.l-50
@@ -27,12 +30,9 @@ block main
   h2 Listas de características
 
   p Úselas para enumerar características de un producto o servicio. Use la clase
-    | <code>feature-list</code> en el elemento <code>ul</code>. Para cambiar el
-    | color de los iconos use las clases <code>secondary</code> <code>tertiary</code>
-    | <code>accent</code> o <code>dark</code>.
-  p Por defecto, sin añadir una clase para el color, se usa el azul principal de EDteam.
+    | <code>feature-list</code> en el elemento <code>ul</code>.
 
-  ul.feature-list.accent
+  ul.feature-list
     li Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas. Cras non facilisis justo. Nunc in faucibus risus. Pellentesque felis diam, condimentum vitae mattis ut, sollicitudin a libero. Pellentesque malesuada pharetra justo, nec fringilla tortor adipiscing at. Maecenas accumsan, enim id mattis blandit, urna enim bibendum est, at volutpat massa neque vitae libero. Phasellus cursus leo hendrerit neque consequat gravida.
     li Item list 2
     li Item list 3

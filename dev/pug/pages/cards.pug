@@ -1,163 +1,117 @@
+
+
 extends ../includes/template
 append config
   -currentPage = 'cards'
+
+mixin card
+  .card
+    .card__img
+      img(src="https://ed.team/sites/default/files/styles/16_9_large/public/2017-10/npm_0.jpg")
+    .card__content
+      .card__title Título de la tarjeta
+      .card__subtitle
+        p Subtitulo de la tarjeta
+      .card__body
+        p Este el contenido de la tarjeta en caso lo requiera. Algunas tarjetas no requieren contenido pero otras sí.
+      footer.card__footer
+        .card__user
+          .card__user-img
+            img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2017-11/alexys_0.jpg?itok=MMRiEdrl")
+          .card__user-name
+            a(href="#") Alexys Lozada
+        .card__button
+          a(href="#").button--ghost--tertiary.button--small Etiqueta
+
+block banner
+  block banner
+    +banner("https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb", 'Cards', '', 'accent')
+
 block main
-  h1 Cards
   p Las tarjetas se usan para mostrar contenido resumido o destacado del resto. Por ejemplo, una cuadricula con posts recientes o un curso en el catalogo.
 
-  h2 Tarjeta genérica (predeterminada)
-  p Las tarjetas ocupan todo el ancho disponible, por lo que sus dimensiones dependerán del layout que se construya.
-
   .ed-container
-    .ed-item.l-50.to-center
-      .card
-        .card__img
-          img(src="https://ed.team/sites/default/files/styles/16_9_large/public/2017-10/npm_0.jpg")
-        .card__content
-          .card__title
-            p Titulo de la tarjeta
-          .card__body
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas. Cras non facilisis justo. Nunc in faucibus risus.
-          .card__footer
-            p Publicado el 5 de febrero de 2017
+    .ed-item.l-50
+      +card
+    .ed-item.l-50
+      +card
 
-  h2 Tarjeta horizontal
+  p Su estructura es la siguiente (por comodidad en formato .pug)
+  pre
+    code.language-pug
+      |.card
+      |  .card__img
+      |    img(src="imagen.jpg")
+      |  .card__content
+      |    .card__title Título de la tarjeta
+      |    .card__subtitle
+      |      p Subtitulo de la tarjeta
+      |    .card__body
+      |      p Este el contenido de la tarjeta en caso lo requiera. Algunas tarjetas (...).
+      |    footer.card__footer
+      |      .card__user
+      |        .card__user-img
+      |          img(src="usuario.jpg")
+      |        .card__user-name
+      |          a(href="#") Alexys Lozada
+      |      .card__button
+      |        a(href="#").button--ghost--tertiary.button--small Etiqueta
 
-  .ed-container
-    .ed-item.l-80.to-center
-      .card--horizontal
-        .card__img
-          img(src="https://ed.team/sites/default/files/styles/16_9_large/public/2017-10/npm_0.jpg")
-        .card__content
-          .card__title
-            p Titulo de la tarjeta
-          .card__body
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas. Cras non facilisis justo. Nunc in faucibus risus.
-          .card__footer
-            p Publicado el 5 de febrero de 2017
+  h2 Minicards de cursos
+  p Se usan para mostrar información de los cursos en páginas internas sin entorpecer la experiencia de usuario.
 
-  h2 Estructura html
-  p El elemento <code>article</code> que contiene la tarjeta puede tener la clase <code>card</code> o <code>card--horizontal</code>
+  .l-1-3.to-center
+    .card.card--mini
+      .card__img
+        img(src="https://ed.team/sites/default/files/styles/medium/public/courses/images/poster-drupal-theming_1.png?itok=LoJWeH01")
+      .card__content
+        .card__title Título de la tarjeta
+        .card__body
+          p Crea sitios profesionales y escalables con el CMS más poderoso del mercado.
+        footer.card__footer
+          .card__user
+            .card__user-img
+              img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2017-11/alexys_0.jpg?itok=MMRiEdrl")
+            .card__user-name
+              a(href="#") Alexys Lozada
+          .card__button
+            a(href="#").button--cta.small Inscríbete
+
+  .l-75.to-center
+    .card.card--mini-horizontal
+      .card__img
+        img(src="https://ed.team/sites/default/files/styles/medium/public/courses/images/poster-drupal-theming_1.png?itok=LoJWeH01")
+      .card__content
+        .card__title Título de la tarjeta
+        .card__body
+          p Crea sitios profesionales y escalables con el CMS más poderoso del mercado.
+        footer.card__footer
+          .card__user
+            .card__user-img
+              img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2017-11/alexys_0.jpg?itok=MMRiEdrl")
+            .card__user-name
+              a(href="#") Alexys Lozada
+          .card__button
+            a(href="#").button--cta.small Inscríbete
+
+  p Su estructura es la siguiente:
 
   pre
-    code
-      | &lt;article class=&quot;card--horizontal&quot;&gt;
-      |   &lt;header class=&quot;card__img&quot;&gt;
-      |     &lt;img src=&quot;imagen.jpg&quot;/&gt;
-      |   &lt;/header&gt;
-      |   &lt;div class=&quot;card__content&quot;&gt;
-      |     &lt;div class=&quot;card__title&quot;&gt;
-      |       &lt;p&gt;Titulo de la tarjeta&lt;/p&gt;
-      |     &lt;/div&gt;
-      |     &lt;div class=&quot;card__body&quot;&gt;
-      |       &lt;p&gt;Cuerpo de la tarjeta.&lt;/p&gt;
-      |     &lt;/div&gt;
-      |     &lt;footer class=&quot;card__footer&quot;&gt;
-      |       &lt;p&gt;Pie de la tarjeta&lt;/p&gt;
-      |     &lt;/footer&gt;
-      |   &lt;/div&gt;
-      | &lt;/article&gt;
+    code.language-pug
+      |.card.card--mini
+      |  .card__img
+      |    img(src="imagen.jpg")
+      |  .card__content
+      |    .card__title Título de la tarjeta
+      |    .card__body
+      |      p Crea sitios profesionales y escalables con el CMS más poderoso del mercado.
+      |    footer.card__footer
+      |      .card__user
+      |        .card__user-img
+      |          img(src="user.jpg")
+      |        .card__user-name
+      |          a(href="#") Alexys Lozada
+      |      .card__button
+      |        a(href="#").button--cta.small Inscríbete
 
-  h2 Variaciones (tipos de tarjetas)
-
-  h3 Post (predeterminado)
-  .ed-container
-    .ed-item.l-50.to-center
-      .card
-        .card__img
-          img(src="https://ed.team/sites/default/files/styles/16_9_large/public/2017-10/npm_0.jpg")
-        .card__content
-          .card__title
-            p Cómo publicar tus propios módulos en npm
-          .card__date
-            p 28.jun.2017
-          .card__body
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas.
-          .card__footer
-            .card__author-img
-              img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2016-11/alvaro_0.jpg?itok=SlW5NOar")
-            .card__author-name
-              p Álvaro Felipe
-            .card__tag
-              a(href="#") JavaScript
-
-  h3 Post horizontal
-
-  .ed-container
-    .ed-item.l-80.to-center
-      .card--horizontal
-        .card__img
-          img(src="https://ed.team/sites/default/files/styles/16_9_large/public/2017-10/npm_0.jpg")
-        .card__content
-          .card__title
-            p Cómo publicar tus propios módulos en npm
-          .card__date
-            p 28.jun.2017
-          .card__body
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas.
-          .card__footer
-            .card__author-img
-              img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2016-11/alvaro_0.jpg?itok=SlW5NOar")
-            .card__author-name
-              p Álvaro Felipe
-            .card__tag
-              a(href="#") JavaScript
-
-  h3 Curso
-
-  .ed-container
-    .ed-item.l-50.to-center
-      .card
-        .card__img
-          img(src="https://ed.team/sites/default/files/styles/medium/public/courses/images/desarrollo_0.png?itok=lbTPPZ_J")
-        .card__content
-          .card__title
-            p Gestión y desarrollo de proyectos web
-          .card__body
-            p Aprende a vender, planificar y desarrollar un proyecto web en equipo.
-          .card__footer
-            .card__teachers
-              .card__teacher
-                .card__teacher-img
-                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2016-11/alvaro_0.jpg?itok=SlW5NOar")
-                .card__teacher-name
-                  p Álvaro Felipe
-              .card__teacher
-                .card__teacher-img
-                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2016-11/alexyslozada.jpg?itok=XQ9D6LUX")
-                .card__teacher-name
-                  p Alexys Lozada
-              .card__teacher
-                .card__teacher-img
-                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2017-04/daniel2017-2.jpg?itok=2SHcVeNM")
-                .card__teacher-name
-                  p Daniel Romero
-              .card__teacher
-                .card__teacher-img
-                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2016-11/jonmircha.jpg?itok=E55nLr6L")
-                .card__teacher-name
-                  p Jon Mircha
-            .card__price.button--ghost--tertiary.center.smaller 80.00 USD
-    .ed-item.l-50.to-center
-      .card
-        .card__img
-          img(src="https://ed.team/sites/default/files/styles/medium/public/courses/images/go-poster-720_1.jpg?itok=K9Amr-_Z")
-        .card__content
-          .card__title
-            p Go Desde Cero
-          .card__body
-            p Go es un lenguaje creado por Google pensado en sistemas backend de alto rendimiento. Permite compilar para cualquier sistema operativo.
-          .card__footer
-            .card__teachers
-              .card__teacher
-                .card__teacher-img
-                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2016-11/alexyslozada.jpg?itok=XQ9D6LUX")
-                .card__teacher-name
-                  p Alexys Lozada
-              .card__teacher
-                .card__teacher-img
-                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2017-04/daniel2017-2.jpg?itok=2SHcVeNM")
-                .card__teacher-name
-                  p Daniel Romero
-            .card__price.button--ghost--tertiary.center.smaller 80.00 USD
-
+  p La minicard usa la clase modificadora (BEM) <code>card--mini</code>. Para una minicard horizontal use la clase <code>card--mini-horizontal</code>. No necesita cambiar la estructura HTML.

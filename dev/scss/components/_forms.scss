@@ -1,35 +1,33 @@
 form {
-  background : #fff;
-  padding : 1em 0;
-  border : 1px solid $borderColor;
-  border-radius : .3em;
+
+  .form__item {
+    margin-bottom : 2rem;
+  }
 
   input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select, textarea {
-    display : block;
-    margin-bottom : 1.4rem;
-    border : 1px solid $borderColor;
-    background : #fff;
-    width : 100%;
-    line-height : 1.6;
-    font-family : Lato, 'sans-serif'; // Fuerza a tomar la fuente por defecto
-    font-size : fontSize(normal);
-    color: $textColor;
-    border-radius : .25em;
-    padding : .3em .5em;
+    display       : block;
+    border        : 1px solid $borderColor;
+    background    : #FFF;
+    width         : 100%;
+    line-height   : 1.6;
+    font-family   : $body-font; // Fuerza a tomar la fuente por defecto
+    font-size     : fontSize(small);
+    color         : $textColor;
+    border-radius : .25rem;
+    padding       : .5rem 1rem;
     &::placeholder {
-      color: rgba($textColor,.75);
+      color : rgba($textColor, .75);
     }
   }
 
   textarea {
     min-height : 6em;
-    padding : .5em;
   }
 
   label {
-    color: $firstColor;
-    display : block;
-    font-size : fontSize(small);
+    color         : $firstColor;
+    display       : block;
+    font-size     : fontSize(small);
     margin-bottom : .2em;
     + input::placeholder {
       display : none;
@@ -40,24 +38,13 @@ form {
     margin : 0 !important;
   }
 
-  .checkbox-container,
-  .radio-container {
-    margin-bottom : 1.4rem;
-
-    label {
-      display : table;
-      color: $textColor;
-    }
-  }
-
-  .checkbox-container {
-
-  }
-
-  .radio-container {
-    label {
-
-    }
-  }
-
+  //.checkbox-container,
+  //.radio-container {
+  //  margin-bottom : 1.4rem;
+  //
+  //  label {
+  //    display : table;
+  //    color   : $textColor;
+  //  }
+  //}
 }
