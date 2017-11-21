@@ -52,9 +52,7 @@ p, iframe, video, figure, blockquote {
   margin-bottom : rem(32px);
 }
 
-.small {
-  margin-bottom : rem(16px);
-}
+p.small, p.smaller { margin-bottom : rem(16px) }
 
 h1, .t1 {
   + .subtitle {
