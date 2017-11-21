@@ -1,50 +1,31 @@
+// Basic buttons
 .button,
 [class*="button--"]{
   @include button;
-  &.center {
-    @include button-center;
+  &.center       { @include button-center }
+  &.full         { @include button-full }
+  &.button--small { @include button-small }
+}
+// Buttons variations
+.button--secondary { @include button-secondary }
+.button--tertiary  { @include button-tertiary }
+.button--cta       { @include button-cta }
+.button--dark      { @include button-dark }
+
+// Ghost buttons
+[class*="button--ghost"]  { @include button-ghost }
+.button--ghost--secondary { @include button-ghost-secondary }
+.button--ghost--tertiary  { @include button-ghost-tertiary }
+.button--ghost--cta       { @include button-ghost-cta }
+.button--ghost--dark      { @include button-ghost-dark }
+
+// Show buttons in style guide
+.show-buttons {
+  .button, [class*="button--"] {
+    margin-bottom : 2rem;
   }
-  &.full {
-    @include button-full;
+
+  + h2 {
+    margin-top : 1rem;
   }
-
-  &.button--smal {
-    @include button-small;
-  }
-}
-
-.button--secondary {
-  @include button-secondary;
-}
-
-.button--tertiary {
-  @include button-tertiary;
-}
-
-.button--cta {
-  @include button-cta;
-}
-
-.button--dark {
-  @include button-dark;
-}
-
-[class*="button--ghost"] {
-  @include button-ghost;
-}
-
-.button--ghost--secondary {
-  @include button-ghost-secondary;
-}
-
-.button--ghost--tertiary {
-  @include button-ghost-tertiary;
-}
-
-.button--ghost--cta {
-  @include button-cta;
-}
-
-.button--ghost--dark {
-  @include button-ghost-dark;
 }
