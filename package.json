@@ -1,6 +1,6 @@
 {
-  "name": "EDteamStyleGuides",
-  "version": "1.0.0",
+  "name": "edteam-style-guides",
+  "version": "0.0.1",
   "description": "Guias de estilo de EDteam, construidas sobre EDboilerplate",
   "main": "gulpfile.babel.js",
   "scripts": {
@@ -10,22 +10,22 @@
   "license": "GPL-2.0",
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "babelify": "^7.3.0",
-    "browser-sync": "^2.18.13",
-    "browserify": "^14.4.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.21.0",
+    "browserify": "^14.5.0",
     "cssnano": "^3.10.0",
-    "ed-grid": "^2.1.4",
+    "ed-grid": "^2.1.6",
     "ed-ui": "0.0.5",
     "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
+    "gulp-babel": "^7.0.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.4.0",
+    "gulp-postcss": "^7.0.0",
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.1",
+    "gulp-sourcemaps": "^2.6.2",
     "gulp-watch": "^4.3.11",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }
