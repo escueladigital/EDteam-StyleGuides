@@ -5,6 +5,7 @@
   &.center       { @include button-center }
   &.full         { @include button-full }
   &.button--small { @include button-small }
+  &.button--last { @include button-last }
 }
 // Buttons variations
 .button--secondary { @include button-secondary }
