@@ -4,10 +4,20 @@ code {
   border  : 1px solid $borderColor;
   padding : .1em .5em;
   margin  : 0 .5em;
+  margin-bottom : 2rem !important;
   font-family : monospace;
 }
 
 pre code {
   display : block;
   border : none;
+}
+
+:not(pre) code {
+  font-family : Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+  background : rgba($borderColor,.5);
+  font-size: fontSize(small);
+  padding : 0 .3em;
+  margin-right: .2rem;
+  word-break: break-all;
 }
