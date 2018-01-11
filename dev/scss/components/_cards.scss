@@ -1,6 +1,9 @@
 .card {
   @include widget;
   @include round;
+  display : flex;
+  height : 100%;
+  flex-direction: column;
   margin-bottom : 2rem;
 
   p, [class*="button"]  {
@@ -9,6 +12,8 @@
 }
 
 .card__img {
+  flex: none;
+
   img {
     display : block;
     border-radius : .25rem .25rem 0 0;
@@ -16,6 +21,9 @@
 }
 
 .card__content {
+  display : flex;
+  flex-direction : column;
+  flex: 1;
   font-size : fontSize(small);
   padding : 1rem;
 }
@@ -36,8 +44,12 @@
   margin-bottom : .5rem;
 }
 
+.card__body {
+  margin-bottom : 1rem;
+}
+
 .card__footer {
-  margin-top : 1rem;
+  margin-top : auto;
   font-size : fontSize(smaller);
   border-top : 1px solid $borderColor;
   padding-top : 1rem;
@@ -86,9 +98,12 @@
 .card--mini-horizontal {
   @include from(l) {
     display : flex;
+    flex-direction: row;
   }
 
   .card__img {
+    flex: 1;
+
     img {
       border-radius : .25rem 0 0 .25rem;
     }
