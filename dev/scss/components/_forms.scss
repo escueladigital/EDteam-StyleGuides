@@ -18,14 +18,52 @@ form {
     &::placeholder {
       color : rgba($textColor, .75);
     }
+    &:disabled {
+      background :$borderColor;
+      cursor: default;
+    }
+
+
+  }
+  [type="radio"]{
+    @include inputCheck;
+    &::before {
+      border-radius: 50%;
+    }
+    &:checked::after {
+      content: "";
+      top: 0.3rem;
+      left: 0.29rem;
+      border-radius: 50%;
+      padding: .35rem;
+      background: $textColor;
+    }
   }
 
+  [type="checkbox"]{
+    @include inputCheck;
+    &::before {
+      border-radius: 4px;
+    }
+    &:checked::after {
+      content: "✔";
+      top: .2rem;
+      left: .1rem;
+      font-size: 1.25rem;
+      line-height: .8;
+      color: $textColor;
+    }
+  }
+  select{
+    appearance: none;
+    background: #fff url(../img/arrow.svg) center right 1rem/1rem no-repeat !important;
+  }
   textarea {
     min-height : 6em;
   }
 
   label {
-    color         : $firstColor;
+    position: relative;
     display       : block;
     font-size     : fontSize(small);
     margin-bottom : .2em;
