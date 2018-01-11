@@ -19,6 +19,8 @@
 }
 
 .vertical-menu {
+  border-right : 1px solid $borderColor;
+
   @include to(l) {
     max-height : 0;
     transition: max-height .5s;
@@ -28,6 +30,10 @@
       max-height : 1000px;
       margin-bottom : 1em;
     }
+
+    .active::before {
+      display : none;
+    }
   }
 
   ul {
@@ -35,8 +41,8 @@
   }
 
   li {
-    padding : 1em 0;
-    border-bottom : 1px solid $borderColor;
+    padding : .4em 0;
+    border-bottom : none;
     font-size : fontSize(small);
     color: $textColor;
   }
@@ -62,6 +68,19 @@
       &:hover {
         text-decoration : none;
       }
+    }
+  }
+
+  .active {
+    border-bottom: 1px solid $borderColor;
+    border-top: 1px solid $borderColor;
+    margin-right: -1px;
+    padding: .5em 0;
+    border-right: 1px solid $bodyBg;
+
+    &::after {
+      background : url(../images/icon-right.svg) 100%/contain no-repeat !important;
+      margin-right : 1rem;
     }
   }
 }
