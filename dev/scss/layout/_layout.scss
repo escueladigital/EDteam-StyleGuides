@@ -11,25 +11,54 @@
   z-index : $z-fixed;
 
   + .main-section {
-    margin-top : 2rem;
+    margin-top : 4rem;
   }
 }
 
 body {
-  margin-top : 64px;
+  margin: 64px 0 0 0;
   display : flex;
   flex-direction : column;
   min-height : calc(100vh - 64px);
+}
+
+main ul {
+  margin-bottom :  2rem;
 }
 
 .main-section {
   margin-bottom : 4rem;
 }
 
+.main-main {
+  ul {
+    padding-left : 0;
+    margin-left : 2rem;
+  }
+}
+
+.main-menu {
+  a:hover {
+    text-decoration : none;
+  }
+
+  .active {
+
+    @include from(l) {
+      font-weight : 400;
+      color: $thirdColor;
+
+      &::before {
+        display : none;
+      }
+    }
+  }
+}
+
 .main-footer {
   background : $darkColor;
   color: #fff;
-  margin-top : auto;
+  margin-top : 4rem;
   padding : 1em 0;
 }
 
