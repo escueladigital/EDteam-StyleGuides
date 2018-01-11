@@ -26,6 +26,24 @@ ul, ol {
     display : flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom : 1rem;
+
+    :first-child {
+      margin-bottom : .5rem;
+  
+      @include from(l) {
+        max-width: 75%;
+        margin-bottom : 0;
+      }
+    }
+  
+    @include to(l) {
+      display : block;
+      
+      [class*="button"] {
+        font-size: fontSize(smaller);
+      }
+    }
   }
 
   h1,h2,h3,h4,h5,h6,p, [class*="button"] {
