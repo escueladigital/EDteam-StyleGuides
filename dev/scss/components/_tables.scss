@@ -1,8 +1,10 @@
 @mixin tableStyle($color) {
   th { background   : $color }
-  td { border-bottom : 1px solid rgba($color, .3) }
-  tr:hover { background : rgba($color, .1) }
-
+  tr {
+    border-bottom : 1px solid rgba($color, .3);
+    &:hover { background : rgba($color, .1) }
+  }
+  
   &.first-column {
     td:first-child {
       background : rgba($color,.75);
