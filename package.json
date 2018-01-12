@@ -19,6 +19,7 @@
     "ed-ui": "0.0.5",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
+    "gulp-imagemin": "^4.1.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^7.0.0",
     "gulp-pug": "^3.3.0",

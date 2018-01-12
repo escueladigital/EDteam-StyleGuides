@@ -11,6 +11,8 @@ import babelify from 'babelify';
 import source from 'vinyl-source-stream';
 import sourcemaps from 'gulp-sourcemaps';
 import buffer from 'vinyl-buffer';
+import imagemin from 'gulp-imagemin';
+import pngcrush from 'imagemin-pngcrush';
 
 const server = browserSync.create();
 
@@ -63,15 +65,36 @@ gulp.task('scripts', () =>
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./public/js'))
 );
+gulp.task('images', function() {
+ gulp.src('./dev/img/**/*.{png,jpg,jpeg,gif,PNG}')
+  .pipe(imagemin({
+    progressive: true,
+    svgoPlugins: [{removeViewBox: false}],
+    use: [pngcrush()]
+  }))
+  .pipe(gulp.dest('./public/img'))
 
-gulp.task('default', () => {
+});
+
+gulp.task('copy', function() {
+ gulp.src('./dev/img/**/*.svg')
+  .pipe(gulp.dest('./public/img'))
+});
+
+gulp.task('default', ['styles', 'pug', 'scripts', 'images', 'copy'], () => {
   server.init({
     server: {
       baseDir: './public'
     },
   });
 
+  // imagenes
+  gulp.watch('./dev/img/**/*', ['images']);
+  gulp.watch('./dev/img/**/*.svg', ['copy']);
+
   watch('./dev/scss/**/*.scss', () => gulp.start('styles'));
   watch('./dev/js/**/*.js', () => gulp.start('scripts',server.reload) );
   watch('./dev/pug/**/*.pug', () => gulp.start('pug', server.reload) );
+  watch('./dev/img/**/*.{png,jpg,jpeg,gif}', () => gulp.start('images') );
+  watch('./dev/img/**/*.svg', () => gulp.start('copy') );
 });
