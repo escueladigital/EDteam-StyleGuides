@@ -4,13 +4,13 @@ code {
   border  : 1px solid $borderColor;
   padding : .1em .5em;
   margin  : 0 .5em;
-  margin-bottom : 2rem !important;
   font-family : monospace;
 }
 
 pre code {
   display : block;
   border : none;
+  margin-bottom : 2rem;
 }
 
 :not(pre) code {
