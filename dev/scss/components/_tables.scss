@@ -41,11 +41,12 @@ table {
 }
 
 .table-container {
-  width      : 100%;
   overflow-x : auto;
   border     : 1px solid $borderColor;
   margin-bottom : 2em;
+  min-width      : 100%;
   position : relative;
+  table-layout: fixed;
 }
 
 .table--secondary { @include tableStyle($secondColor) }

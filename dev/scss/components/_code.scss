@@ -10,4 +10,14 @@ code {
 pre code {
   display : block;
   border : none;
+  margin-bottom : 2rem;
+}
+
+:not(pre) code {
+  font-family : Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+  background : rgba($borderColor,.5);
+  font-size: fontSize(small);
+  padding : 0 .3em;
+  margin-right: .2rem;
+  word-break: break-all;
 }
