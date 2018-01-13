@@ -28,7 +28,7 @@ ul, ol {
     align-items: center;
     margin-bottom : 1rem;
 
-    :first-child {
+    > :first-child {
       margin-bottom : .5rem;
   
       @include from(l) {
