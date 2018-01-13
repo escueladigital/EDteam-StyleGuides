@@ -1,5 +1,6 @@
 .vertical-menu-toggle {
   background-size : 100% 34%;
+  color: $firstColor;
   font-size : fontSize(small);
   @include to(l) {
     display : flex;
