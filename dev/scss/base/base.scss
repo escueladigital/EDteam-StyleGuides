@@ -7,6 +7,7 @@
 body {
   margin : 0;
   background : $bodyBg;
+  font-size : fontSize(small) !important; // conflicto no identificado
 }
 
 
