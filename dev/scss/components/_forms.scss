@@ -18,6 +18,17 @@ form {
     &::placeholder {
       color : rgba($textColor, .75);
     }
+    &:disabled {
+      background :$borderColor;
+      cursor: default;
+    }
+
+
+  }
+
+  select{
+    appearance: none;
+    background: #fff url(../img/arrow.svg) center right 1rem/1rem no-repeat !important;
   }
 
   textarea {
@@ -25,7 +36,7 @@ form {
   }
 
   label {
-    color         : $firstColor;
+    position: relative;
     display       : block;
     font-size     : fontSize(small);
     margin-bottom : .2em;
