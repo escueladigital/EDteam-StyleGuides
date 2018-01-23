@@ -28,7 +28,7 @@ form {
 
   select{
     appearance: none;
-    background: #fff url(../img/arrow.svg) center right 1rem/1rem no-repeat !important;
+    background: #fff img('arrow.svg') center right 1rem/1rem no-repeat !important;
   }
 
   textarea {
