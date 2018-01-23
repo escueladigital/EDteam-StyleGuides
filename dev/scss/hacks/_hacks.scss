@@ -1,0 +1,8 @@
+td [class*="button"] {
+  display: inline;
+
+  &:last-child {
+    margin-right : 0;
+  }
+}
+
