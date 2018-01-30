@@ -1,0 +1,12 @@
+.main-header {
+  height        : 4rem;
+  border-bottom : 1px solid $borderColor;
+  display       : flex;
+  align-items   : center;
+  background    : #FFF;
+  position      : fixed;
+  top           : 0;
+  width         : 100%;
+  left          : 0;
+  z-index       : $z-fixed;
+}
