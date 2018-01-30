@@ -41,7 +41,7 @@
 }
 
 .card__subtitle {
-  font-size : fontSize(smaller);
+  font-size : fontSize(small);
   opacity : .5;
   margin-bottom : .5rem;
 }
@@ -52,7 +52,7 @@
 
 .card__footer {
   margin-top : auto;
-  font-size : fontSize(smaller);
+  font-size : fontSize(small);
   border-top : 1px solid $borderColor;
   padding-top : 1rem;
   display : flex;
@@ -85,7 +85,7 @@
     margin-bottom : .25rem;
   }
   .card__body {
-    font-size : fontSize(smaller);
+    font-size : fontSize(small);
     padding-top : .5rem;
     border-top : 1px solid $accentColor;
   }
