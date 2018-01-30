@@ -13,12 +13,11 @@ $heading-font : 'Open Sans', 'sans-serif'; // only 700
 
 // Font sizes
 $fontSizes: (
-  t1      : rem(36px),
-  t2      : rem(30px),
-  t3      : rem(24px),
-  normal  : rem(20px),
-  small   : rem(16px),
-  smaller : rem(14px),
+  title1  : rem(36px),
+  title2  : rem(24px),
+  title3  : rem(20px),
+  normal  : rem(16px),
+  small   : rem(14px),
 );
 
 // Get font size from map
@@ -32,21 +31,16 @@ $fontSizes: (
 
 // Mixins
 @mixin t1 {
-  font-size: fontSize(t1);
-  @include to(l) { font-size: fontSize(t2) }
+  font-size: fontSize(title1);
+  @include to(l) { font-size: fontSize(title2) }
 }
 
 @mixin t2 {
-  font-size: fontSize(t2);
-  @include to(l) { font-size: fontSize(t3) }
+  font-size: fontSize(title2);
+  @include to(l) { font-size: fontSize(title3) }
 }
 
 @mixin t3 {
-  font-size: fontSize(t3);
+  font-size: fontSize(title3);
   @include to(l) { font-size: fontSize(normal) }
-}
-
-@mixin font-base {
-  font-size : fontSize(normal);
-  @include to(l) { font-size: fontSize(small) }
 }
