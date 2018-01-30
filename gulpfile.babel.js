@@ -33,11 +33,11 @@ const sassOptions = {
 
 gulp.task('styles', () =>
   gulp.src('./dev/scss/styles.scss')
-    // .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(plumber())
     .pipe(sass(sassOptions))
     .pipe(postcss(postcssPlugins))
-    // .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./public/css'))
     .pipe(server.stream({match: '**/*.css'}))
 );
