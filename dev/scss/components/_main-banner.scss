@@ -5,6 +5,10 @@
   margin-bottom : 4rem;
   position      : relative;
 
+  // Separación del contenido
+  padding       : 2rem 0 3rem;
+  @include from(l) { padding: 8rem 0 10rem }
+
   &.main-banner--secondary { background : $secondColor  }
   &.main-banner--tertiary  { background : $thirdColor  }
   &.main-banner--accent    { background : $accentColor }
@@ -23,18 +27,6 @@
 
 .main-banner__data {
   text-align    : center;
-  margin-top    : 2rem;
-  margin-bottom : 3rem;
-  position      : relative;
-
-  @include from(l) {
-    margin-top    : 8rem;
-    margin-bottom : rem(180px);
-  }
-
-  [class*='button'] {
-    //margin : 0;
-  }
 }
 
 .main-banner__author {
