@@ -1,0 +1,87 @@
+extends ../includes/template
+append config
+  -currentPage = 'top-bar'
+
+block banner
+  block banner
+    +banner("https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb", 'Tabs', '', 'dark')
+
+block main
+  p Use los tabs para mostrar informacion dividida en opciones en poco espacio.
+
+  .edui-tabs
+    .tabs
+      .tab: img(src="http://ux.ed.team/img/icon-flag-pe.svg")
+      .tab: img(src="http://ux.ed.team/img/icon-flag-co.svg")
+      .tab: img(src="http://ux.ed.team/img/icon-flag-mx.svg")
+      .tab: img(src="http://ux.ed.team/img/icon-flag-bo.svg")
+      .tab: img(src="http://ux.ed.team/img/icon-wu.svg")
+    .panels
+      .panel
+        .button--ghost--alert.big.center.l-block S/ 67 soles
+        .ed-container
+          .ed-item.m-50
+            .payment-method
+              h3.payment-method__name Interbank
+              p.payment-method__info Cuenta: <span class="payment-method__account">630-3093243101</span>
+                br
+                | CCI: 003-630-013093243101-13
+                br
+                | Titular: Alvaro Felipe Chávez
+              .small.payment-method__notes * En ventanilla la comisión es de S/ 9.00
+
+          .ed-item.m-50
+            .payment-method
+              h3.payment-method__name BCP
+              p.payment-method__info Cuenta: <span class="payment-method__account">191-25906095-0-70</span>
+                br
+                | Titular: Zoraida Chipana Estrada
+              .small.payment-method__notes * En ventanilla la comisión es de S/. 7.00
+      .panel
+        .button--ghost--alert.big.center.l-block $ 132000 pesos
+        .ed-container
+          .ed-item
+            .payment-method
+              h3.payment-method__name Bancolombia
+              p.payment-method__info Cuenta de ahorros: <span class="payment-method__account">317-418026-62</span>
+                br
+                | Titular: Daniel Guillermo Romero (cédula: 1116786822)
+                br
+                |
+
+              .small.payment-method__notes * $120,000 pesos si paga por consignación electrónica (internet o app de Bancolombia)
+                br
+                | * Si paga por Internet o por la App de Bancolombia, envíenos el número de cuenta desde la cual hace la transferencia
+      .panel
+        .button--ghost--alert.big.center.l-block $ 380.00 MX
+        .ed-container
+          .ed-item
+            .payment-method
+              h3.payment-method__name Banamex
+              p.payment-method__info Cuenta: <span class="payment-method__account">9007 0358866</span>
+                br
+                | Clabe (Seven Eleven, otros): <span class="payment-method__account">002180900703588669</span>
+                br
+                | Tarjeta (OXXO): <span class="payment-method__account">5256780180075498</span>
+                br
+                | Titular: Jonathan Ulises Miranda Charles
+      .panel
+        .button--ghost--alert.big.center.l-block $ 140.00 BS
+        .ed-container
+          .ed-item
+            .payment-method
+              h3.payment-method__name Banco Union
+              p.payment-method__info Cuenta <span class="payment-method__account">1-24645852</span>
+                br
+                | Titular: Alberto Junior Quiroga Muñoz
+      .panel
+        .button--ghost--alert.big.center.l-block $ 20.00 USD
+        .ed-container
+          .ed-item
+            .payment-method
+              h3.payment-method__name Pague a nombre de
+              p.payment-method__info Álvaro Ernesto Felipe Chávez
+              .small.payment-method__notes Tenga en cuenta que WU cobra una comisión por envio de dinero
+
+  script.
+    addEventListener('DOMContentLoaded', () => { edTabs() })
