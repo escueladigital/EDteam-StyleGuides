@@ -1,0 +1,56 @@
+.edui-tabs {
+
+  .tabs {
+    display : flex;
+    position : relative;
+    left : 1rem;
+    top : 1px;
+  }
+
+  .tab {
+    border : 1px solid $borderColor;
+    padding : 1rem;
+    border-radius : .25rem .25rem 0 0;
+    margin-right : .5rem;
+    background : #fff;
+    cursor: pointer;
+    opacity : .5;
+
+    &.active {
+      border-bottom : 1px solid #fff;
+      opacity : 1;
+    }
+
+    img {
+      width : rem(36px);
+      display : block;
+    }
+
+    .tab {
+      border : none;
+      padding: 0;
+      border-radius : 0;
+      margin : 0;
+      opacity : 1;
+    }
+  }
+
+  .panels {
+
+  }
+
+  .panel {
+    @include widget;
+    display : none;
+    border-radius : .25rem;
+    padding : 2rem;
+
+    :last-child {
+      margin-bottom : 0;
+    }
+
+    &.active {
+      display : block;
+    }
+  }
+}
