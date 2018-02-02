@@ -1,0 +1,20 @@
+extends ../includes/template
+append config
+  -currentPage = 'top-bar'
+
+block banner
+  block banner
+    +banner("https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb", 'Modal', '', 'tertiary')
+
+block main
+  p Las ventanas modales se usan para mostrar información importante pero oculta para el usuario hasta que realice alguna acción (como pulsar un botón).
+  a.button.center(href="#")#open-modal Abrir modal
+
+  script.
+    document.getElementById('open-modal').addEventListener('click', () => {
+      edModal(
+        `<h1>Hola mundo, este es un modal</h1>
+        <p>Puedes poner cualquier tipo de contenido en el modal <br>
+        Para cerrar pulsa fuera de este cuadro. La equis arriba a la derecha no hace nada, es solo un placebo</p>`
+      )
+    })
