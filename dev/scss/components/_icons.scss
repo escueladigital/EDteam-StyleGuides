@@ -34,3 +34,13 @@ $icons: (
   cart: "\6b"
 );
 
+.svg-icon {
+  height : 1em;
+  width : 1em;
+  display : inline-block;
+  fill: currentcolor;
+
+  &.before {
+    margin-right : .3em;
+  }
+}

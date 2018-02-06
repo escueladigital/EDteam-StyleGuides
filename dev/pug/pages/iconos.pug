@@ -1,0 +1,26 @@
+extends ../includes/template
+append config
+  -currentPage = 'post'
+
+block banner
+  block banner
+    +banner("https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb", 'Tipografía', '', 'tertiary')
+
+block main
+  ul
+    li Para iconos que deban cambiar de color junto con el contenido, use elementos svg con la clase <code>svg-icon</code>.
+    li Agregue la clase <code>before</code> o <code>after</code> segun la posición del código para añadir los márgenes correspondientes.
+    li Use las clase <code>cross-center</code> cuando requiera forzar la alineación vertical con texto.
+    li El icono tomará automáticamente el color del texto al que acompaña.
+  p Ejemplos:
+
+  p.cross-center(style="color: #007BDF") <svg class="svg-icon before"><use href="img/icons.svg#live"></svg> Este es un icono
+  p.cross-center(style="color: #00CBFF") <svg class="svg-icon before"><use href="img/icons.svg#cart"></svg> Este es un icono
+  p.cross-center(style="color: #FF3C32") <svg class="svg-icon before"><use href="img/icons.svg#check"></svg> Este es un icono
+
+  h2 Código SVG
+  p El archivo <code>icons.svg</code> debe ser parte del proyecto. Se llaman a los iconos con su id como en el ejemplo. Son tres íconos posibles: <code>cart</code> <code>check</code> <code>live</code>
+
+  pre
+    code.language-markup
+      | &lt;svg class="svg-icon before"&gt;&lt;use href="img/icons.svg#live"&gt;&lt;/svg&gt;
