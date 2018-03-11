@@ -1,5 +1,5 @@
 .main-header {
-  height        : 4rem;
+  height        : var(--header-height);
   border-bottom : 1px solid $borderColor;
   display       : flex;
   align-items   : center;

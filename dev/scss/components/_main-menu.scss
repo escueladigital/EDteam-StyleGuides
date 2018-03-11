@@ -61,7 +61,7 @@ body {
 
   @include to(l) {
     position   : fixed;
-    top        : 64px;
+    top        : var(--header-height);
     background : rgba($firstColor, .95);
     width      : 80%;
     right      : -80%;
