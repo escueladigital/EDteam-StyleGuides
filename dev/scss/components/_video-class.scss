@@ -55,6 +55,7 @@
 
   // Título del curso
   &--course {
+    color: var(--accent-color);
     font-size : fontSize(small);
     margin : -.5rem 0 0 0;
     opacity : .75;
