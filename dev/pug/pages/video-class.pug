@@ -1,0 +1,33 @@
+extends ../includes/template
+append config
+  -currentPage = 'Clase (video)'
+
+block topbar
+  article.video-class#video-class
+    .video-class--container
+      .video-class--element#video-element
+        <iframe src="https://player.vimeo.com/video/258828489" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    footer.video-class--footer
+      .ed-container
+        .ed-item
+          h1.video-class--title Variables CSS
+          p.video-class--course.small Curso CSS Desde Cero (2018)
+
+block main
+  h1 Clase (video)
+  p Para ofrecer la mejor experiencia de usuario al visualizar los videos de las clases, el video se ajusta al tamaño de la pantalla evitando desbordarse y aprovechando todo el espacio disponible.
+  p Además, en móviles en disposición vertical el video está fijo en la parte superior.
+
+  p El marcado es el siguiente:
+
+  pre
+    code.language-pug
+      | article.video-class#video-class
+      |   .video-class--container
+      |     .video-class--element#video-element
+      |       iframe // video
+      |   footer.video-class--footer
+      |     .ed-container
+      |       .ed-item
+      |         h1.video-class--title Titulo de la clase
+      |         p.video-class--course.small Titulo del curso
