@@ -2,17 +2,14 @@
 .video-class {
   background: var(--dark-color);
 
+  // Ajustarse al viewport
   @media screen and (min-aspect-ratio: 8 / 5) {
     height : calc(100vh - 3rem);
   }
 
   // Contenedor del video
   &--container {
-    @media screen and (min-aspect-ratio: 8 / 5) {
-      height : calc(100vh - 9rem);
-      padding : 1rem;
-    }
-
+    // Video fijo en moviles
     @media screen and (max-width: 960px) and (orientation: portrait) {
       position: fixed;
       top: var(--header-height);
@@ -20,9 +17,10 @@
       z-index: $z-fixed;
     }
 
-    img {
-      display : block;
-      margin : auto;
+    // Ajustarse al viewport
+    @media screen and (min-aspect-ratio: 8 / 5) {
+      height : calc(100vh - 9rem);
+      padding : 1rem;
     }
   }
 
@@ -60,5 +58,13 @@
     font-size : fontSize(small);
     margin : -.5rem 0 0 0;
     opacity : .75;
+  }
+
+  // Navegación de clases
+  &--next,
+  &--prev {
+    width: 2rem;
+    margin-left : 1rem;
+    cursor: pointer;
   }
 }
