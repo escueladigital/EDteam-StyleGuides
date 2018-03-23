@@ -1,8 +1,13 @@
-header.main-header
+-var headerClasses = currentPage = 'Clase (video)' ? 'main-header--dark' : 'main-header'
+
+header(class=headerClasses)
   .ed-container.full
     .ed-item.s-80.l-25.cross-center
       a(href="/")
-        img(src="img/edteam-ux-logo.svg").main-logo
+        if currentPage = 'Clase (video)'
+          img(src="img/edteam-logo-alt.svg").main-logo
+        else
+          img(src="img/edteam-ux-logo.svg").main-logo
     .ed-item.s-20.l-75.cross-center.main-end.header-links
       nav.main-menu#main-menu
         ul
