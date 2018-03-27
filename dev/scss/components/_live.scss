@@ -22,10 +22,34 @@
     color: var(--border-color);
     padding: 1rem 0;
 
-    @include from(l) {
-      grid-column: 1;
-      grid-row: 2;
+    [class*="button"] {
+      margin-right : 0;
     }
+
+
+    @include from(l) {
+      grid-column: 1 / span 2;
+      grid-row: 2 ;
+
+      [class*="button"] {
+        margin-right : 6rem;
+      }
+    }
+  }
+
+  &__title-container {
+    display : flex;
+    align-items: center;
+    margin-bottom : 1rem;
+
+    [class*="button"] {
+      margin-right : 1rem;
+    }
+  }
+
+  &__title {
+    margin : 0;
+    @include t3
   }
 
   &__footer {
