@@ -18,9 +18,13 @@ block topbar
         <iframe src="https://player.vimeo.com/video/258828489" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       .video-live__data
         .ed-container.full
-          .ed-item.s-60
-            h1.video-class--title Variables CSS
+          .ed-item.s-60.l-75
+            .video-live__title-container
+              span.button--ghost--alert.button--tiny Live
+              h1.video-live__title Variables CSS
             p.video-class--course.small Curso CSS Desde Cero (2018)
+          .ed-item.s-40.l-25.main-end.cross-start
+            .button--small 5h:12m:13s
       .video-live__chat#live-chat
         .chat.chat-container
           .chat__send
@@ -43,20 +47,37 @@ block topbar
             +chat-message('Estamos onfaiel 🔥')
 
 block main
-  h1 Clase (video)
-  p Para ofrecer la mejor experiencia de usuario al visualizar los videos de las clases, el video se ajusta al tamaño de la pantalla evitando desbordarse y aprovechando todo el espacio disponible.
-  p Además, en móviles en disposición vertical el video está fijo en la parte superior.
+  h1 Live (video y chat)
+  p Las sesiones en vivo son parte principal del modelo de negocio de EDteam. En las sesiones en vivo se transmiten las clases de los cursos y los EDtaller Premium mientras los estudiantes comentan e interactuan con el profesor en tiempo real a través del chat.
+  p Este layout aprovecha al máximo el espacio disponible y fija el video en tamaños móviles. El contador debe desaparecer cuando llegue a cero.
 
   p El marcado es el siguiente:
 
   pre
     code.language-pug
-      | article.video-class#video-class
-      |   .video-class--container
-      |     .video-class--element#video-element
-      |       iframe // video
-      |   footer.video-class--footer
-      |     .ed-container
-      |       .ed-item
-      |         h1.video-class--title Titulo de la clase
-      |         p.video-class--course.small Titulo del curso
+      | article.video-live
+      |   .video-live__container
+      |     .video-live__video.video#live-video
+      |       //player de video
+      |     .video-live__data
+      |       .ed-container.full
+      |         .ed-item.s-60.l-75
+      |           .video-live__title-container
+      |             span.button--ghost--alert.button--tiny Live
+      |             h1.video-live__title Variables CSS
+      |           p.video-class--course.small Curso CSS Desde Cero (2018)
+      |         .ed-item.s-40.l-25.main-end.cross-start
+      |           .button--small 5h:12m:13s
+      |     .video-live__chat#live-chat
+      |       .chat.chat-container
+      |         .chat__send
+      |           input(placeholder="Escribe algo").chat__send-message
+      |           input(type="image" src="img/send.svg").chat__send-submit
+      |         .chat__messages
+      |           .chat__message
+      |             .chat__message-avatar
+      |               img(src="user.jpg" alt="nombre-de-usuario")
+      |             .chat__mensage-content
+      |               span.chat__message-user.small Alvaro Felipe
+      |               span.chat__message-date.small 16:32
+      |               p.chat__message-comment=message
