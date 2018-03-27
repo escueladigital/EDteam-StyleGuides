@@ -7,9 +7,10 @@
 [class*="button--"]{
   @include button;
   &.center        { @include button-center }
-  &.full          { @include button-full }
-  &.button--small { @include button-small }
-  &.button--last  { @include button-last }
+  &.full          { @include button-full   }
+  &.button--small { @include button-small  }
+  &.button--tiny  { @include button-tiny   }
+  &.button--last  { @include button-last   }
   &.big           { font-size: fontSize(title3) }
 }
 // Buttons variations

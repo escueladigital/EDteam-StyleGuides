@@ -27,6 +27,11 @@
   font-size: fontSize(small);
 }
 
+@mixin button-tiny {
+  padding: .25rem .5rem;
+  font-size: fontSize(small);
+}
+
 @mixin button-center {
   display     : table;
   margin-left  : auto;
