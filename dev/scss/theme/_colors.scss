@@ -1,50 +1,79 @@
 .colors {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-  grid-gap: 1.5em;
-  margin-bottom: 2em;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  grid-gap: 2rem;
+  margin-bottom: 2rem;
+
 }
 
 .color {
+  box-shadow: 0 3px 6px -3px rgba(#000,.1);
+
+  $sassColorsMap: (
+    firstColor     : $firstColor,
+    firstColorAlt  : $firstColorAlt,
+    secondColor    : $secondColor,
+    secondColorAlt : $secondColorAlt,
+    thirdColor     : $thirdColor,
+    thirdColorAlt  : $thirdColorAlt,
+    accentColor    : $accentColor,
+    accentColorAlt : $accentColorAlt,
+    darkColor      : $darkColor,
+    darkColorAlt   : $darkColorAlt,
+    borderColor    : $borderColor,
+    textColor      : $textColor,
+    bodyBg         : $bodyBg
+  );
+
   &__sample {
-    padding-bottom: 100%;
+    padding-bottom: 56.25%;
     height: 0;
-    &.color--body {
+    border-radius : .25rem .25rem 0 0;
+
+    &.bodyBg {
       border : 1px solid $borderColor;
+    }
+
+    @each $colorName,$colorVar in $sassColorsMap {
+      &.#{$colorName} {
+        background: $colorVar;
+      }
     }
   }
 
-  &--primary {
-    background: $firstColor;
-  }
 
-  &--secondary {
-    background: $secondColor;
-  }
 
-  &--tertiary {
-    background: $thirdColor;
-  }
-
-  &--accent {
-    background: $accentColor;
-  }
-
-  &--dark {
-    background: $darkColor;
-  }
-
-  &--border {
-    background: $borderColor;
-  }
-
-  &--text {
-    background : $textColor;
-  }
-
-  &--body {
-    background : $bodyBg;
-  }
+  //&--primary {
+  //  background: $firstColor;
+  //}
+  //
+  //&--secondary {
+  //  background: $secondColor;
+  //}
+  //
+  //&--tertiary {
+  //  background: $thirdColor;
+  //}
+  //
+  //&--accent {
+  //  background: $accentColor;
+  //}
+  //
+  //&--dark {
+  //  background: $darkColor;
+  //}
+  //
+  //&--border {
+  //  background: $borderColor;
+  //}
+  //
+  //&--text {
+  //  background : $textColor;
+  //}
+  //
+  //&--body {
+  //  background : $bodyBg;
+  //}
 
   &__info {
     text-align: center;
@@ -52,6 +81,7 @@
     border-top: none;
     padding: 1em;
     background : #fff;
+    border-radius : 0 0 .25rem .25rem;
   }
 
   &__name,
