@@ -1,26 +1,43 @@
 const video = document.getElementById('live-video')
 const chat = document.getElementById('live-chat')
 const largeBp = matchMedia('(min-width: 1024px)')
-let height, chatInput, chatMessages;
+let chatInput, chatMessages;
 
 export const liveLayout = () => {
-  height = video.getBoundingClientRect().height
-  chatInput = chat.querySelector('.chat__send')
-  chatMessages = chat.querySelector('.chat__messages')
-  chatMessages.style.height = `calc(${height - chatInput.getBoundingClientRect().height}px - 1rem)`
+  if(largeBp.matches) {
+    let h = getVideoSize()
+    chatInput = chat.querySelector('.chat__send')
+    chatMessages = chat.querySelector('.chat__messages')
+    chatMessages.style.height = `calc(${h} - ${chatInput.getBoundingClientRect().height}px - 1rem)`
+  }
+}
+
+const getVideoSize = () => {
+  let w = video.getBoundingClientRect().width
+  let h = `${w / 16 * 9}px`
+  video.style.height = h
+  return h
 }
 
 const fixedVideoLive = () => {
-  video.classList.add('video-fixed')
-  video.nextElementSibling.style.marginTop = `${video.getBoundingClientRect().height}px`
+  const videoSibling = video.nextElementSibling;
+  let h = getVideoSize()
+  if(!largeBp.matches) {
+    video.classList.add('video-fixed')
+    videoSibling.style.marginTop = h
+  } else {
+    video.classList.remove('video-fixed')
+    videoSibling.style.marginTop = '0'
+  }
 }
 
 if (video && chat) {
-  if (largeBp.matches) {
-    addEventListener('DOMContentLoaded', liveLayout)
-    addEventListener('resize', liveLayout)
-  } else {
-    addEventListener('DOMContentLoaded', fixedVideoLive)
-    addEventListener('resize', fixedVideoLive)
-  }
+    addEventListener('DOMContentLoaded', () => {
+      liveLayout();
+      fixedVideoLive();
+    })
+    addEventListener('resize', () => {
+      liveLayout()
+      fixedVideoLive();
+    })
 }
