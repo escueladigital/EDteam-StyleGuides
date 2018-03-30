@@ -28,15 +28,15 @@ ul, ol {
 
     > :first-child {
       margin-bottom : .5rem;
-  
+      max-width: 75%;
+
       @include from(l) {
-        max-width: 75%;
         margin-bottom : 0;
       }
     }
   
     @include to(l) {
-      display : block;
+      //display : block;
       
       [class*="button"] {
         font-size: fontSize(small);
