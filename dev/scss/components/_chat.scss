@@ -31,6 +31,14 @@
     }
   }
 
+  &__info {
+    color: var(--text-color);
+    margin-top : -.5rem;
+    opacity: .5;
+    font-style: italic;
+    margin-bottom : 1rem;
+  }
+
   &__messages {
     padding-top: 1rem;
   }
