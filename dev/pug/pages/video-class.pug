@@ -19,13 +19,15 @@ mixin subject
         span.class-fragment__title
           a(href="#") 1.1 Introduccion
         span.class-fragment__duration 07:25
-      li.class-temary__fragment
+      li.class-fragment
         span.class-fragment__title
+          img(src="https://ux.ed.team/img/approve.svg")
           a(href="#") 1.2 Historia de CSS (este es un titulo muy largo)
         span.class-fragment__duration 07:25
-      li.class-temary__fragment
+      li.class-fragment
         span.class-fragment__title
           a(href="#") 1.1 Introduccion
+            span.button--ghost--alert.button--tiny Ver gratis
         span.class-fragment__duration 07:25
 
 block topbar
@@ -64,6 +66,7 @@ block topbar
               .chat__send
                 input(placeholder="Escribe algo").chat__send-message
                 input(type="image" src="img/send.svg").chat__send-submit
+              p.chat__info.small Chatea con tus compañeros sobre los temas de este curso. <a href="#">Más información</a>
               .chat__messages
                 +chat-message('Estamos onfaiel 🔥')
                 +chat-message('Estamos onfaiel 🔥')
@@ -84,6 +87,7 @@ block topbar
           .panel.panel--class
             form.add-note
               textarea(placeholder="Escribe una nota")
+              p.add-note__info.small Crea notas para guardar datos importantes del curso. Puedes usar markdown. <a href="#">Más información</a>
               input(type="submit").button--tiny
             .notes
               article.note
@@ -95,8 +99,45 @@ block topbar
                 footer.note__footer
                   img(src="img/edit.svg" title="Editar nota").note__edit
                   img(src="img/delete.svg" title="Borrar nota").note__delete
+              article.note.note--delete
+                header.note__header
+                  p 12 de marzo - 14:23
+                .note__content
+                  p Las variables en JavaScript se declaran con let y las constantes se declaran con const.
+                  p Las constantes exigen que se defina un valor, las variables no requieren un valor inicial y puede asignarse después.
+                footer.note__footer
+                  img(src="img/edit.svg" title="Editar nota").note__edit
+                  img(src="img/delete.svg" title="Borrar nota").note__delete
+                .note--delete__alert
+                  p Esta acción no se puede deshacer. ¿Está seguro que quiere borrar esta nota?
+                  .node--delete__buttons
+                    button.button--ghost--alert.button--small Sí. Borrar la nota
+                    button.button--ghost.button--small No. Conservar la nota
+              article.note.note--edit
+                header.note__header
+                  p 12 de marzo - 14:23
+                .note__content
+                  p Las variables en JavaScript se declaran con let y las constantes se declaran con const.
+                  p Las constantes exigen que se defina un valor, las variables no requieren un valor inicial y puede asignarse después.
+                footer.note__footer
+                  img(src="img/approve.svg" title="Aceptar cambios").note__accept
+                  img(src="img/cancel.svg" title="Cancelar cambios").note__cancel
           .panel.panel--class
-            h2 Recursos
+            .resources
+              p Aquí encontrarás archivos, enlaces y descargas del curso que haya dejado el profesor.
+              ul.feature-list
+                li
+                  img(src="https://ux.ed.team/img/icon-external-link.svg" alt="Repositorio del curso" )
+                  a(target="_blank" href="https://github.com/luixaviles/edteam-typescript") Repositorio del curso
+                li
+                  img(src="https://ux.ed.team/img/icon-external-link.svg" alt="Repositorio del curso" )
+                  a(target="_blank" href="https://github.com/luixaviles/edteam-typescript") Repositorio del curso
+                li
+                  img(src="https://ux.ed.team/img/icon-external-link.svg" alt="Repositorio del curso" )
+                  a(target="_blank" href="https://github.com/luixaviles/edteam-typescript") Repositorio del curso
+                li
+                  img(src="https://ux.ed.team/img/icon-external-link.svg" alt="Repositorio del curso" )
+                  a(target="_blank" href="https://github.com/luixaviles/edteam-typescript") Repositorio del curso
 
 
     .ed-item.l-50.class-contents__video
