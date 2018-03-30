@@ -2,15 +2,17 @@
 
 const breakpointVideoSize = matchMedia('(min-aspect-ratio: 8 / 5)')
 const breakpointVideoFixed = matchMedia('(max-width: 960px) and (orientation: portrait)')
+const largeBp = matchMedia('(min-width: 1024px)')
 const videoElement = document.getElementById('video-element')
-const videoClass = document.getElementById('video-class')
+const videoElementAlt = document.getElementById('video-element-alt')
+const remValue = parseFloat(getComputedStyle(document.documentElement).fontSize)
 
 
 // define size for video by media query
 export const videoSize = mq => {
   let viewportWidth = document.body.getBoundingClientRect().width
   let unit = mq.matches
-    ? (innerHeight - (11 * 16)) / 9
+    ? (innerHeight - (11 * remValue)) / 9
     : viewportWidth / 16
 
   if (videoElement) {
@@ -31,6 +33,29 @@ const fixedVideo = mq => {
     }
   }
 }
+
+const scrollVideoFixed = mq => {
+  let scrollPosition
+  if(videoElement && videoElementAlt && mq.matches) {
+    const h = videoElementAlt.getBoundingClientRect().height
+    const w = videoElementAlt.getBoundingClientRect().width
+    addEventListener('scroll', () => {
+      scrollPosition = scrollY
+      if (scrollPosition > innerHeight * .75) {
+        videoElement.style.position = 'fixed'
+        videoElement.style.right = '1rem'
+        videoElement.style.top = '5rem'
+        videoElement.style.width = `${w}px`
+        videoElement.style.height = `${h}px`
+      } else {
+        videoElement.style.position = 'static'
+        videoSize(breakpointVideoSize)
+      }
+    })
+  }
+}
+
+scrollVideoFixed(largeBp);
 
 addEventListener('DOMContentLoaded', () => {
   videoSize(breakpointVideoSize)
