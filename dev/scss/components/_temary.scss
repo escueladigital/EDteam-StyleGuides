@@ -1,0 +1,29 @@
+.class-temary {
+  padding-top : 2rem;
+  counter-reset: subjects;
+}
+
+.class-subject {
+  &__title {
+    counter-increment: subjects;
+    margin-bottom :  0;
+
+    &::before {
+      content: counter(subjects) ".";
+      display : inline-block;
+      margin-right : .25rem;
+    }
+  }
+}
+
+.class-fragment {
+  &__title {
+    a {
+      color: var(--text-color);
+    }
+  }
+
+  &__duration {
+
+  }
+}
