@@ -5,8 +5,33 @@ const breakpointVideoFixed = matchMedia('(max-width: 960px) and (orientation: po
 const largeBp = matchMedia('(min-width: 1024px)')
 const videoElement = document.getElementById('video-element')
 const videoElementAlt = document.getElementById('video-element-alt')
+const videoClass = document.getElementById('video-class')
 const remValue = parseFloat(getComputedStyle(document.documentElement).fontSize)
+let scrollFinal = innerHeight - (remValue * 3)
+let footer
+if(videoClass) footer = videoClass.querySelector('footer');
 
+export const scrollPageUp = () => {
+  scrollTo(0,0)
+  document.body.classList.remove('scroll')
+  videoElement.style.position = 'static'
+  videoSize(breakpointVideoSize)
+  videoClass.appendChild(footer)
+}
+
+const scrollPageDown = () => {
+  scrollTo(0,scrollFinal)
+  scrollVideoFixed(largeBp);
+  videoElementAlt.insertAdjacentElement('afterend', footer);
+}
+
+addEventListener('scroll', () => {
+  if (scrollY > 20 && scrollY < 120) {
+    scrollPageDown()
+  } else if (scrollY < scrollFinal - 20 && scrollY > scrollFinal - 120) {
+    scrollPageUp()
+  }
+})
 
 // define size for video by media query
 export const videoSize = mq => {
@@ -35,27 +60,16 @@ const fixedVideo = mq => {
 }
 
 const scrollVideoFixed = mq => {
-  let scrollPosition
   if(videoElement && videoElementAlt && mq.matches) {
     const h = videoElementAlt.getBoundingClientRect().height
     const w = videoElementAlt.getBoundingClientRect().width
-    addEventListener('scroll', () => {
-      scrollPosition = scrollY
-      if (scrollPosition > innerHeight * .75) {
-        videoElement.style.position = 'fixed'
-        videoElement.style.right = '1rem'
-        videoElement.style.top = '5rem'
-        videoElement.style.width = `${w}px`
-        videoElement.style.height = `${h}px`
-      } else {
-        videoElement.style.position = 'static'
-        videoSize(breakpointVideoSize)
-      }
-    })
+    videoElement.style.position = 'fixed'
+    videoElement.style.right = '1rem'
+    videoElement.style.top = '5rem'
+    videoElement.style.width = `${w}px`
+    videoElement.style.height = `${h}px`
   }
 }
-
-scrollVideoFixed(largeBp);
 
 addEventListener('DOMContentLoaded', () => {
   videoSize(breakpointVideoSize)
