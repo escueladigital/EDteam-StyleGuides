@@ -66,10 +66,37 @@
   // tabs para clases
   .tabs--class {
     left : 0;
+    border-radius : .25rem .25rem 0 0;
+    overflow : hidden;
+
+    &::before {
+      content: "";
+      display : block;
+      width: 25%;
+      height : 4px;
+      background: var(--second-color);
+      position : absolute;
+      bottom : 0;
+      left : 0;
+      transition: transform .25s ease-in;
+    }
+
+    &[data-tab="2"]::before {
+      transform: translateX(100%);
+    }
+
+    &[data-tab="3"]::before {
+      transform: translateX(200%);
+    }
+
+    &[data-tab="4"]::before {
+      transform: translateX(300%);
+    }
+
   }
 
   .tab--class {
-    width: 33.33%;
+    width: 25%;
     text-align : center;
     margin : 0;
     border-radius : 0;
@@ -78,11 +105,11 @@
     color: var(--border-color);
     opacity : 1;
     height : 3rem;
-    padding : 0;
+    padding : .6rem 0 0;
     display : flex;
-    align-items: center;
     justify-content: center;
-    box-shadow: 0 -2px rgba(#fff,.5) inset;
+    line-height : 1.6;
+    box-shadow: 0 -4px rgba(#fff,.5) inset;
 
     &.active {
       color: var(--second-color);

@@ -3,24 +3,30 @@ export const edTabs = () => {
     tabsContainer = container.querySelector('.tabs'),
     panelsContainer = container.querySelector('.panels'),
     tabs = [...tabsContainer.querySelectorAll('.tab')],
-    panels = [...panelsContainer.querySelectorAll('.panel')];
+    panels = [...panelsContainer.querySelectorAll('.panel')]
 
-  tabs[0].classList.add('active');
-  panels[0].classList.add('active');
+  tabs[0].classList.add('active')
+  panels[0].classList.add('active')
+  tabsContainer.setAttribute('data-tab','1')
 
   tabsContainer.addEventListener('click', e => {
     let t = e.target,
       i = tabs.indexOf(t);
+
     if(t.classList.contains('tab') || t.tagName === "IMG") {
       tabs.map( tab => tab.classList.remove('active'));
-      panels.map( panel => panel.classList.remove('active'));
+      panels.map( panel => panel.classList.remove('active'))
+      tabsContainer.removeAttribute('data-tab');
+      tabsContainer.setAttribute('data-tab', `${i+1}`)
+
       if(t.tagName === 'IMG') {
-        t.parentElement.classList.add('active');
-        i = tabs.indexOf(t.parentElement);
+        t.parentElement.classList.add('active')
+        i = tabs.indexOf(t.parentElement)
       } else {
-        t.classList.add('active');
+        t.classList.add('active')
       }
-      panels[i].classList.add('active');
+
+      panels[i].classList.add('active')
     }
   })
 };
