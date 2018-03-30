@@ -7,11 +7,12 @@
 [type="password"],
 [type="number"],
 [type="date"],
+[type="search"],
 select,
 textarea {
   display       : block;
   border        : 1px solid $borderColor;
-  background    : yellow;
+  background    : #fff;
   width         : 100%;
   line-height   : 1.6;
   font-family   : $body-font; // Fuerza a tomar la fuente por defecto
@@ -28,6 +29,10 @@ textarea {
     background :$borderColor;
     cursor: default;
   }
+}
+
+[type="search"] {
+  background : #fff img('icon-search.svg') center right 1rem / 1rem no-repeat !important;
 }
 
 select{
