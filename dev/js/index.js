@@ -6,3 +6,5 @@ import {liveLayout} from "./modules/live";
 
 window.edModal = edModal
 window.edTabs = edTabs
+
+edTabs()
