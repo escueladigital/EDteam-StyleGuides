@@ -3,6 +3,12 @@
   textarea {
     margin-bottom : .5rem;
   }
+
+  &__info {
+    opacity: .5;
+    font-style: italic;
+    margin-bottom : .5rem;
+  }
 }
 
 .notes {
@@ -13,6 +19,10 @@
   border : 1px solid var(--border-color);
   font-size: fontSize(small);
   border-radius : .25rem;
+
+  &--edit {
+    background : rgba($accentColor,.075);
+  }
 
   &__header {
     background: var(--text-color);
