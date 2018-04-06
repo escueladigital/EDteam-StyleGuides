@@ -1,8 +1,9 @@
 // Functions for show video responsive and adjust it to viewport
+// const breakpointVideoSize = matchMedia('(min-aspect-ratio: 8 / 5)')
+// const breakpointVideoFixed = matchMedia('(max-width: 960px) and (orientation: portrait)')
 
-const breakpointVideoSize = matchMedia('(min-aspect-ratio: 8 / 5)')
-const breakpointVideoFixed = matchMedia('(max-width: 960px) and (orientation: portrait)')
-const largeBp = matchMedia('(min-width: 1024px)')
+const largeBp = matchMedia('(min-width: 1024px) and (min-aspect-ratio: 8 / 5)')
+const fixedBp = matchMedia('(min-width:960px)')
 const videoElement = document.getElementById('video-element')
 const videoElementAlt = document.getElementById('video-element-alt')
 const videoClass = document.getElementById('video-class')
@@ -11,31 +12,34 @@ let scrollFinal = innerHeight - (remValue * 3)
 let footer
 if(videoClass) footer = videoClass.querySelector('footer');
 
+
 export const scrollPageUp = () => {
-  scrollTo(0,0)
+  scrollTo(0, 0)
   document.body.classList.remove('scroll')
   videoElement.style.position = 'static'
-  videoSize(breakpointVideoSize)
+  videoSize(largeBp)
   videoClass.appendChild(footer)
 }
 
 const scrollPageDown = () => {
-  scrollTo(0,scrollFinal)
-  scrollVideoFixed(largeBp);
+  scrollTo(0, scrollFinal)
+  scrollVideoFixed();
   videoElementAlt.insertAdjacentElement('afterend', footer);
 }
 
 addEventListener('scroll', () => {
-  if (scrollY > 20 && scrollY < 120) {
-    scrollPageDown()
-  } else if (scrollY < scrollFinal - 20 && scrollY > scrollFinal - 120) {
-    scrollPageUp()
+  if(largeBp.matches) {
+    if (scrollY > 20 && scrollY < 120) {
+      scrollPageDown()
+    } else if (scrollY < scrollFinal - 20 && scrollY > scrollFinal - 120) {
+      scrollPageUp()
+    }
   }
 })
 
-// define size for video by media query
-export const videoSize = mq => {
+const videoSize = (mq) => {
   let viewportWidth = document.body.getBoundingClientRect().width
+
   let unit = mq.matches
     ? (innerHeight - (11 * remValue)) / 9
     : viewportWidth / 16
@@ -44,23 +48,28 @@ export const videoSize = mq => {
     videoElement.style.width = `${unit * 16}px`
     videoElement.style.height = `${unit * 9}px`
   }
-}
 
-const fixedVideo = mq => {
-  let viewportWidth = document.body.getBoundingClientRect().width
-  if(videoElement) {
+  return viewportWidth
+}
+// videoLayout mq = min-width: 1024px
+export const videoLayout = (mq1,mq2) => {
+  let viewportWidth = videoSize(mq1)
+
+  if (videoElement) {
     let e = videoElement.parentElement.nextElementSibling,
         h = (viewportWidth / 16) * 9;
-    if (mq.matches) {
-      e.style.marginTop = `${h}px`
-    } else {
+
+    // Video footer position
+    if (mq2.matches) {
       e.style.marginTop = '0';
+    } else {
+      e.style.marginTop = `${h}px`
     }
   }
 }
 
-const scrollVideoFixed = mq => {
-  if(videoElement && videoElementAlt && mq.matches) {
+const scrollVideoFixed = () => {
+  if(videoElement && videoElementAlt) {
     const h = videoElementAlt.getBoundingClientRect().height
     const w = videoElementAlt.getBoundingClientRect().width
     videoElement.style.position = 'fixed'
@@ -72,11 +81,9 @@ const scrollVideoFixed = mq => {
 }
 
 addEventListener('DOMContentLoaded', () => {
-  videoSize(breakpointVideoSize)
-  fixedVideo(breakpointVideoFixed)
+  videoLayout(largeBp,fixedBp)
 })
 
 addEventListener('resize', () => {
-  videoSize(breakpointVideoSize)
-  fixedVideo(breakpointVideoFixed)
+  videoLayout(largeBp,fixedBp)
 })
