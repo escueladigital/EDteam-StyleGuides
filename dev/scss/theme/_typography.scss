@@ -28,7 +28,8 @@ h1, .t1         { @include t1 }
 h2, .t2         { @include t2 }
 h3, .t3         { @include t3 }
 h4, .t4         { font-size : fontSize(normal) }
-h5, h6, .small  { font-size : fontSize(small) }
+h5, h6, .small  { font-size : fontSize(small)  }
+.smaller        { font-size: fontSize(smaller) }
 
 // Blockquote
 blockquote {
