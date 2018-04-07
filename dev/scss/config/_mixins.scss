@@ -7,8 +7,8 @@
 }
 
 @mixin widget {
-  border     : 1px solid $borderColor;
-  box-shadow : 0 1px 2px rgba(#000,.1);
+  box-shadow: 0 2px 16px -2px rgba(0,0,0,.15);
+  border : none;;
   background : #fff;
 }
 
