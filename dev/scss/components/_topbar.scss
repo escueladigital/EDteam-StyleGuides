@@ -8,7 +8,7 @@
     align-items: center;
 
     @include from(l) {
-      height : rem(64px);
+      height : var(--header-height);
     }
 
     @include to(l) {
@@ -31,13 +31,6 @@
 
   input {
     border : none;
-  }
-
-  [class*="button"] {
-    padding-top : .5rem;
-    padding-bottom : .5rem;
-    margin-right : 0;
-    margin-left : 2rem;
   }
 }
 
