@@ -18,11 +18,10 @@ h1, h2, h3, h4, h5, h6 {
 
 li {
   margin-top : 0;
-  margin-bottom : .75rem;
+  margin-bottom : .5rem;
 }
 
 // Bloques de contenido
-.l-block,
 section,
 p,
 blockquote,
@@ -33,6 +32,16 @@ iframe,
 video,
 ul,
 ol {
+  margin-top : 0;
+  margin-bottom : 1rem;
+
+  + h2 {
+    padding-top : 1rem;
+  }
+
+}
+
+.l-block {
   margin-top : 0;
   margin-bottom : 2rem;
 }
@@ -58,7 +67,6 @@ ol {
 }
 
 // main-banner y top-bar no deben separarse verticalmente de su hermano anterior
-
 .topbar + .main-banner{
-  margin-top : -4rem;
+  margin-top : -3rem;
 }
