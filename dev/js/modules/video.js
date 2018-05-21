@@ -1,6 +1,6 @@
-// Functions for show video responsive and adjust it to viewport
-// const breakpointVideoSize = matchMedia('(min-aspect-ratio: 8 / 5)')
-// const breakpointVideoFixed = matchMedia('(max-width: 960px) and (orientation: portrait)')
+/*
+* Layout de video
+* */
 
 const largeBp = matchMedia('(min-width: 1024px) and (min-aspect-ratio: 8 / 5)')
 const fixedBp = matchMedia('(min-width:960px)')
@@ -12,32 +12,7 @@ let scrollFinal = innerHeight - (remValue * 3)
 let footer
 if(videoClass) footer = videoClass.querySelector('footer');
 
-
-export const scrollPageUp = () => {
-  scrollTo(0, 0)
-  document.body.classList.remove('scroll')
-  videoElement.style.position = 'static'
-  videoSize(largeBp)
-  videoClass.appendChild(footer)
-}
-
-const scrollPageDown = () => {
-  scrollTo(0, scrollFinal)
-  scrollVideoFixed();
-  videoElementAlt.insertAdjacentElement('afterend', footer);
-}
-
-addEventListener('scroll', () => {
-  if(largeBp.matches) {
-    if (scrollY > 20 && scrollY < 120) {
-      scrollPageDown()
-    } else if (scrollY < scrollFinal - 20 && scrollY > scrollFinal - 120) {
-      scrollPageUp()
-    }
-  }
-})
-
-const videoSize = (mq) => {
+export const videoSize = (mq) => {
   let viewportWidth = document.body.getBoundingClientRect().width
 
   let unit = mq.matches
