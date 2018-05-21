@@ -1,3 +1,7 @@
+/*
+* Layout de página de live
+* */
+
 const video = document.getElementById('live-video')
 const chat = document.getElementById('live-chat')
 const largeBp = matchMedia('(min-width: 1024px)')
