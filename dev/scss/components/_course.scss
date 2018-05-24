@@ -1,30 +1,19 @@
 // == Estilos para que la cabecera de los cursos abarque toda la ventana == //
 .course-header {
   position: relative;
-  margin-left: 0;
   margin-bottom: 2rem;
-  padding: 2rem 1rem;
   width: 100%;
   overflow: hidden;
 
-  &__overlay,
-  &__cover {
+  &::before {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__overlay {
-    background-color: rgba($darkColor, 0.7);
-    z-index: $z-back + 1;
-  }
-  
-  &__cover {
-    z-index: $z-back;
-    object-fit: cover;
+    top: -10%;
+    left: -10vw;
+    width: 120vw;
+    height: 120%;
     filter: blur(10px);
+    background: linear-gradient(rgba($darkColor,.9), rgba($darkColor,.9)), url(https://ed.team/sites/default/files/styles/large/public/courses/images/css-animaciones-poster-1280.jpg) no-repeat center / cover;
   }
 
 }
@@ -32,6 +21,12 @@
 // == Estilos para el contenido de la cabecera == //
 .course-data {
   color: #fff;
+  position : relative;
+  padding : 2rem 0;
+
+  @include from(xl) {
+    padding : 4rem 0;
+  }
 
   &__subtitle {
     margin-top: -1rem;
@@ -46,7 +41,8 @@
   &__more-info {
     display: flex;
     flex-direction: column;
-    @media screen and (min-width: 480px) {
+    
+    @include from(400px) {
       flex-direction: row;
     }
 
@@ -61,18 +57,28 @@
     margin-right: 1rem;
   }
 
+  &__live-or-record span {
+    margin-left: 0.25em;
+  }
+
 }
 
 // == Estilos para la información del curso == //
 .course-info {
   @include round;
+  position : relative;
   margin-bottom: 2rem;
   padding: 1rem;
   border: 1px solid $borderColor;
   box-shadow: 0 2px 6px rgba(#000, 0.1);
 
+  &__item:nth-child(2) {
+    @include to(m) {
+      margin: 1rem 0;
+    }
+  }
+
   &__title {
-    padding-bottom: 1px;
     border-bottom: 1px solid $borderColor;
     font-family: $heading-font;
   }
@@ -105,7 +111,7 @@
 }
 
 // == Reordenar tarjeta y contenido del curso dependiendo si se ve en desktop o celular == //
-@media screen and (max-width: 1024px) {
+@include to(l) {
 
   .course-main {
 
@@ -125,10 +131,11 @@
 
 }
 
-// == Estilos de temario == //
-.course-temary {
+.course-main {
   margin-bottom: 4rem;
 }
+
+// == Estilos de temario == //
 
 .temary-accordion {
   margin-bottom: 1rem;
@@ -143,7 +150,7 @@
   }
   
   &__list {
-    padding: 1rem 1rem 0 1rem;
+    padding: 1rem 1rem 0;
     margin-bottom: 0;
   }
 

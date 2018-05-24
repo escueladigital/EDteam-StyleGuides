@@ -1,52 +1,50 @@
-/**
- * Funcionalidad aside de cursos
- */
+const stickyCardCourse = (referId, cardId) => {
+  const refer = document.getElementById(referId),
+    card = document.getElementById(cardId),
+    largeBp = matchMedia('(min-width: 1024px)')
 
-//  Conseguir elementos
-// La variable gutter es el espaciado que habrá entre el footer y el aside cuando lleguen a colisionar
- const titleCourse = document.querySelector(".course-data__title"),
-       asideCard = document.querySelector(".card.card--sidebar"),
-       mainFooter = document.querySelector(".main-footer"),
-       mainHeader = document.querySelector(".main-header"),
-       gutter = 32;
+  const stickyStyles = breakpointBoolean => {
+    if (refer && card) {
+      let t = refer.getBoundingClientRect().top,
+        l = card.parentElement.getBoundingClientRect().left,
+        w = card.parentElement.getBoundingClientRect().width
 
-export const stickyAside = () => {
-    // Validando que los elementos se hayan conseguido correctamente y que la pantalla sea mayor que 1024px
-    if (titleCourse && asideCard && mainFooter && mainHeader && window.innerWidth > 1024) {
+      const styles = breakpointBoolean ? `
+        position: fixed;
+        top: ${t}px;
+        left: ${l}px;
+        width: ${w}px;
+      ` :
+        `
+      position: static
+      `
+      card.setAttribute('style', styles)
 
-        // Obtener el ClientRect de los elementos
-        let asideRect = asideCard.getBoundingClientRect(),
-            titleRect = titleCourse.getBoundingClientRect(),
-            footerRect = mainFooter.getBoundingClientRect(),
-            headerRect = mainHeader.getBoundingClientRect();
+      const temary = document.querySelector(".course-temary");
 
-        // Estilos para posicionar aside
-        asideCard.style.position = "fixed";
-        asideCard.style.right = "1rem";
-        
-        // Calcular la altura del título principal para poder alinear el aside con éste mismo
-        asideCard.style.top = `${titleRect.top}px`;
+      addEventListener("scroll", () => {
+        let temaryBottom = temary.getBoundingClientRect().bottom;
+        if (temaryBottom <= card.getBoundingClientRect().bottom) {
+          // El card no debe superar al temario
+          const stylesAbsolute = `
+            position: absolute;
+            top: auto;
+            bottom: 0;
+          `
+          card.setAttribute('style', stylesAbsolute)
+          card.parentElement.style.position = "relative"
+        } 
+      })
 
-        // Reasignando la anchura para evitar desmaquetamiento de aside
-        asideCard.style.width = `${asideRect.width}px`;
-
-        // Evento scroll. Se usará para que el aside no se sobreponga con el footer
-        window.addEventListener("scroll", () => {
-            // Validando posición del aside respecto al footer
-            if ((asideRect.bottom + gutter) >= footerRect.top) {
-                asideCard.style.position = "absolute";
-                asideCard.style.top = `${document.documentElement.scrollHeight - footerRect.height - asideRect.height - headerRect.height - gutter}px`;
-            } else if (document.documentElement.scrollHeight >= titleRect.top){
-                // asideCard.style.position = "fixed";
-                // asideCard.style.top = `${titleRect.top}px`;
-            }
-
-            /* DELETE THIS */
-            // let c = console.log;
-            // c(`scroll: ${window.pageYOffset}    aside top: ${asideRect.top}    aside bottom: ${asideRect.bottom}   footer top: ${footerRect.top}`);
-        });
     }
-};
 
+  }
 
-stickyAside();
+  stickyStyles(largeBp.matches)
+  addEventListener('resize', () => {
+    stickyStyles(largeBp.matches)
+  })
+
+}
+
+stickyCardCourse('course-title', 'course-card')
