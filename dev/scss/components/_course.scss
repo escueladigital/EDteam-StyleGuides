@@ -41,7 +41,8 @@
   &__more-info {
     display: flex;
     flex-direction: column;
-    @media screen and (min-width: 480px) {
+    
+    @include from(400px) {
       flex-direction: row;
     }
 
@@ -56,6 +57,10 @@
     margin-right: 1rem;
   }
 
+  &__live-or-record span {
+    margin-left: 0.25em;
+  }
+
 }
 
 // == Estilos para la información del curso == //
@@ -66,6 +71,12 @@
   padding: 1rem;
   border: 1px solid $borderColor;
   box-shadow: 0 2px 6px rgba(#000, 0.1);
+
+  &__item:nth-child(2) {
+    @include to(m) {
+      margin: 1rem 0;
+    }
+  }
 
   &__title {
     border-bottom: 1px solid $borderColor;
@@ -100,7 +111,7 @@
 }
 
 // == Reordenar tarjeta y contenido del curso dependiendo si se ve en desktop o celular == //
-@media screen and (max-width: 1024px) {
+@include to(l) {
 
   .course-main {
 
@@ -120,10 +131,11 @@
 
 }
 
-// == Estilos de temario == //
-.course-temary {
+.course-main {
   margin-bottom: 4rem;
 }
+
+// == Estilos de temario == //
 
 .temary-accordion {
   margin-bottom: 1rem;
@@ -138,7 +150,7 @@
   }
   
   &__list {
-    padding: 1rem 1rem 0 1rem;
+    padding: 1rem 1rem 0;
     margin-bottom: 0;
   }
 
