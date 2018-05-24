@@ -8,6 +8,8 @@ td [class*="button"] {
 
 
 // para ed-grid
-.ed-grid .ed-grid {
+.ed-grid .ed-grid,
+.ed-grid.full{
   width : 100%;
+  max-width : 100%;
 }
