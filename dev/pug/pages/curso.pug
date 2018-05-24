@@ -4,27 +4,26 @@ append config
   -topicsMenu = false
 
 block main
-  .course-header.ed-grid.cols-l-5
-    .span-l-3
-      .course-data
-        h1.course-data__title CSS Avanzado - Animaciones
-        p.course-data__subtitle Crea animaciones opitimizadas para la web en 2D y 3D sin programar.
-        p.course-data__description Aprende a hacer animaciones para la web usando sólo CSS que generen impacto (sin tener conocimientos de Javascript) . Potencia la interacción con el usuario y aumenta la usabilidad de tus proyectos. Las animaciones convierten un proyecto aburrido en uno lleno de vida y que los usuarios y clientes aman, aprende con el mejor profesor de CSS en habla hispana.
-        .course-data__more-info.small
-          .course-data__calification
-            .course-data__stars
-              p &#9733; &#9733; &#9733; &#9733; &#9733;
-            .course-data__stars-info
-              p 4.5 (12 valoraciones)
-          .course-data__live-or-record
-            p.cross-center 
-              svg.svg-icon.before
-                use(href="img/icons.svg#live")
-              span Clases grabadas
-    .span-l-2
-    .course-header__overlay
-    img.course-header__cover(src="https://ed.team/sites/default/files/styles/large/public/courses/images/css-animaciones-poster-1280.jpg?itok=RVKU2XUo", alt="Portada del curso")
-    
+  .course-header
+    .ed-grid.cols-l-5
+      .span-l-3
+        .course-data
+          h1.course-data__title#course-title CSS Avanzado - Animaciones
+          p.course-data__subtitle Crea animaciones opitimizadas para la web en 2D y 3D sin programar.
+          p.course-data__description Aprende a hacer animaciones para la web usando sólo CSS que generen impacto (sin tener conocimientos de Javascript) . Potencia la interacción con el usuario y aumenta la usabilidad de tus proyectos. Las animaciones convierten un proyecto aburrido en uno lleno de vida y que los usuarios y clientes aman, aprende con el mejor profesor de CSS en habla hispana.
+          .course-data__more-info.small
+            .course-data__calification
+              .course-data__stars
+                p &#9733; &#9733; &#9733; &#9733; &#9733;
+              .course-data__stars-info
+                p 4.5 (12 valoraciones)
+            .course-data__live-or-record
+              p.cross-center
+                svg.svg-icon.before
+                  use(href="img/icons.svg#live")
+                span Clases grabadas
+      .span-l-2
+
       
 
 
@@ -41,8 +40,25 @@ block main
               li.course-info__list-item Característica 1
               li.course-info__list-item Característica 1
 
+      .course-temary
+        h2.t3 Temario del curso
+        .temary-container.ed-item
+        -let i = 8
+        while i--
+          details(open).temary-accordion
+            summary.temary-accordion__main-title 1. Introducción
+            ul.temary-accordion__list.small
+              -let j = 4
+              while j--
+                li.temary-accordion__item
+                  a(href="#").temary-accordion__title Estado actual de CSS
+                  span.temary-accordion__time 09:52
+                li.temary-accordion__item
+                  a(href="#").temary-accordion__title.free-class Estado actual de CSS
+                  span.temary-accordion__time 09:52
+
     .course-sidebar.span-l-1
-      .card.card--sidebar
+      .card.card--sidebar#course-card
         img.card__image(src="https://ed.team/sites/default/files/styles/large/public/courses/images/css-animaciones-poster-1280.jpg?itok=-9c6clkJ", alt="Imagen del curso")
         .card__info
           img.card__teacher-photo(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2017-11/alvaro_0.jpg?itok=4M1cv5mv", alt="Foto de maestro EDteam")
@@ -59,24 +75,7 @@ block main
           a(href="#").card__button.button--ghost--cta.small.full Suscribirse
           p.card__cap-button.smaller Acceso a todos los cursos de EDteam
 
-  .course-temary.ed-grid.cols-l-4
-    .span-l-3
-      h2.t3 Temario del curso
-      .temary-container.ed-item
-      -let i = 8
-      while i--
-        details(open).temary-accordion
-          summary.temary-accordion__main-title 1. Introducción
-          ul.temary-accordion__list.small
-            -let j = 4
-            while j--
-              li.temary-accordion__item
-                a(href="#").temary-accordion__title Estado actual de CSS
-                span.temary-accordion__time 09:52
-              li.temary-accordion__item
-                a(href="#").temary-accordion__title.free-class Estado actual de CSS
-                span.temary-accordion__time 09:52
-    .span-l-1
+
 
 
 
