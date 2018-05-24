@@ -1,7 +1,6 @@
 [class*="topbar"] {
   background : $firstColor;
   color: #fff;
-  margin-bottom : 2rem;
   font-size : fontSize(small);
 
   .ed-item {
@@ -9,7 +8,7 @@
     align-items: center;
 
     @include from(l) {
-      height : rem(64px);
+      height : var(--header-height);
     }
 
     @include to(l) {
@@ -32,14 +31,6 @@
 
   input {
     border : none;
-    background : #fff url(../img/icon-search.svg) center right 1rem / 1rem no-repeat !important;
-  }
-
-  [class*="button"] {
-    padding-top : .5rem;
-    padding-bottom : .5rem;
-    margin-right : 0;
-    margin-left : 2rem;
   }
 }
 

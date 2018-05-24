@@ -1,10 +1,10 @@
 // This file doesn't generate any css
 @mixin button {
   display         : inline-block;
-  padding         : .8em 1.6em;
+  padding         : 1em 2em;
   background      : $firstColor;
   color           : #FFF;
-  margin          : 0 2rem 0 0;
+  margin-right    : 2rem;
   cursor          : pointer;
   text-decoration : none;
   border-radius   : .25rem;
@@ -23,36 +23,36 @@
 }
 
 @mixin button-small {
-  padding : .3em .8em;
+  padding : .5rem 1rem;
+  font-size: fontSize(small);
+}
+
+@mixin button-tiny {
+  padding: .25rem .5rem;
+  font-size: fontSize(small);
 }
 
 @mixin button-center {
-  display : table;
-  margin  : 0 auto;
+  display     : table;
+  margin-left  : auto;
+  margin-right : auto;
 }
 
 @mixin button-full {
-  margin     : 0;
-  width      : 100%;
+  margin-right : 0;
+  margin-left  : 0;
+  width        : 100%;
 }
 
 @mixin button-last {
   margin-right: 0;
 }
 
-@mixin button-secondary {
-  background : $secondColor;
-
-  &:hover {
-    background : darken($secondColor, 2);
-  }
-}
-
-@mixin button-tertiary {
+@mixin button-alert {
   background : $thirdColor;
 
   &:hover {
-    background : darken($thirdColor, 6);
+    background : $thirdColorAlt;
   }
 }
 
@@ -60,15 +60,7 @@
   background : $accentColor;
 
   &:hover {
-    background : darken($accentColor, 2);
-  }
-}
-
-@mixin button-dark {
-  background : $darkColor;
-
-  &:hover {
-    background : darken($darkColor, 10);
+    background : $accentColorAlt;
   }
 }
 
@@ -84,16 +76,7 @@
   }
 }
 
-@mixin button-ghost-secondary {
-  color : $secondColor;
-
-  &:hover {
-    background : $secondColor;
-    color      : #FFF;
-  }
-}
-
-@mixin button-ghost-tertiary {
+@mixin button-ghost-alert {
   color : $thirdColor;
 
   &:hover {
@@ -107,15 +90,6 @@
 
   &:hover {
     background : $accentColor;
-    color      : #FFF;
-  }
-}
-
-@mixin button-ghost-dark {
-  color : $darkColor;
-
-  &:hover {
-    background : $darkColor;
     color      : #FFF;
   }
 }

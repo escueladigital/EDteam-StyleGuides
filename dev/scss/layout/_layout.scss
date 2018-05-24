@@ -1,68 +1,72 @@
-.main-header {
-  height : 64px;
-  border-bottom : 1px solid $borderColor;
-  display : flex;
-  align-items: center;
-  background : #fff;
-  position : fixed;
-  top : 0;
-  width : 100%;
-  left : 0;
-  z-index : $z-fixed;
+body {
+  margin         : var(--header-height) 0 0 0;
+  display        : flex;
+  flex-direction : column;
+  min-height     : calc(100vh - 64px);
+}
 
-  + .main-section {
-    margin-top : 4rem;
+// Vertical rhythm
+h1, h2, h3, h4, h5, h6 {
+  margin-top : 0;
+  margin-bottom : 1rem;
+
+  & + .subtitle {
+    margin-top : -.5rem;
+    margin-bottom : 1rem;
   }
 }
 
-body {
-  margin: 64px 0 0 0;
-  display : flex;
-  flex-direction : column;
-  min-height : calc(100vh - 64px);
+li {
+  margin-top : 0;
+  margin-bottom : .5rem;
 }
 
-main ul {
-  margin-bottom :  2rem;
+// Bloques de contenido
+section,
+p,
+blockquote,
+pre,
+article,
+figure,
+iframe,
+video,
+ul,
+ol {
+  margin-top : 0;
+  margin-bottom : 1rem;
+
+  + h2 {
+    padding-top : 1rem;
+  }
+
 }
 
-.main-section {
+.l-block {
+  margin-top : 0;
+  margin-bottom : 2rem;
+}
+
+// secciones principales
+.l-section {
+  margin-top : 0;
+  margin-bottom : 4rem;
+
+  .main-header + & {
+    margin-top : 4rem;
+  }
+
+  &--main {
+    margin-top : 0;
+    margin-bottom : 8rem;
+  }
+}
+
+.main-banner,
+.topbar {
   margin-bottom : 4rem;
 }
 
-.main-main {
-  ul {
-    padding-left : 0;
-    margin-left : 2rem;
-  }
-}
-
-.main-menu {
-  a:hover {
-    text-decoration : none;
-  }
-
-  .active {
-
-    @include from(l) {
-      font-weight : 400;
-      color: $thirdColor;
-
-      &::before {
-        display : none;
-      }
-    }
-  }
-}
-
-.main-footer {
-  background : $darkColor;
-  color: #fff;
-  margin-top : 4rem;
-  padding : 1em 0;
-}
-
-
-.sidebar-first {
-  margin-bottom : 1em;
+// main-banner y top-bar no deben separarse verticalmente de su hermano anterior
+.topbar + .main-banner{
+  margin-top : -3rem;
 }

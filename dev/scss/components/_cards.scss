@@ -4,7 +4,6 @@
   display : flex;
   height : 100%;
   flex-direction: column;
-  margin-bottom : 2rem;
 
   p, [class*="button"]  {
     margin : 0;
@@ -17,8 +16,6 @@
   img {
     display : block;
     border-radius : .25rem .25rem 0 0;
-    height: 100%;
-    object-fit: cover;
   }
 }
 
@@ -41,7 +38,7 @@
 }
 
 .card__subtitle {
-  font-size : fontSize(smaller);
+  font-size : fontSize(small);
   opacity : .5;
   margin-bottom : .5rem;
 }
@@ -52,13 +49,64 @@
 
 .card__footer {
   margin-top : auto;
-  font-size : fontSize(smaller);
+  font-size : fontSize(small);
   border-top : 1px solid $borderColor;
   padding-top : 1rem;
   display : flex;
   justify-content: space-between;
   align-items: center;
 }
+
+
+// Card standard de curso en App
+.card--course {
+  .card__footer {
+    border-top : none;
+    margin-top : -1.5rem;
+  }
+}
+
+.card--course-next {
+  .card__footer {
+    padding-top : .5rem;
+  }
+}
+
+.card--next-class {
+  border : none;
+  box-shadow: none;
+  position : relative;
+  color: #fff;
+
+  a {
+    color: currentColor;
+    display : block;
+  }
+
+  img {
+    display : block;
+  }
+
+  .card__content {
+    position : absolute;
+    bottom : 0;
+    background : rgba($darkColor,.8);
+    width : 100%;
+  }
+
+  .card__title {
+    font-size : fontSize(title3);
+    font-family : $body-font;
+    font-weight : 400;
+  }
+
+  .card__footer {
+    padding-top : 0;
+    border : none;
+    margin-top : -.5rem;
+  }
+}
+
 
 .card__user {
   display : flex;
@@ -85,7 +133,7 @@
     margin-bottom : .25rem;
   }
   .card__body {
-    font-size : fontSize(smaller);
+    font-size : fontSize(small);
     padding-top : .5rem;
     border-top : 1px solid $accentColor;
   }

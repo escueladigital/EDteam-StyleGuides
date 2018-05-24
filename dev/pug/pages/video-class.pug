@@ -1,0 +1,164 @@
+extends ../includes/template
+append config
+  -currentPage = 'Clase (video)'
+
+mixin chat-message(message)
+  .chat__message
+    .chat__message-avatar
+      img(src="https://cursos.ed.team/sites/default/files/styles/thumbnail/public/img/users/picture-1-1472485361.jpg?itok=ajWlX7yg" alt="nombre-de-usuario")
+    .chat__mensage-content
+      span.chat__message-user.small Alvaro Felipe
+      span.chat__message-date.small 16:32
+      p.chat__message-comment=message
+
+mixin subject
+  .class-subject
+    h3.class-subject__title Introducción
+    ul.class-fragments.data-list
+      li.class-fragment
+        span.class-fragment__title
+          a(href="#") 1.1 Introduccion
+        span.class-fragment__duration 07:25
+      li.class-fragment
+        span.class-fragment__title
+          img(src="https://ux.ed.team/img/approve.svg")
+          a(href="#") 1.2 Historia de CSS (este es un titulo muy largo)
+        span.class-fragment__duration 07:25
+      li.class-fragment
+        span.class-fragment__title
+          a(href="#") 1.1 Introduccion
+            span.button--ghost--alert.button--tiny Ver gratis
+        span.class-fragment__duration 07:25
+
+block topbar
+  article.video-class#video-class
+    .video-class--container
+      .video-class--element#video-element
+        <iframe src="https://player.vimeo.com/video/258828489" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    footer.video-class--footer
+      .ed-container.full
+        .ed-item.s-60
+          h1.video-class--title Variables CSS
+          p.video-class--course.small Curso CSS Desde Cero (2018)
+        .ed-item.s-40.cross-center.main-end
+          .video-class--navigation
+            img(src="https://ux.ed.team/img/icon-prev.svg").video-class--prev
+            img(src="https://ux.ed.team/img/icon-next.svg").video-class--next
+  .ed-container.full.class-contents.l-block
+    .ed-item.l-50.class-contents__tabs
+      .edui-tabs.edui-tabs--class
+        .tabs.tabs--class
+          .tab.tab--class.active Temario
+          .tab.tab--class Chat
+          .tab.tab--class Tus notas
+          .tab.tab--class Recursos
+        .panels.panels--class
+          .panel.panel--class.active
+            input(type="search" placeholder="Encuentra una clase")
+            .class-temary
+              +subject
+              +subject
+              +subject
+              +subject
+              +subject
+          .panel.panel--class
+            .chat.chat-container
+              .chat__send
+                input(placeholder="Escribe algo").chat__send-message
+                input(type="image" src="img/send.svg").chat__send-submit
+              p.chat__info.small Chatea con tus compañeros sobre los temas de este curso. <a href="#">Más información</a>
+              .chat__messages
+                +chat-message('Estamos onfaiel 🔥')
+                +chat-message('Estamos onfaiel 🔥')
+                +chat-message('Estamos onfaiel 🔥')
+                +chat-message('Estamos onfaiel 🔥')
+                +chat-message('Estamos onfaiel 🔥')
+                +chat-message('Estamos onfaiel 🔥')
+                +chat-message('Estamos onfaiel 🔥')
+                +chat-message('Estamos onfaiel 🔥')
+                +chat-message('Estamos onfaiel 🔥')
+                +chat-message('Estamos onfaiel 🔥')
+                +chat-message('Estamos onfaiel 🔥')
+                +chat-message('Estamos onfaiel 🔥')
+                +chat-message('Estamos onfaiel 🔥')
+                +chat-message('Estamos onfaiel 🔥')
+                +chat-message('Estamos onfaiel 🔥')
+                +chat-message('Estamos onfaiel 🔥')
+          .panel.panel--class
+            form.add-note
+              textarea(placeholder="Escribe una nota")
+              p.add-note__info.small Crea notas para guardar datos importantes del curso. Puedes usar markdown. <a href="#">Más información</a>
+              input(type="submit").button--tiny
+            .notes
+              article.note
+                header.note__header
+                  p 12 de marzo - 14:23
+                .note__content
+                  p Las variables en JavaScript se declaran con let y las constantes se declaran con const.
+                  p Las constantes exigen que se defina un valor, las variables no requieren un valor inicial y puede asignarse después.
+                footer.note__footer
+                  img(src="img/edit.svg" title="Editar nota").note__edit
+                  img(src="img/delete.svg" title="Borrar nota").note__delete
+              article.note.note--delete
+                header.note__header
+                  p 12 de marzo - 14:23
+                .note__content
+                  p Las variables en JavaScript se declaran con let y las constantes se declaran con const.
+                  p Las constantes exigen que se defina un valor, las variables no requieren un valor inicial y puede asignarse después.
+                footer.note__footer
+                  img(src="img/edit.svg" title="Editar nota").note__edit
+                  img(src="img/delete.svg" title="Borrar nota").note__delete
+                .note--delete__alert
+                  p Esta acción no se puede deshacer. ¿Está seguro que quiere borrar esta nota?
+                  .node--delete__buttons
+                    button.button--ghost--alert.button--small Sí. Borrar la nota
+                    button.button--ghost.button--small No. Conservar la nota
+              article.note.note--edit
+                header.note__header
+                  p 12 de marzo - 14:23
+                .note__content
+                  p Las variables en JavaScript se declaran con let y las constantes se declaran con const.
+                  p Las constantes exigen que se defina un valor, las variables no requieren un valor inicial y puede asignarse después.
+                footer.note__footer
+                  img(src="img/approve.svg" title="Aceptar cambios").note__accept
+                  img(src="img/cancel.svg" title="Cancelar cambios").note__cancel
+          .panel.panel--class
+            .resources
+              p Aquí encontrarás archivos, enlaces y descargas del curso que haya dejado el profesor.
+              ul.feature-list
+                li
+                  img(src="https://ux.ed.team/img/icon-external-link.svg" alt="Repositorio del curso" )
+                  a(target="_blank" href="https://github.com/luixaviles/edteam-typescript") Repositorio del curso
+                li
+                  img(src="https://ux.ed.team/img/icon-external-link.svg" alt="Repositorio del curso" )
+                  a(target="_blank" href="https://github.com/luixaviles/edteam-typescript") Repositorio del curso
+                li
+                  img(src="https://ux.ed.team/img/icon-external-link.svg" alt="Repositorio del curso" )
+                  a(target="_blank" href="https://github.com/luixaviles/edteam-typescript") Repositorio del curso
+                li
+                  img(src="https://ux.ed.team/img/icon-external-link.svg" alt="Repositorio del curso" )
+                  a(target="_blank" href="https://github.com/luixaviles/edteam-typescript") Repositorio del curso
+
+
+    .ed-item.l-50.class-contents__video
+      .ed-video#video-element-alt
+
+
+block main
+  h1 Clase (video)
+  p Para ofrecer la mejor experiencia de usuario al visualizar los videos de las clases, el video se ajusta al tamaño de la pantalla evitando desbordarse y aprovechando todo el espacio disponible.
+  p Además, en móviles en disposición vertical el video está fijo en la parte superior.
+
+  p El marcado es el siguiente:
+
+  //pre
+  //  code.language-pug
+  //    | article.video-class#video-class
+  //    |   .video-class--container
+  //    |     .video-class--element#video-element
+  //    |       iframe // video
+  //    |   footer.video-class--footer
+  //    |     .ed-container
+  //    |       .ed-item
+  //    |         h1.video-class--title Titulo de la clase
+  //    |         p.video-class--course.small Titulo del curso

@@ -1,13 +1,18 @@
-// Aplicar tamaños de fuente
+/*
+* This file use declarations, functions and mixins from
+* config/_typography.scss
+*/
+
 body {
-  @include font-base;
   font-family : $body-font;
+  font-size   : fontSize(normal);
   font-weight : 400;
   line-height : 1.6;
   color       : $textColor;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.t1, .t2, .t3, .t4 {
   font-family    : $heading-font;
   font-weight    : 700;
   letter-spacing : -0.01em;
@@ -19,56 +24,19 @@ h1, h2, h3, h4, h5, h6 {
 .heading-font { font-family : $heading-font }
 
 // Set font sizes
-h1, .t1      { @include t1 }
-h2, .t2      { @include t2 }
-h3, .t3      { @include t3 }
-h4           { font-size : fontSize(normal) }
-h5, .small   { font-size : fontSize(small) }
-h6, .smaller { font-size : fontSize(smaller) }
-
-
-// Vertical rythm
-h1, .t1 {
-  margin-top    : 0;
-  margin-bottom : rem(32px);
-}
-
-h2, .t2 {
-  margin-top    : rem(64px);
-  margin-bottom : rem(16px);
-}
-
-h3, .t3 {
-  margin-top    : rem(48px);
-  margin-bottom : rem(16px);
-}
-
-h4, h5, h6 {
-  margin-top : rem(32px);
-  margin-bottom : rem(8px);
-}
-
-p, iframe, video, figure, blockquote {
-  margin-top : 0;
-  margin-bottom : rem(32px);
-}
-
-p.small, p.smaller { margin-bottom : rem(16px) }
-
-h1, .t1 {
-  + .subtitle {
-    font-size     : fontSize(small);
-    margin-top    : -1.5rem;
-    margin-bottom : 2rem;
-  }
-}
+h1, .t1         { @include t1 }
+h2, .t2         { @include t2 }
+h3, .t3         { @include t3 }
+h4, .t4         { font-size : fontSize(normal) }
+h5, h6, .small  { font-size : fontSize(small)  }
+.smaller        { font-size: fontSize(smaller) }
 
 // Blockquote
 blockquote {
   @include t3;
   font-style     : italic;
   letter-spacing : .01em;
-  margin-left    : rem(64px);
+  margin-left    : 4rem;
   position       : relative;
   opacity        : .9;
 

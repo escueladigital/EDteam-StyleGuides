@@ -7,16 +7,14 @@
 body {
   margin : 0;
   background : $bodyBg;
-  font-size : fontSize(small) !important; // conflicto no identificado
 }
-
 
 strong,
 em {
   font-weight : 700;
 }
 
-
-p {
-  margin-top : 0;
+ul {
+  padding-left : 0;
+  margin-left  : 2rem;
 }

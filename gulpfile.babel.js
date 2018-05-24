@@ -33,11 +33,11 @@ const sassOptions = {
 
 gulp.task('styles', () =>
   gulp.src('./dev/scss/styles.scss')
-    // .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(plumber())
     .pipe(sass(sassOptions))
     .pipe(postcss(postcssPlugins))
-    // .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./public/css'))
     .pipe(server.stream({match: '**/*.css'}))
 );
@@ -92,9 +92,9 @@ gulp.task('default', ['styles', 'pug', 'scripts', 'images', 'copy'], () => {
   gulp.watch('./dev/img/**/*', ['images']);
   gulp.watch('./dev/img/**/*.svg', ['copy']);
 
-  watch('./dev/scss/**/*.scss', () => gulp.start('styles'));
-  watch('./dev/js/**/*.js', () => gulp.start('scripts',server.reload) );
-  watch('./dev/pug/**/*.pug', () => gulp.start('pug', server.reload) );
-  watch('./dev/img/**/*.{png,jpg,jpeg,gif}', () => gulp.start('images') );
-  watch('./dev/img/**/*.svg', () => gulp.start('copy') );
+  gulp.watch('./dev/scss/**/*.scss', () => gulp.start('styles'));
+  gulp.watch('./dev/js/**/*.js', () => gulp.start('scripts',server.reload) );
+  gulp.watch('./dev/pug/**/*.pug', () => gulp.start('pug', server.reload) );
+  gulp.watch('./dev/img/**/*.{png,jpg,jpeg,gif}', () => gulp.start('images') );
+  gulp.watch('./dev/img/**/*.svg', () => gulp.start('copy') );
 });

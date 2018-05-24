@@ -1,23 +1,22 @@
 ul, ol {
-  margin-top : 1em;
-  margin-bottom : 1em;
-  padding-left : 2em;
-  margin-left : 2em;
+  padding-left : 2rem;
+  margin-left : 0;
 
   li {
-    padding-left : .2em;
+    //padding-left : .2em;
   }
 }
 
 .data-list,
 .feature-list {
   @include clearMenu;
-  margin-top : 2em;
   margin-bottom : 2em;
 
   li {
     border-bottom : 1px solid $borderColor;
-    padding : .5em 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin : 0;
   }
 }
 
@@ -26,22 +25,21 @@ ul, ol {
     display : flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom : 1rem;
 
     > :first-child {
       margin-bottom : .5rem;
-  
+      max-width: 75%;
+
       @include from(l) {
-        max-width: 75%;
         margin-bottom : 0;
       }
     }
   
     @include to(l) {
-      display : block;
+      //display : block;
       
       [class*="button"] {
-        font-size: fontSize(smaller);
+        font-size: fontSize(small);
       }
     }
 
@@ -57,7 +55,7 @@ ul, ol {
 .feature-list {
   padding-left : 0;
   li {
-    padding : .5em 0 .5em 1.5em;
+    padding-left: 1.5rem;
     list-style: none;
     position : relative;
 
@@ -68,10 +66,10 @@ ul, ol {
       height : 1rem;
       display : block;
       position : absolute;
-      top : .9em;
+      top : 1.25em; // número mágico !no me juzgues!
       left : 0;
       color: $firstColor;
-      background : url(../img/icon-check.svg);
+      background : img('icon-check.svg');
     }
   }
 

@@ -19,6 +19,25 @@
 
 */
 
+.main-menu {
+  a:hover {
+    text-decoration : none;
+  }
+
+  .active {
+
+    @include from(l) {
+      font-weight : 400;
+      color: $thirdColor;
+
+      &::before {
+        display : none;
+      }
+    }
+  }
+}
+
+
 body {
   position   : relative;
   right      : 0;
@@ -42,7 +61,7 @@ body {
 
   @include to(l) {
     position   : fixed;
-    top        : 64px;
+    top        : var(--header-height);
     background : rgba($firstColor, .95);
     width      : 80%;
     right      : -80%;
@@ -67,6 +86,7 @@ body {
     color         : #FFF;
     border-bottom : 1px solid rgba(#fff, .2);
     padding       : 1em 0;
+    margin        : 0;
 
     @include from(l) {
       color       : $textColor;

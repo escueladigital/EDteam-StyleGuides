@@ -4,6 +4,7 @@
 
 // Config
 @import "config/variables";
+@import "config/_functions";
 
 // Mixins
 @import "config/mixins";
@@ -36,7 +37,19 @@
 @import "components/cards";
 @import "components/post";
 @import "components/main-banner";
+@import "components/main-header";
+@import "components/main-footer";
 @import "components/topbar";
+@import "components/modal";
+@import "components/tabs";
+@import "components/payments";
+@import "components/video-class";
+@import "components/live";
+@import "components/temary";
+@import "components/chat";
+@import "components/notes";
+@import "components/resources";
+@import "components/course";
 
 // Theme (colors and fonts)
 @import "theme/typography";

@@ -63,7 +63,7 @@
         display : block;
         width : 1rem;
         height : 1rem;
-        background : url(../img/icon-right.svg) center right / contain no-repeat;
+        background : img('icon-right.svg') center right / contain no-repeat;
       }
 
       &:hover {
@@ -80,7 +80,7 @@
     border-right: 1px solid $bodyBg;
 
     &::after {
-      background : url(../images/icon-right.svg) 100%/contain no-repeat !important;
+      background : img('icon-right.svg') 100% / contain no-repeat !important;
       margin-right : 1rem;
     }
   }
