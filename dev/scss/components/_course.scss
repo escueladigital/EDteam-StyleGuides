@@ -21,8 +21,12 @@
 // == Estilos para el contenido de la cabecera == //
 .course-data {
   color: #fff;
-  padding : 4rem 0;
   position : relative;
+  padding : 2rem 0;
+
+  @include from(xl) {
+    padding : 4rem 0;
+  }
 
   &__subtitle {
     margin-top: -1rem;
