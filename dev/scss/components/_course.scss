@@ -132,17 +132,27 @@
 }
 
 .course-main {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+
+  @include from(l) {
+    margin-bottom : 4rem;
+  }
 }
 
 // == Estilos de temario == //
 
 .temary-accordion {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   padding: 1rem;
   background-color: #fff;
   border: 1px solid $borderColor;
   border-radius: 0.25rem;
+
+  &:last-of-type {
+    @include from(l) {
+      margin-bottom : 0;
+    }
+  }
   
   &__main-title{
     font-family: $heading-font;
