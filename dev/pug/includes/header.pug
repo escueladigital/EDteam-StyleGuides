@@ -1,10 +1,10 @@
 -var headerClasses = currentPage === 'Clase (video)' ? 'main-header--dark' : 'main-header'
 
 header(class=headerClasses)
-  .ed-container.full
+  .ed-container
     .ed-item.s-80.l-25.cross-center
       a(href="/")
-        if currentPage = 'Clase (video)'
+        if currentPage === 'Clase (video)'
           img(src="img/edteam-logo-alt.svg").main-logo
         else
           img(src="img/edteam-ux-logo.svg").main-logo
