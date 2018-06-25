@@ -1,22 +1,21 @@
 code {
-  color   : $thirdColor;
-  display : inline-block;
-  border  : 1px solid $borderColor;
-  padding : .1em .5em;
-  margin  : 0 .5em;
+  color       : rgba($thirdColor,.9);
+  display     : inline-block;
+  padding     : 0 .5em;
+  margin      : 0 .5em;
   font-family : monospace;
+  line-height : 1.4;
 }
 
 pre code {
   display : block;
-  border : none;
 }
 
 :not(pre) code {
   font-family : Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
-  background : rgba($borderColor,.5);
-  font-size: fontSize(small);
-  padding : 0 .3em;
-  margin-right: .2rem;
-  word-break: break-all;
+  background  : rgba($borderColor,.5);
+  font-size   : fontSize(small);
+  padding     : 0 .25em;
+  margin      : 0 .1em;
+  word-break  : break-all;
 }
