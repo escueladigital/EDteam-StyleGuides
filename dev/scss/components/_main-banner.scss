@@ -1,18 +1,32 @@
 .main-banner {
-  background    : $firstColor;
-  color         : #FFF;
-  clip-path     : polygon(0 0, 100% 0, 100% 100%, 0 94%);
-  margin-bottom : 4rem;
-  position      : relative;
+  --color    : var(--first-color);
+  background : var(--color);
+  color      : #FFF;
+  clip-path  : polygon(0 0, 100% 0, 100% 100%, 0 94%);
+  position   : relative;
 
   // Separación del contenido
-  padding       : 2rem 0 3rem;
-  @include from(l) { padding: 8rem 0 10rem }
+  padding-top    : 2rem;
+  padding-bottom : 2rem;
 
-  &.main-banner--secondary { background : $secondColor  }
-  &.main-banner--tertiary  { background : $thirdColor  }
-  &.main-banner--accent    { background : $accentColor }
-  &.main-banner--dark      { background : $darkColor   }
+  @include from(l) {
+    padding-top    : 4rem;
+    padding-bottom : 4rem;
+  }
+
+  h1, h2 {
+    margin-bottom : 0;
+    @include t2;
+
+    + .subtitle {
+      margin-top : .5rem;
+      margin-bottom : 0;
+    }
+  }
+
+  [class*=button] {
+    margin-top : 1rem;
+  }
 }
 
 .main-banner__img {
@@ -22,28 +36,30 @@
   width      : 100%;
   height     : 100%;
   object-fit : cover;
-  opacity    : .1;
+  opacity    : .2;
+  filter     : blur(12px);
 }
 
 .main-banner__data {
-  text-align    : center;
+  text-align : center;
+  position   : relative;
 }
 
 .main-banner__author {
-  color: #fff;
-  margin-top : -1.5rem;
+  color      : #fff;
+  margin-top : .5rem;
 
   a {
     color: inherit;
   }
 
   &-img {
-    width : 6rem;
-    height : 6rem;
+    width         : 5rem;
+    height        : 5rem;
     border-radius : 50%;
-    border : 2px solid;
-    display : block;
-    margin : 0 auto;
+    border        : 2px solid;
+    display       : block;
+    margin        : 0 auto;
   }
 
   &-name {
