@@ -15,55 +15,52 @@ block main
     li
       strong Lato (400,400i)
       |  para los contenidos
+  p Y los siguientes tamaños de fuente que se pueden conseguir con los elementos o clases indicados:
 
   ul.data-list
     li
-      div: h1 Título 1 <span class="from-l">(36px/1.3)</span> <span class="to-l">(30px/1.3)</span>
+      div: .biggest Biggest <span class="from-l">(36px)</span> <span class="to-l">(24px)</span>
       div: p
         code &lt;h1&gt;&lt;/h1&gt;
-        code class="t1"
+        code .t1 .biggest
 
     li
-      div: h2 Titulo 2 <span class="from-l">(30px/1.3)</span><span class="to-l">(24px/1.3)</span>
+      div: .bigger Bigger <span class="from-l">(24px)</span><span class="to-l">(20px)</span>
       div: p
         code &lt;h2&gt;&lt;/h2&gt;
-        code class="t2"
+        code .t2 .bigger
 
     li
-      div: h3 Título 3 <span class="from-l">(24px/1.3)</span><span class="to-l">(20px/1.3)</span>
+      div: .big Big <span class="from-l">(20px)</span><span class="to-l">(16px)</span>
       div: p
         code &lt;h3&gt;&lt;/h3&gt;
-        code class="t3"
+        code .t3 .big
 
     li
-      div: h4 Título 4 (20px/1.3)
+      div: .normal Normal (16px)
       div: p
         code &lt;h4&gt;&lt;/h4&gt;
-        code class="normal"
+        code .t4 .normal
 
     li
-      div: h5 Título 5 (16px/1.3)
+      div: .small Small (14px)
       div: p
         code &lt;h5&gt;&lt;/h5&gt;
-        code class="small"
+        code .t5 .small
 
     li
-      div: h6 Título 6 (14px/1.3)
+      div: .smaller Smaller (13px)
       div: p
         code &lt;h6&gt;&lt;/h6&gt;
-        code class="smaller"
+        code .t6 .smaller
 
-  h2 Parrafo normal (Lato 20px / 1.6)
-  p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas. Cras non facilisis justo. Nunc in faucibus risus. Pellentesque felis diam, condimentum vitae mattis ut, sollicitudin a libero. Pellentesque malesuada pharetra justo, nec fringilla tortor adipiscing at. Maecenas accumsan, enim id mattis blandit, urna enim bibendum est, at volutpat massa neque vitae libero. Phasellus cursus leo hendrerit neque consequat gravida.
+  p Los títulos tienen <code>line-height: 1.3</code> y los contenidos <code>line-height: 1.6</code>. Las clases <code>.t1 .t2 .t3 .t4 .t5 .t6</code> aplican los tamaños de fuente indicados arriba con la tipografía y altura de línea para títulos. Las clases <code>.biggest .bigger .big .normal .small .smaller</code> aplican los tamaños de fuente indicados arriba con la tipografía de contenido. La clase <code>.normal</code> puede omitirse ya que representa el tamaño predeterminado. Salvo que se use para sobreescribir otro tamaño.
 
-  h3 Parrafo pequeño (Lato 16px / 1.6)
-  p.small Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas. Cras non facilisis justo. Nunc in faucibus risus. Pellentesque felis diam, condimentum vitae mattis ut, sollicitudin a libero. Pellentesque malesuada pharetra justo, nec fringilla tortor adipiscing at. Maecenas accumsan, enim id mattis blandit, urna enim bibendum est, at volutpat massa neque vitae libero. Phasellus cursus leo hendrerit neque consequat gravida.
-
-  h4 Parrafo más pequeño (Lato 14px / 1.6)
-  p.smaller Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas. Cras non facilisis justo. Nunc in faucibus risus. Pellentesque felis diam, condimentum vitae mattis ut, sollicitudin a libero. Pellentesque malesuada pharetra justo, nec fringilla tortor adipiscing at. Maecenas accumsan, enim id mattis blandit, urna enim bibendum est, at volutpat massa neque vitae libero. Phasellus cursus leo hendrerit neque consequat gravida.
+  h2 Aplicar tamaños de fuente sin clases (Sass)
+  p Para los tres tamaños mayores use los mixins <code>t1</code> <code>t2</code> <code>t3</code>. Para los tres tamaños menores use la funcion <code>fontSize($size)</code> donde el parámetro puede ser <code>normal | small | smaller</code>. La razon de separar los tamaños en dos grupos es que los más grandes (t1, t2, t3) se reducen en móviles para leerse mejor.
 
   h2 Blockquote
-  blockquote Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas. Cras non facilisis justo. Nunc in faucibus risus. Pellentesque felis diam, condimentum vitae mattis ut, sollicitudin a libero. Pellentesque malesuada pharetra justo, nec fringilla tortor adipiscing at.
+  blockquote El coronel destapó el tarro del café y comprobó que no había más de una cucharadita. Retiró la olla del fogón, vertió la mitad del agua en el piso de tierra, y con un cuchillo raspó el interior del tarro sobre la olla hasta cuando se desprendieron las últimas raspaduras del polvo de café revueltas con óxido de lata.
 
   h2 Enlaces
-  p Lorem ipsum dolor sit amet, <a href="https://ed.team" target="_blank">consectetur adipiscing elit</a>. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas. <a href="https://ed.team" target="_blank">Cras non facilisis justo. Nunc in faucibus risus.</a> Pellentesque felis diam, condimentum vitae mattis ut, sollicitudin a libero. Pellentesque malesuada pharetra justo, nec fringilla tortor adipiscing at. Maecenas accumsan, enim id mattis blandit, urna enim bibendum est, at volutpat massa neque vitae libero. Phasellus cursus leo hendrerit neque <a href="https://ed.team" target="_blank">consequat</a> gravida.
+  p <a href="https://ed.team" target="_blank">EDteam</a> es la opción honesta y sin falsas promesas para aprender programación, diseño y emprendimiento en Latinoamerica y España. Visítanos en <a href="https://ed.team" target="_blank">ed.team</a>
