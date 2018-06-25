@@ -12,37 +12,6 @@ $gutter     : 1rem;
   --gutter        : 1rem;
 }
 
-// Colors
-$firstColor     : #007BDF;
-$firstColorAlt  : #006DC6;
-$secondColor    : #00CBFF;
-$secondColorAlt : #00BFF0;
-$thirdColor     : #FF3C32;
-$thirdColorAlt  : #FF2419;
-$accentColor    : #FBA905;
-$accentColorAlt : #F1A000;
-$darkColor      : #282D31;
-$darkColorAlt   : #141618;
-$borderColor    : #DFE0E0;
-$textColor      : #53575A;
-$bodyBg         : #FAFDFF;
-
-:root {
-  --first-color      : #007BDF;
-  --first-color-alt  : #006DC6;
-  --second-color     : #00CBFF;
-  --second-color-alt : #00BFF0;
-  --third-color      : #FF3C32;
-  --third-color-alt  : #FF2419;
-  --accent-color     : #FBA905;
-  --accent-color-alt : #F1A000;
-  --dark-color       : #282D31;
-  --dark-color-alt   : #141618;
-  --border-color     : #DFE0E0;
-  --text-color       : #53575A;
-  --body-bg          : #FAFDFF;
-}
-
 // z-ndex
 $z-back    : -10;
 $z-normal  : 1;
