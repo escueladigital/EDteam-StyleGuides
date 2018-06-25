@@ -12,7 +12,12 @@
   &.button--tiny  { @include button-tiny   }
   &.button--last  { @include button-last   }
   &.big           { font-size: fontSize(title3) }
+
+  &:last-of-type:not(.center) {
+    margin-right : 0;
+  }
 }
+
 // Buttons variations
 .button--alert     { @include button-alert }
 .button--cta       { @include button-cta }
@@ -28,3 +33,4 @@
     //margin-bottom : 2rem;
   }
 }
+
