@@ -16,7 +16,7 @@ body {
 **********************FONT SIZES************************
 * There are 6 font sizes represents 6 HTML heading sizes
 * Classes t1 - t6 are for heading font family
-* Clases p1 - p6 are for body font family
+* Clases smaller, small, normal, big, bigger, biggest are for body font family
 * If you want apply font-size from Sass (without html class)
   use @include t1, @include t2, @include t3
   fontSize(normal) fontSize(small) fontSize(smaller)
@@ -36,21 +36,25 @@ h1, h2, h3, h4, h5, h6,
 .heading-font { font-family : $heading-font }
 
 // Set font sizes
-h1, .t1, .p1, .biggest { @include t1 }
-h2, .t2  .p2, .bigger  { @include t2 }
-h3, .t3, .p3, .big     { @include t3 }
-h4, .t4, .p4, .normal  { font-size : fontSize(normal)  }
-h5, .t5, .p5, .small   { font-size : fontSize(small)   }
-h6, .t6, .p6, .smaller { font-size : fontSize(smaller) }
+h1, .t1, .biggest { @include t1 }
+h2, .t2, .bigger  { @include t2 }
+h3, .t3, .big     { @include t3 }
+h4, .t4, .normal  { font-size : fontSize(normal)  }
+h5, .t5, .small   { font-size : fontSize(small)   }
+h6, .t6, .smaller { font-size : fontSize(smaller) }
 
 // Blockquote
 blockquote {
   @include t3;
   font-style     : italic;
   letter-spacing : .01em;
-  margin-left    : 4rem;
+  margin-left    : 2rem;
   position       : relative;
   opacity        : .9;
+
+  @include from(l) {
+    margin-left : 4rem;
+  }
 
   &::before {
     content        : "\201C";
