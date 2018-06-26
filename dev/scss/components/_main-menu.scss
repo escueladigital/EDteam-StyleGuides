@@ -28,7 +28,7 @@
 
     @include from(l) {
       font-weight : 400;
-      color: $thirdColor;
+      color: var(--third-color);
 
       &::before {
         display : none;
@@ -52,7 +52,7 @@ body {
 }
 
 .main-menu-toggle {
-  @include navToggle(20px, $textColor);
+  @include navToggle(20px, var(--text-color));
 }
 
 
@@ -62,7 +62,7 @@ body {
   @include to(l) {
     position   : fixed;
     top        : var(--header-height);
-    background : rgba($firstColor, .95);
+    background : var(--first-color);
     width      : 80%;
     right      : -80%;
     padding    : 1em 1em 2em;
@@ -89,7 +89,7 @@ body {
     margin        : 0;
 
     @include from(l) {
-      color       : $textColor;
+      color       : var(--text-color);
       padding     : 0;
       margin-left : 2rem;
     }

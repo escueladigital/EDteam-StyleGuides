@@ -69,7 +69,7 @@
   position : relative;
   margin-bottom: 2rem;
   padding: 1rem;
-  border: 1px solid $borderColor;
+  border: 1px solid var(--border-color);
   box-shadow: 0 2px 6px rgba(#000, 0.1);
 
   &__item:nth-child(2) {
@@ -79,7 +79,7 @@
   }
 
   &__title {
-    border-bottom: 1px solid $borderColor;
+    border-bottom: 1px solid var(--border-color);
     font-family: $heading-font;
   }
 
@@ -145,7 +145,7 @@
   margin-bottom: 2rem;
   padding: 1rem;
   background-color: #fff;
-  border: 1px solid $borderColor;
+  border: 1px solid var(--border-color);
   border-radius: 0.25rem;
 
   &:last-of-type {
@@ -167,7 +167,7 @@
   &__item {
       display: flex;
       justify-content: space-between;
-      color: $textColor;
+      color: var(--text-color);
   }
 
   &__title {

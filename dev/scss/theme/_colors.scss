@@ -31,7 +31,7 @@
     border-radius : .25rem .25rem 0 0;
 
     &.bodyBg {
-      border : 1px solid $borderColor;
+      border : 1px solid var(--border-color);
     }
 
     @each $colorName,$colorVar in $sassColorsMap {
@@ -41,43 +41,9 @@
     }
   }
 
-
-
-  //&--primary {
-  //  background: $firstColor;
-  //}
-  //
-  //&--secondary {
-  //  background: $secondColor;
-  //}
-  //
-  //&--tertiary {
-  //  background: $thirdColor;
-  //}
-  //
-  //&--accent {
-  //  background: $accentColor;
-  //}
-  //
-  //&--dark {
-  //  background: $darkColor;
-  //}
-  //
-  //&--border {
-  //  background: $borderColor;
-  //}
-  //
-  //&--text {
-  //  background : $textColor;
-  //}
-  //
-  //&--body {
-  //  background : $bodyBg;
-  //}
-
   &__info {
     text-align: center;
-    border: 1px solid $borderColor;
+    border: 1px solid var(--border-color);
     border-top: none;
     padding: 1em;
     background : #fff;
@@ -92,4 +58,42 @@
   &__name {
     font-weight: 700;
   }
+}
+
+:root {
+  --first-color      : #007BDF;
+  --first-color-alt  : #006DC6;
+  --second-color     : #00CBFF;
+  --second-color-alt : #00BFF0;
+  --third-color      : #FF3C32;
+  --third-color-alt  : #FF2419;
+  --accent-color     : #FBA905;
+  --accent-color-alt : #F1A000;
+  --dark-color       : #282D31;
+  --dark-color-alt   : #141618;
+  --border-color     : #DFE0E0;
+  --text-color       : #53575A;
+  --body-bg          : #FCFCFC;
+}
+
+// Combinaciones de colores
+.first-color  {
+  --color: var(--first-color);
+  --color-alt: var(--accent-color);
+}
+.second-color {
+  --color: var(--second-color);
+  --color-alt: var(--third-color);
+}
+.third-color  {
+  --color: var(--third-color);
+  --color-alt: var(--accent-color);
+}
+.accent-color {
+  --color: var(--accent-color);
+  --color-alt: var(--third-color);
+}
+.dark-color   {
+  --color: var(--dark-color);
+  --color-alt: var(--accent-color);
 }

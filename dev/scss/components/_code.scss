@@ -1,5 +1,5 @@
 code {
-  color       : rgba($thirdColor,.9);
+  color       : var(--third-color);
   display     : inline-block;
   padding     : 0 .5em;
   margin      : 0 .5em;
@@ -13,7 +13,7 @@ pre code {
 
 :not(pre) code {
   font-family : Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
-  background  : rgba($borderColor,.5);
+  background  : var(--border-color);
   font-size   : fontSize(small);
   padding     : 0 .25em;
   margin      : 0 .1em;

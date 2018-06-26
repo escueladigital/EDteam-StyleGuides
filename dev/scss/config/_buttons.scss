@@ -2,7 +2,7 @@
 @mixin button {
   display         : inline-block;
   padding         : 1em 2em;
-  background      : $firstColor;
+  background      : var(--first-color);
   color           : #FFF;
   margin-right    : 1rem;
   margin-bottom   : 1rem;
@@ -14,7 +14,7 @@
   text-align      : center;
 
   &:hover {
-    background      : darken($firstColor, 5);
+    background      : var(--first-color-alt);
     text-decoration : inherit;
   }
 
@@ -50,47 +50,47 @@
 }
 
 @mixin button-alert {
-  background : $thirdColor;
+  background : var(--second-color);
 
   &:hover {
-    background : $thirdColorAlt;
+    background : var(--second-color)Alt;
   }
 }
 
 @mixin button-cta {
-  background : $accentColor;
+  background : var(--accent-color);
 
   &:hover {
-    background : $accentColorAlt;
+    background : var(--accent-color)Alt;
   }
 }
 
 @mixin button-ghost {
-  color      : $firstColor;
+  color      : var(--first-color);
   background : none;
   border     : 1px solid;
 
   &:hover {
-    background   : $firstColor;
+    background   : var(--first-color);
     color        : #FFF;
     border-color : transparent;
   }
 }
 
 @mixin button-ghost-alert {
-  color : $thirdColor;
+  color : var(--second-color);
 
   &:hover {
-    background : $thirdColor;
+    background : var(--second-color);
     color      : #FFF;
   }
 }
 
 @mixin button-ghost-cta {
-  color : $accentColor;
+  color : var(--accent-color);
 
   &:hover {
-    background : $accentColor;
+    background : var(--accent-color);
     color      : #FFF;
   }
 }

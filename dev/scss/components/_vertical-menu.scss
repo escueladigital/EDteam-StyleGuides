@@ -1,6 +1,6 @@
 .vertical-menu-toggle {
   background-size : 100% 34%;
-  color: $firstColor;
+  color: var(--first-color);
   font-size : fontSize(small);
   @include to(l) {
     display : flex;
@@ -10,7 +10,7 @@
     display : block;
     width : .5em;
     height : 1.2em;
-    background-image: radial-gradient(circle, $textColor 2px, transparent 2px);
+    background-image: radial-gradient(circle, var(--text-color) 2px, transparent 2px);
     background-size : 100% 34%;
     margin-right : .2em;
   }
@@ -20,7 +20,7 @@
 }
 
 .vertical-menu {
-  border-right : 1px solid $borderColor;
+  border-right : 1px solid var(--border-color);
 
   @include to(l) {
     max-height : 0;
@@ -45,7 +45,7 @@
     padding : .4em 0;
     border-bottom : none;
     font-size : fontSize(small);
-    color: $textColor;
+    color: var(--text-color);
   }
 
   a {
@@ -56,7 +56,7 @@
       display : flex;
       justify-content: space-between;
       align-items: center;
-      color: $thirdColor;
+      color: var(--third-color);
 
       &::after {
         content: '';
@@ -73,11 +73,11 @@
   }
 
   .active {
-    border-bottom: 1px solid $borderColor;
-    border-top: 1px solid $borderColor;
+    border-bottom: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
     margin-right: -1px;
     padding: .5em 0;
-    border-right: 1px solid $bodyBg;
+    border-right: 1px solid var(--body-bg);
 
     &::after {
       background : img('icon-right.svg') 100% / contain no-repeat !important;

@@ -1,5 +1,5 @@
 [class*="topbar"] {
-  background : $firstColor;
+  background : var(--first-color);
   color: #fff;
   font-size : fontSize(small);
 
@@ -35,7 +35,7 @@
 }
 
 // Color variations
-.topbar--secondary { background : $secondColor }
-.topbar--tertiary  { background : $thirdColor  }
-.topbar--accent    { background : $accentColor }
-.topbar--dark      { background : $darkColor   }
+.topbar--secondary { background : var(--second-color) }
+.topbar--tertiary  { background : var(--third-color)  }
+.topbar--accent    { background : var(--accent-color) }
+.topbar--dark      { background : var(--dark-color)   }

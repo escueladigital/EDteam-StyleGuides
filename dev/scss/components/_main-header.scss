@@ -1,6 +1,6 @@
 [class*="main-header"] {
   height        : var(--header-height);
-  border-bottom : 1px solid $borderColor;
+  border-bottom : 1px solid var(--border-color);
   display       : flex;
   align-items   : center;
   background    : #FFF;
