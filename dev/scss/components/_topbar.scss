@@ -3,19 +3,13 @@
   color: #fff;
   font-size : fontSize(small);
 
-  .ed-item {
-    display : flex;
+  @include from(l) {
+    height : var(--header-height);
+  }
+
+  .ed-grid {
+    height : 100%;
     align-items: center;
-
-    @include from(l) {
-      height : var(--header-height);
-    }
-
-    @include to(l) {
-      padding-top : .5rem;
-      padding-bottom : .5rem;
-      justify-content: center;
-    }
   }
 
   p, .button, form, input, a {
