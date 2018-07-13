@@ -3,14 +3,14 @@ append config
   -currentPage = 'top-bar'
 
 block topbar
-  .topbar
-    .ed-container
-      .ed-item.l-50
+  .topbar.l-block
+    .ed-grid.cols-l-2
+      div
         p Características > Topbar
-      .ed-item.l-50.main-end
+      div.main-end
         form
           input(placeholder="Encuentra algo")
-        a(href="#").button--cta Modelo de boton
+        a(href="#").button--cta.button--tiny Modelo de boton
 
 block main
   h1 Top bar
