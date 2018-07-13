@@ -16,11 +16,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-li {
-  margin-top : 0;
-  margin-bottom : .5rem;
-}
-
 // Bloques de contenido
 section,
 p,
@@ -43,27 +38,21 @@ ol {
 
 .l-block {
   margin-top : 0;
-  margin-bottom : 2rem;
+  margin-bottom : 1rem;
+
+  @include from(l) {
+    margin-bottom : 2rem;
+  }
 }
 
 // secciones principales
 .l-section {
   margin-top : 0;
-  margin-bottom : 4rem;
+  margin-bottom : 2rem;
 
-  .main-header + & {
-    margin-top : 4rem;
+  @include from(l) {
+    margin-bottom : 4rem;
   }
-
-  &--main {
-    margin-top : 0;
-    margin-bottom : 8rem;
-  }
-}
-
-.main-banner,
-.topbar {
-  margin-bottom : 4rem;
 }
 
 // main-banner y top-bar no deben separarse verticalmente de su hermano anterior
