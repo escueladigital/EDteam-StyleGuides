@@ -1,8 +1,10 @@
 // This file doesn't generate any css
 @mixin button {
+  --color         : var(--first-color);
+  --color-alt     : var(--first-color-alt);
   display         : inline-block;
   padding         : 1em 2em;
-  background      : var(--first-color);
+  background      : var(--color);
   color           : #FFF;
   margin-right    : 1rem;
   margin-bottom   : 1rem;
@@ -14,7 +16,7 @@
   text-align      : center;
 
   &:hover {
-    background      : var(--first-color-alt);
+    background      : var(--color-alt);
     text-decoration : inherit;
   }
 
@@ -49,48 +51,60 @@
   margin-right: 0;
 }
 
-@mixin button-alert {
-  background : var(--second-color);
+@mixin button-secondary {
+  --color: var(--second-color);
+  --color-alt: var(--second-color-alt);
+}
 
-  &:hover {
-    background : var(--second-color)Alt;
-  }
+@mixin button-alert {
+  --color     : var(--third-color);
+  --color-alt : var(--third-color-alt);
 }
 
 @mixin button-cta {
-  background : var(--accent-color);
+  --color     : var(--accent-color);
+  --color-alt : var(--accent-color-alt)
+}
 
-  &:hover {
-    background : var(--accent-color)Alt;
-  }
+@mixin button-dark {
+  --color: var(--dark-color);
+  --color-alt: var(--dark-color-alt);
+}
+
+@mixin button-light {
+  --color: var(--body-bg);
+  --color-alt: var(--border-color);
 }
 
 @mixin button-ghost {
-  color      : var(--first-color);
+  --color    : var(--first-color);
+  color      : var(--color);
   background : none;
   border     : 1px solid;
 
   &:hover {
-    background   : var(--first-color);
+    background   : var(--color);
     color        : #FFF;
     border-color : transparent;
   }
 }
 
 @mixin button-ghost-alert {
-  color : var(--second-color);
+  --color : var(--third-color);
+}
 
-  &:hover {
-    background : var(--second-color);
-    color      : #FFF;
-  }
+@mixin button-ghost-secondary {
+  --color : var(--second-color);
 }
 
 @mixin button-ghost-cta {
-  color : var(--accent-color);
+  --color : var(--accent-color);
+}
 
-  &:hover {
-    background : var(--accent-color);
-    color      : #FFF;
-  }
+@mixin button-ghost-dark {
+  --color : var(--dark-color);
+}
+
+@mixin button-ghost-light {
+  --color : var(--border-color);
 }
