@@ -10,6 +10,7 @@
   margin-bottom   : 1rem;
   cursor          : pointer;
   text-decoration : none;
+  line-height     : inherit;
   border-radius   : .25rem;
   transition      : transform .05s;
   border          : none;
@@ -26,17 +27,17 @@
 }
 
 @mixin button-small {
-  padding : .5rem 1rem;
-  font-size: fontSize(small);
+  padding   : .5rem 1rem;
+  font-size : fontSize(small);
 }
 
 @mixin button-tiny {
-  padding: .25rem .5rem;
-  font-size: fontSize(small);
+  padding   : .25rem .5rem;
+  font-size : fontSize(small);
 }
 
 @mixin button-center {
-  display     : table;
+  display      : table;
   margin-left  : auto;
   margin-right : auto;
 }
@@ -48,12 +49,12 @@
 }
 
 @mixin button-last {
-  margin-right: 0;
+  margin-right : 0;
 }
 
 @mixin button-secondary {
-  --color: var(--second-color);
-  --color-alt: var(--second-color-alt);
+  --color     : var(--second-color);
+  --color-alt : var(--second-color-alt);
 }
 
 @mixin button-alert {
@@ -67,13 +68,13 @@
 }
 
 @mixin button-dark {
-  --color: var(--dark-color);
-  --color-alt: var(--dark-color-alt);
+  --color     : var(--dark-color);
+  --color-alt : var(--dark-color-alt);
 }
 
 @mixin button-light {
-  --color: var(--body-bg);
-  --color-alt: var(--border-color);
+  --color     : var(--body-bg);
+  --color-alt : var(--border-color);
 }
 
 @mixin button-ghost {
