@@ -1,9 +1,10 @@
 .main-banner {
   --color    : var(--first-color);
+  position   : fixed;
+  width      : 100%;
   background : var(--color);
   color      : #FFF;
-  clip-path  : polygon(0 0, 100% 0, 100% 100%, 0 94%);
-  position   : relative;
+  // clip-path  : polygon(0 0, 100% 0, 100% 100%, 0 94%);
 
   // Separación del contenido
   padding-top    : 2rem;
@@ -65,4 +66,22 @@
   &-name {
     font-size : fontSize(small);
   }
+}
+
+.banner-placeholder {
+  --top    : 0;
+  --height : 20px;
+  width    : 100%;
+
+  &::before {
+    content          : '';
+    display          : block;
+    position         : absolute;
+    top              : var(--top);
+    width            : 100%;
+    height           : var(--height);
+    background-color : var(--body-bg);
+    clip-path        : polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
+  }
+
 }

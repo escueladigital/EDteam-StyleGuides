@@ -4,8 +4,19 @@
   box-sizing: border-box;
 }
 
+.main-root {
+  background  : var(--body-bg);
+  z-index     : $z-tooltip;
+  padding-top : 2rem;
+
+  @include from("l") {
+    padding-top : 4rem;
+  }
+
+}
+
 body {
-  margin : 0;
+  margin     : 0;
   background : var(--body-bg);
 }
 

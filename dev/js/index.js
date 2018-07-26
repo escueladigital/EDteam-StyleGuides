@@ -6,6 +6,7 @@ import {liveLayout} from "./modules/live";
 import {stickyCard} from "./modules/sticky-card";
 import {loadWithoutScroll} from "./modules/helpers";
 import {cloneCardCourse} from "./modules/course";
+import {mainBanner} from "./modules/main-banner";
 
 window.edModal = edModal
 window.edTabs = edTabs
