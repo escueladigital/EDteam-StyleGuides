@@ -67,21 +67,3 @@
     font-size : fontSize(small);
   }
 }
-
-.banner-placeholder {
-  --top    : 0;
-  --height : 20px;
-  width    : 100%;
-
-  &::before {
-    content          : '';
-    display          : block;
-    position         : absolute;
-    top              : var(--top);
-    width            : 100%;
-    height           : var(--height);
-    background-color : var(--body-bg);
-    clip-path        : polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
-  }
-
-}
