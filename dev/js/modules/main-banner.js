@@ -1,9 +1,9 @@
-export const mainBanner = (idBanner, classTopRefer) => {
-    let banner            = document.getElementById(idBanner),
+export const mainBanner = (classBanner, classTopRefer) => {
+    let banner            = document.querySelector(classBanner),
         topRefer          = document.querySelector(classTopRefer),
         bannerPlaceholder = document.createElement('div')
-
-    if (banner && topRefer) {
+        
+        if (banner && topRefer) {
         const bannerActive = (b, tr) => {
             let placeholderHeight = 20,
                 bannerHeight = banner.getBoundingClientRect().height,
@@ -29,4 +29,4 @@ export const mainBanner = (idBanner, classTopRefer) => {
     }
 }
 
-mainBanner('main-banner', '.main-header')
+mainBanner('.main-banner', '.main-header')
