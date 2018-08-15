@@ -1,0 +1,24 @@
+extends ../includes/template
+append config
+  -currentPage = 'method-payment'
+  -topicsMenu = false
+
+mixin row(image, account, clabe, name)
+  .method-payment__row
+    .method-payment__column
+      img.method-payment__image(src=image, alt="Método de pago")
+    .method-payment__column
+      p.method-payment__info Cuenta: #[span(class="method-payment__span")= account]
+    .method-payment__column
+      p.method-payment__info Clabe: #[span(class="method-payment__span")= clabe]
+    .method-payment__column= `Titular: ${name}`
+
+block main
+  .ed-container(style="justify-content: center;")
+    section.method-payment
+      h3.method-payment__title México
+      article.method-payment__container
+        +row("https://finding.com.mx/wp-content/uploads/2016/04/banamex.gif", "9007-0358866", "002180900703588669", "Jonathan Mircha")
+        +row("https://i2.wp.com/channelw.my/wp-content/uploads/2018/02/Screen-Shot-2018-02-27-at-5.05.29-PM.png?resize=609%2C128", "9007-0358866", "002180900703588669", "Jonathan Mircha")
+        +row("https://upload.wikimedia.org/wikipedia/commons/6/66/Oxxo_Logo.svg", "5256780180075498", "002180900703588669", "Jonathan Mircha")
+      
