@@ -43,7 +43,7 @@ table {
 
 .table-container {
   overflow-x : auto;
-  border     : 1px solid $borderColor;
+  border     : 1px solid var(--border-color);
   margin-bottom : 2em;
   min-width      : 100%;
   position : relative;

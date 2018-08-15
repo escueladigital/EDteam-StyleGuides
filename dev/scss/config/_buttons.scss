@@ -1,10 +1,13 @@
 // This file doesn't generate any css
 @mixin button {
+  --color         : var(--first-color);
+  --color-alt     : var(--first-color-alt);
   display         : inline-block;
   padding         : 1em 2em;
-  background      : $firstColor;
+  background      : var(--color);
   color           : #FFF;
-  margin-right    : 2rem;
+  margin-right    : 1rem;
+  margin-bottom   : 1rem;
   cursor          : pointer;
   text-decoration : none;
   border-radius   : .25rem;
@@ -13,7 +16,7 @@
   text-align      : center;
 
   &:hover {
-    background      : darken($firstColor, 5);
+    background      : var(--color-alt);
     text-decoration : inherit;
   }
 
@@ -48,48 +51,60 @@
   margin-right: 0;
 }
 
-@mixin button-alert {
-  background : $thirdColor;
+@mixin button-secondary {
+  --color: var(--second-color);
+  --color-alt: var(--second-color-alt);
+}
 
-  &:hover {
-    background : $thirdColorAlt;
-  }
+@mixin button-alert {
+  --color     : var(--third-color);
+  --color-alt : var(--third-color-alt);
 }
 
 @mixin button-cta {
-  background : $accentColor;
+  --color     : var(--accent-color);
+  --color-alt : var(--accent-color-alt)
+}
 
-  &:hover {
-    background : $accentColorAlt;
-  }
+@mixin button-dark {
+  --color: var(--dark-color);
+  --color-alt: var(--dark-color-alt);
+}
+
+@mixin button-light {
+  --color: var(--body-bg);
+  --color-alt: var(--border-color);
 }
 
 @mixin button-ghost {
-  color      : $firstColor;
+  --color    : var(--first-color);
+  color      : var(--color);
   background : none;
   border     : 1px solid;
 
   &:hover {
-    background   : $firstColor;
+    background   : var(--color);
     color        : #FFF;
     border-color : transparent;
   }
 }
 
 @mixin button-ghost-alert {
-  color : $thirdColor;
+  --color : var(--third-color);
+}
 
-  &:hover {
-    background : $thirdColor;
-    color      : #FFF;
-  }
+@mixin button-ghost-secondary {
+  --color : var(--second-color);
 }
 
 @mixin button-ghost-cta {
-  color : $accentColor;
+  --color : var(--accent-color);
+}
 
-  &:hover {
-    background : $accentColor;
-    color      : #FFF;
-  }
+@mixin button-ghost-dark {
+  --color : var(--dark-color);
+}
+
+@mixin button-ghost-light {
+  --color : var(--border-color);
 }

@@ -13,7 +13,7 @@ ul, ol {
   margin-bottom : 2em;
 
   li {
-    border-bottom : 1px solid $borderColor;
+    border-bottom : 1px solid var(--border-color);
     padding-top: 1rem;
     padding-bottom: 1rem;
     margin : 0;
@@ -69,13 +69,13 @@ ul, ol {
       position : absolute;
       top : 1.25em; // número mágico !no me juzgues!
       left : 0;
-      color: $firstColor;
+      color: var(--first-color);
       background : img('icon-check.svg');
     }
   }
 
-  //&.secondary li::before { color: $secondColor }
-  //&.tertiary li::before  { color: $thirdColor  }
-  //&.accent li::before    { color: $accentColor }
-  //&.dark li::before      { color: $darkColor   }
+  //&.secondary li::before { color: var(--second-color) }
+  //&.tertiary li::before  { color: var(--third-color)  }
+  //&.accent li::before    { color: var(--accent-color) }
+  //&.dark li::before      { color: var(--dark-color)   }
 }

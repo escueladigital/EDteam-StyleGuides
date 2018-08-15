@@ -8,16 +8,17 @@
 [type="number"],
 [type="date"],
 [type="search"],
+[type="tel"],
 select,
 textarea {
   display       : block;
-  border        : 1px solid $borderColor;
+  border        : 1px solid var(--border-color);
   background    : #fff;
   width         : 100%;
   line-height   : 1.6;
   font-family   : $body-font; // Fuerza a tomar la fuente por defecto
   font-size     : fontSize(small);
-  color         : $textColor;
+  color         : var(--text-color);
   border-radius : .25rem;
   padding       : .5rem 1rem;
 
@@ -26,7 +27,7 @@ textarea {
   }
 
   &:disabled {
-    background :$borderColor;
+    background :var(--border-color);
     cursor: default;
   }
 }

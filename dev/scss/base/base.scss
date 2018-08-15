@@ -6,7 +6,7 @@
 
 body {
   margin : 0;
-  background : $bodyBg;
+  background : var(--body-bg);
 }
 
 strong,

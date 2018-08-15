@@ -85,34 +85,25 @@ block main
   p Las tarjetas se usan para mostrar contenido resumido o destacado del resto. Por ejemplo, una cuadricula con posts recientes o un curso en el catalogo.
 
   h2 Tarjetas estándar
-  .ed-container.l-block
-    .ed-item.l-50
-      +card
-    .ed-item.l-50
-      +card
+  .ed-grid.cols-l-2.l-block
+    +card
+    +card
 
   h2 Minicards de cursos para App
-  .ed-container.l-block
-    .ed-item.l-1-3
-      +cardCourseApp
-    .ed-item.l-1-3
-      +cardCourseApp
-    .ed-item.l-1-3
-      +cardCourseApp
+  .ed-grid.cols-l-3.l-block
+    +cardCourseApp
+    +cardCourseApp
+    +cardCourseApp
 
   h2 Minicards de cursos siguientes
-  .ed-container.l-block
-    .ed-item.l-1-3
-      +cardCourseAppNext
-    .ed-item.l-1-3
-      +cardCourseAppNext
-    .ed-item.l-1-3
-      +cardCourseAppNext
+  .ed-grid.cols-l-3.l-block
+    +cardCourseAppNext
+    +cardCourseAppNext
+    +cardCourseAppNext
 
   h2 Continua estudiando
-  .ed-container.l-block
-    .ed-item.l-50
-      +cardNextClass
+  .ed-grid.cols-l-2.l-block
+    +cardNextClass
 
   p Su estructura es la siguiente (por comodidad en formato .pug)
   pre

@@ -50,7 +50,7 @@
 .card__footer {
   margin-top : auto;
   font-size : fontSize(small);
-  border-top : 1px solid $borderColor;
+  border-top : 1px solid var(--border-color);
   padding-top : 1rem;
   display : flex;
   justify-content: space-between;
@@ -113,7 +113,7 @@
   align-items: center;
 
   a {
-    color: $textColor;
+    color: var(--text-color);
   }
 }
 
@@ -135,7 +135,7 @@
   .card__body {
     font-size : fontSize(small);
     padding-top : .5rem;
-    border-top : 1px solid $accentColor;
+    border-top : 1px solid var(--accent-color);
   }
 
   .card__footer {

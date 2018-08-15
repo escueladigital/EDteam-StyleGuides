@@ -17,16 +17,15 @@ html(lang="es")
     block topbar
     block banner
     if(topicsMenu)
-      .ed-container.main-section.l-section
-        aside.ed-item.l-25.main-sidebar.sidebar-first
+      .ed-grid.cols-l-4.main-section.l-section
+        aside.span-l-1.main-sidebar.sidebar-first
           include topics-menu
-        main.ed-item.l-75.main-main
+        main.span-l-3.main-main
           block main
     else
       block main
     footer.main-footer
-      .ed-container
-        .ed-item
+      .ed-grid
           p.small EDteam Style Guide por <a href="http://alvarofelipe.net" target="_blank">Álvaro Felipe</a>
     script(src="js/scripts.js?201803301710")
     script(src="js/prism.js?201803301710")

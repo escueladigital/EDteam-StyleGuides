@@ -9,43 +9,51 @@ block banner
 block main
   p Los botones usan la clase <code>button</code> o alguna variacion de <code>button--</code>. En
     |  los siguientes botones se indica las clases que debe llevar
-  .show-buttons
-    a.button.center.l-block class="button center"
-    a.button.full.l-block class="button full"
-    a.button.l-block class="button"
-    a.button--alert.l-block class="button--alert"
-    a.button--cta.l-block class="button--cta"
+  p.show-buttons
+    a.button.center .button.center
+    a.button.full .button.full
+    a.button .button
+    a.button--secondary .button--secondary
+    a.button--alert .button--alert
+    a.button--cta .button--cta
+    a.button--dark .button--dark
     br
-    a.button--ghost.l-block class="button--ghost"
-    a.button--ghost--alert.l-block class="button--ghost--alert"
-    a.button--ghost--cta.l-block class="button--ghost--cta"
+    a.button--ghost .button--ghost
+    a.button--ghost--secondary .button--ghost--secondary
+    a.button--ghost--alert .button--ghost--alert
+    a.button--ghost--cta .button--ghost--cta
+    a.button--ghost--dark .button--ghost--dark
 
   p Si se necesita un grupo de botones centrados, basta agruparlos en un contedor
     | que tenga la propiedad <code>text-align:center</code> o la clase
     | <code>center</code>. Ejemplo:
 
   .center.show-buttons.l-block
-    a.button--tertiary class="button--tertiary"
-    a.button--cta class="button--cta"
+    a.button--tertiary .button--tertiary
+    a.button--cta .button--cta
 
   p Tenga en cuenta que no necesita agregar dos clases para variaciones estilo BEM:
   ul
-    li <code>class="button button--secondary"</code> Incorrecto
-    li <code>class="button--secondary"</code> Correcto
+    li <code>.button.button--secondary</code> Incorrecto
+    li <code>.button--secondary</code> Correcto
 
-  p Los botones tienen tres variaciones de tamaños. Se indican a continuación las clases correspondientes. Ejemplos:
+  p Puede cambiar el tamaño de los botones usandolas clases de <a href="/tipografia.html">tamaños de tipografía</a>. Ejemplos:
 
-  .show-buttons.l-block
-    a.button.big class="button big"
-    a.button--cta class="button--cta"
-    a.button--alert.small.l-block class="button--alert small"
+  p.show-buttons
+    a.button.big .button.big
+    a.button--cta .button--cta
+    a.button--alert.small.l-block .button--alert.small
 
-  h2 Button small
-  p La variación <code>button--small</code> tiene menor padding para ajustarse a tamaños pequeños de fuente. Compare:
+  h2 Button small y button tiny
+  p Las variaciones <code>button--smal</code> y <code>button--tiny</code> tienen menor padding para ajustarse a tamaños pequeños. Además tienen 14px como tamaño de fuente (small).
 
-  .show-buttons
-    a.button--alert.small.l-block class="button--alert small"
-    a.button--alert.button--small.l-block class="button--alert button--small"
+  p.show-buttons
+    a.button--alert .button--alert
+    a.button--alert.small .button--alert.small
+    a.button--alert.button--small .button--alert.button--small
+    a.button--alert.button--tiny .button--alert.button--tiny
     br
-    a.button--ghost.l-block class="button--ghost"
-    a.button--ghost.button--small.l-block class="button--ghost button--small"
+    a.button--ghost .button--ghost
+    a.button--ghost.small .button--ghost.small
+    a.button--ghost.button--small .button--ghost.button--small
+    a.button--ghost.button--tiny .button--ghost.button--tiny

@@ -1,11 +1,12 @@
-const stickyCardCourse = (referId, cardId) => {
-  const refer = document.getElementById(referId),
-    card = document.getElementById(cardId),
-    largeBp = matchMedia('(min-width: 1024px)')
+export const stickyCard = (topReferId, bottomReferId, cardId, breakpoint = '(min-width: 1024px)') => {
+  const topRefer = document.getElementById(topReferId),
+        bottomRefer = document.getElementById(bottomReferId),
+        card = document.getElementById(cardId),
+        largeBp = matchMedia(breakpoint)
 
   const stickyStyles = breakpointBoolean => {
-    if (refer && card) {
-      let t = refer.getBoundingClientRect().top,
+    if (topRefer && card) {
+      let t = topRefer.getBoundingClientRect().top + scrollY,
         l = card.parentElement.getBoundingClientRect().left,
         w = card.parentElement.getBoundingClientRect().width
 
@@ -20,12 +21,9 @@ const stickyCardCourse = (referId, cardId) => {
       `
       card.setAttribute('style', styles)
 
-      const temary = document.querySelector(".course-temary");
-
       addEventListener("scroll", () => {
-        let temaryBottom = temary.getBoundingClientRect().bottom;
-        if (temaryBottom <= card.getBoundingClientRect().bottom) {
-          // El card no debe superar al temario
+        let b = bottomRefer.getBoundingClientRect().bottom
+        if (b <= card.getBoundingClientRect().bottom && breakpointBoolean) {
           const stylesAbsolute = `
             position: absolute;
             top: auto;
@@ -33,18 +31,19 @@ const stickyCardCourse = (referId, cardId) => {
           `
           card.setAttribute('style', stylesAbsolute)
           card.parentElement.style.position = "relative"
-        } 
+
+          if (card.getBoundingClientRect().top >= t) {
+            card.setAttribute('style', styles)
+          }
+        }
       })
-
     }
-
   }
 
   stickyStyles(largeBp.matches)
   addEventListener('resize', () => {
     stickyStyles(largeBp.matches)
   })
-
 }
 
-stickyCardCourse('course-title', 'course-card')
+

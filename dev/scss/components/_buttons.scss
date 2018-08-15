@@ -12,19 +12,24 @@
   &.button--tiny  { @include button-tiny   }
   &.button--last  { @include button-last   }
   &.big           { font-size: fontSize(title3) }
+
+  &:last-of-type:not(.center) {
+    margin-right : 0;
+  }
 }
+
 // Buttons variations
 .button--alert     { @include button-alert }
 .button--cta       { @include button-cta }
+.button--secondary { @include button-secondary }
+.button--dark      { @include button-dark }
+.button--light      { @include button-light }
 
 // Ghost buttons
 [class*="button--ghost"]  { @include button-ghost }
 .button--ghost--alert     { @include button-ghost-alert }
 .button--ghost--cta       { @include button-ghost-cta }
+.button--ghost--secondary { @include button-ghost-secondary }
+.button--ghost--dark      { @include button-ghost-dark }
+.button--ghost--light      { @include button-ghost-light }
 
-// Show buttons in style guide
-.show-buttons {
-  .button, [class*="button--"] {
-    //margin-bottom : 2rem;
-  }
-}

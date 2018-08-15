@@ -22,11 +22,13 @@
 
 .ed-modal-content {
   @include widget;
-  width     : 90%;
-  max-width : 1000px;
-  margin    : auto;
-  padding : 2rem;
+  width         : 90%;
+  max-width     : 1000px;
+  max-height    : 90vh;
+  margin        : auto;
+  padding       : 2rem;
   border-radius : .25rem;
+  overflow-y    : auto;
 }
 
 .video {

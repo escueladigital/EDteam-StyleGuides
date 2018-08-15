@@ -17,7 +17,7 @@
   }
 
   .tab {
-    border : 1px solid $borderColor;
+    border : 1px solid var(--border-color);
     padding : 1rem;
     border-radius : .25rem .25rem 0 0;
     margin-right : .5rem;
