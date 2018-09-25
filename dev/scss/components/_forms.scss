@@ -1,5 +1,10 @@
 .form__item {
   margin-bottom : 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
 }
 
 [type="text"],
@@ -43,6 +48,9 @@ select{
 
 textarea {
   min-height : 6em;
+  max-height : 6em;
+  min-width  : 100%;
+  max-width  : 100%;
 }
 
 label {

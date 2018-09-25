@@ -1,0 +1,40 @@
+extends ../includes/template
+append config
+  -currentPage = 'playlist'
+
+block banner
+  block banner
+    +banner("https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb", 'Playlist', '', 'dark')
+
+mixin playlist
+    article.playlist
+        header.playlist__header
+            .playlist__header-meatballs
+            a.playlist__header-content(href="#")
+                span.playlist__header-fragment Tipos de listas
+                span.playlist__header-course CSS Desde Cero (2018)
+            img.playlist__header-cover(src="https://ed.team/sites/default/files/styles/large/public/courses/images/Kotlin%20Poster.png?itok=jHl7qPHL", alt="Portada de playlist")
+        .playlist__content
+            a.playlist__button-add(href="#")
+            h3.playlist__title Diseño y programación web
+            input.playlist__search(type="search" placeholder="Buscar clase")
+            .playlist__list
+                - for(let i = 1; i <= 10; i++)
+                    a(href="#").playlist__item
+                        .playlist__item-data
+                            span.playlist__item-index= i < 10 ? `0${i}` : i
+                            .playlist__item-content
+                                span.playlist__item-fragment Tipos de listas
+                                span.playlist__item-course CSS Desde Cero 2018
+                        .playlist__item-action
+                            span.playlist__item-time 06:24
+                            img.playlist__item-button-delete(src="https://ux.ed.team/img/delete.svg", alt="Botón eliminar")
+
+
+
+        
+
+block main
+    .ed-grid.cols-m-2
+        +playlist
+        +playlist
