@@ -16,14 +16,15 @@ html(lang="es")
     include header
     block topbar
     block banner
-    if(topicsMenu)
-      .ed-grid.cols-l-4.main-section.l-section
-        aside.span-l-1.main-sidebar.sidebar-first
-          include topics-menu
-        main.span-l-3.main-main
-          block main
-    else
-      block main
+    .main-root
+      if(topicsMenu)
+        .ed-grid.cols-l-4.main-section.l-section
+          aside.span-l-1.main-sidebar.sidebar-first
+            include topics-menu
+          main.span-l-3.main-main
+            block main
+      else
+        block main
     footer.main-footer
       .ed-grid
           p.small EDteam Style Guide por <a href="http://alvarofelipe.net" target="_blank">Álvaro Felipe</a>
