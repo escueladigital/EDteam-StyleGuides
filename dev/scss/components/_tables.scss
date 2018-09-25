@@ -11,6 +11,16 @@
       color: #fff;
     }
   }
+
+  &.center-content {
+    text-align: center;
+
+    th {
+      text-align: inherit;
+    }
+
+  }
+
 }
 
 table {
@@ -22,7 +32,7 @@ table {
   min-width       : 100%;
 
   th {
-    font-family : 'Open Sans', sans-serif;
+    font-family  : 'Open Sans', sans-serif;
     text-align   : left;
     color        : #FFF;
     font-weight  : 700;
