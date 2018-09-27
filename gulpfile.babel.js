@@ -45,7 +45,10 @@ gulp.task('styles', () =>
 gulp.task('pug', () =>
   gulp.src('./dev/pug/pages/*.pug')
     .pipe(plumber())
-    .pipe(pug())
+    .pipe(pug({
+      pretty: true,
+      basedir: './dev/pug'
+    }))
     .pipe(gulp.dest('./public'))
 );
 
