@@ -3,6 +3,54 @@
 * config/_typography.scss
 */
 
+// Typography config
+// This file doesn't generate any css
+// CSS for typography will be generate from theme/_typography.scss file.
+
+// Convert pixels to rem
+@function rem($px) {
+  @return ($px / 16px) * 1rem;
+}
+
+// Font families
+$body-font : Lato, 'sans-serif'; // only 400 and 400i
+$heading-font : 'Open Sans', 'sans-serif'; // only 700
+
+// Font sizes
+$fontSizes : (
+  title1 : rem(36px),
+  title2 : rem(24px),
+  title3 : rem(20px),
+  normal : rem(16px),
+  small : rem(14px),
+  smaller : rem(13px)
+);
+
+// Get font size from map
+@function fontSize($size) {
+  @if map-has-key($fontSizes, $size) {
+    @return map-get($fontSizes, $size)
+  } @else {
+    @error '$size is not valid, valid values are title1, title2, title3, normal, small, smaller'
+  }
+}
+
+// Mixins
+@mixin t1 {
+  font-size : fontSize(title1);
+  @include to(l) { font-size : fontSize(title2) }
+}
+
+@mixin t2 {
+  font-size : fontSize(title2);
+  @include to(l) { font-size : fontSize(title3) }
+}
+
+@mixin t3 {
+  font-size : fontSize(title3);
+  @include to(l) { font-size : fontSize(normal) }
+}
+
 body {
   font-family : $body-font;
   font-size   : fontSize(normal);
@@ -84,5 +132,5 @@ a {
 
 ::selection {
   background : var(--second-color);
-  color      : #FFF;
+  color      : #FFF
 }
