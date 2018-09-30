@@ -1,5 +1,5 @@
 mixin pricingTable(color,plan,price,description,arrayFeatures,buttonUrl,buttonText)
-  .pricing-table.l-block(class= color)
+  .pricing-table.l-block(class=`color-${color}`)
     header.pricing-table__header.center
       span.pricing-table__title= plan
     .pricing-table__price.center.t3= price

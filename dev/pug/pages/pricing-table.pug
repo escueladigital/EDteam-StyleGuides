@@ -1,0 +1,93 @@
+extends ../includes/template
+append config
+  -currentPage = 'plans'
+  -topicsMenu = false
+
+block banner
+  .alt-banner.color-second
+    .ed-grid.cols-l-2
+      .alt-banner__data
+        h2 Tu futuro comienza hoy
+        p
+          | EDteam te ayuda a dominar la tecnología con cursos de programación, diseño y emprendimiento en español, con profesores que aman enseñar y rutas de aprendizaje detalladas.
+          br
+          | No esperes a mañana para conquistar tus sueños. Tu futuro te está esperando.
+        .button--ghost.small Comienza gratis
+      .alt-banner__caption
+        i "Gracias a lo que aprendí en EDteam pude viajar a Sillicon Valley"
+        br
+        | - Joan Serna
+        br
+        span Leer testimonio
+
+block main
+  .ed-grid.cols-m-2.cols-l-4.l-block
+    .span-m-2.span-l-4
+      h1.t3.center.l-block Planes de estudio en EDteam
+    // Gratis
+    +pricingTable(
+    'first',
+    'Gratis',
+    '$ 0 USD',
+    'Estudia gratis, obtén certificados y prueba la experiencia EDteam.',
+    [
+      'Acceso a cursos gratuitos',
+      'Aprende desarrollo web gratis',
+      'Acceso gratis a clases demo de cursos premium',
+      'Acceso a EDtaller en vivo',
+      'Certificado de culminación'
+    ],
+    'https://app.ed.team',
+    '¡Comienza hoy!'
+    )
+
+    // Compra individual
+    +pricingTable(
+    'third',
+    'Compra individual ',
+    'Desde $ 10 USD',
+    'Compra solo los cursos o especialidades que necesites y conservalos de por vida.',
+    [
+      'Sin pagos mensuales',
+      'Certificado de culminación',
+      'Acceso de por vida a tus especialidades y cursos adquiridos',
+      'Acceso a las clases en vivo de tus cursos comprados'
+    ],
+    'https://app.ed.team',
+    'Explorar cursos'
+    )
+
+    // Premium mensual
+    +pricingTable(
+    'accent',
+    'Premium mensual',
+    '$ 30 USD',
+    'Acceso a todos los cursos (+80), especialidades (9) y clases en vivo de EDteam',
+    [
+      'Acceso completo a EDteam',
+      'Más de 80 cursos',
+      '9 especialidades',
+      'Clases en vivo toda la semana',
+      'Certificados de culminación'
+    ],
+    'https://app.ed.team',
+    'Sé premium'
+    )
+
+    // Premium anual
+    +pricingTable(
+    'dark',
+    'Premium anual',
+    '$ 300 USD',
+    'Acceso total por un año a todo EDteam (80+ cursos, 9 especialidades) pagando diez meses.',
+    [
+      'Acceso completo a EDteam',
+      'Más de 80 cursos',
+      '9 especialidades',
+      'Clases en vivo toda la semana',
+      'Certificados de culminación',
+      'Dos meses gratis'
+    ],
+    'https://app.ed.team',
+    'Obtén dos meses gratis'
+    )
