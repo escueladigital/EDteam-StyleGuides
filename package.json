@@ -1,6 +1,6 @@
 {
   "name": "edteam-style-guides",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Guias de estilo de EDteam, construidas sobre EDboilerplate",
   "main": "gulpfile.babel.js",
   "scripts": {
@@ -27,6 +27,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-watch": "^5.0.0",
     "imagemin-pngcrush": "^5.1.0",
+    "jstransformer-markdown-it": "^2.1.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   }
