@@ -32,7 +32,7 @@
 
   h2 { // titulo del banner
     @include to(l) {
-      font-size : 1rem;
+      //font-size : 1rem;
       color     : var(--color-second)
     }
   }
