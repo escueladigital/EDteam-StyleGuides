@@ -1,6 +1,6 @@
 {
   "name": "edteam-style-guides",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "Guias de estilo de EDteam, construidas sobre EDboilerplate",
   "main": "gulpfile.babel.js",
   "scripts": {
