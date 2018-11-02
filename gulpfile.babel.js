@@ -1,46 +1,59 @@
-import gulp from 'gulp';
-import plumber from 'gulp-plumber';
-import pug from 'gulp-pug';
-import browserSync from 'browser-sync';
-import sass from 'gulp-sass';
-import postcss from 'gulp-postcss';
-import cssnano from 'cssnano';
-import watch from 'gulp-watch';
-import browserify from 'browserify';
-import babelify from 'babelify';
-import source from 'vinyl-source-stream';
-import sourcemaps from 'gulp-sourcemaps';
-import buffer from 'vinyl-buffer';
-import imagemin from 'gulp-imagemin';
-import pngcrush from 'imagemin-pngcrush';
+import gulp from 'gulp'
+import plumber from 'gulp-plumber'
+import pug from 'gulp-pug'
+import browserSync from 'browser-sync'
+import sass from 'gulp-sass'
+import postcss from 'gulp-postcss'
+import cssnano from 'cssnano'
+import watch from 'gulp-watch'
+import browserify from 'browserify'
+import babelify from 'babelify'
+import source from 'vinyl-source-stream'
+import sourcemaps from 'gulp-sourcemaps'
+import buffer from 'vinyl-buffer'
+import imagemin from 'gulp-imagemin'
+import autoprefixer from 'autoprefixer'
 
-const server = browserSync.create();
+const server = browserSync.create()
 
-const postcssPlugins = [
-  cssnano({
-    core: false,
-    autoprefixer: {
-      add: true,
-      browsers: '> 1%, last 2 versions, Firefox ESR, Opera 12.1'
-    }
-  })
-];
-
-const sassOptions = {
-  outputStyle: 'compressed',
-  includePaths: ['node_modules']
-};
-
-gulp.task('styles', () =>
+gulp.task('styles-dev', () =>
   gulp.src('./dev/scss/styles.scss')
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(plumber())
-    .pipe(sass(sassOptions))
-    .pipe(postcss(postcssPlugins))
+    .pipe(sass({
+      outputStyle: 'expanded',
+      includePaths: ['node_modules']
+    }))
+    .pipe(postcss([
+      autoprefixer({
+        browsers: '> 1%, last 2 versions, Firefox ESR, Opera 12.1'
+      })
+    ]))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./public/css'))
     .pipe(server.stream({match: '**/*.css'}))
 );
+
+gulp.task('styles-build', () =>
+  gulp.src('./dev/scss/styles.scss')
+    .pipe(plumber())
+    .pipe(sass({
+      outputStyle: 'compressed',
+      includePaths: ['node_modules']
+    }))
+    .pipe(postcss([
+      cssnano({
+        core: false,
+        autoprefixer: {
+          add: true,
+          browsers: '> 1%, last 2 versions, Firefox ESR, Opera 12.1'
+        }
+      })
+    ]))
+    .pipe(gulp.dest('./public/css'))
+    .pipe(server.stream({match: '**/*.css'}))
+)
+
 
 gulp.task('pug', () =>
   gulp.src('./dev/pug/pages/*.pug')
@@ -68,23 +81,24 @@ gulp.task('scripts', () =>
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./public/js'))
 );
-gulp.task('images', function() {
- gulp.src('./dev/img/**/*.{png,jpg,jpeg,gif,PNG}')
-  .pipe(imagemin({
-    progressive: true,
-    svgoPlugins: [{removeViewBox: false}],
-    use: [pngcrush()]
-  }))
-  .pipe(gulp.dest('./public/img'))
 
-});
+gulp.task('images-build', () => {
+  gulp.src('./dev/img/**/**')
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.jpegtran({progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo()
+    ]))
+    .pipe(gulp.dest('./public/img'))
+})
 
-gulp.task('copy', function() {
- gulp.src('./dev/img/**/*.svg')
-  .pipe(gulp.dest('./public/img'))
-});
+gulp.task('images-dev', () => {
+  gulp.src('./dev/img/**/**')
+    .pipe(gulp.dest('./public/img'))
+})
 
-gulp.task('default', ['styles', 'pug', 'scripts', 'images', 'copy'], () => {
+gulp.task('dev', ['styles-dev', 'pug', 'scripts', 'images-dev'], () => {
   server.init({
     server: {
       baseDir: './public'
@@ -92,12 +106,10 @@ gulp.task('default', ['styles', 'pug', 'scripts', 'images', 'copy'], () => {
   });
 
   // imagenes
-  gulp.watch('./dev/img/**/*', ['images']);
-  gulp.watch('./dev/img/**/*.svg', ['copy']);
-
-  gulp.watch('./dev/scss/**/*.scss', () => gulp.start('styles'));
-  gulp.watch('./dev/js/**/*.js', () => gulp.start('scripts',server.reload) );
-  gulp.watch('./dev/pug/**/*.pug', () => gulp.start('pug', server.reload) );
-  gulp.watch('./dev/img/**/*.{png,jpg,jpeg,gif}', () => gulp.start('images') );
-  gulp.watch('./dev/img/**/*.svg', () => gulp.start('copy') );
+  watch('./dev/scss/**/**', () => gulp.start('styles-dev'))
+  watch('./dev/js/**/**', () => gulp.start('scripts', server.reload))
+  watch('./dev/pug/**/**', () => gulp.start('pug', server.reload))
+  watch('./dev/img/**/**', () => gulp.start('images-dev'))
 });
+
+gulp.task('build', ['styles-build', 'pug', 'scripts', 'images-build'])
