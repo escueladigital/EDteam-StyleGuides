@@ -1,6 +1,6 @@
 {
   "name": "edteam-style-guides",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "Guias de estilo de EDteam, construidas sobre EDboilerplate",
   "main": "gulpfile.babel.js",
   "scripts": {
@@ -9,6 +9,7 @@
   "author": "Alvaro Felipe",
   "license": "GPL-2.0",
   "devDependencies": {
+    "autoprefixer": "^9.3.1",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
