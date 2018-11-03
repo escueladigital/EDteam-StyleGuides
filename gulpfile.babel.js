@@ -13,6 +13,7 @@ import sourcemaps from 'gulp-sourcemaps'
 import buffer from 'vinyl-buffer'
 import imagemin from 'gulp-imagemin'
 import autoprefixer from 'autoprefixer'
+import tildeImporter from 'node-sass-tilde-importer'
 
 const server = browserSync.create()
 
@@ -22,7 +23,7 @@ gulp.task('styles-dev', () =>
     .pipe(plumber())
     .pipe(sass({
       outputStyle: 'expanded',
-      includePaths: ['node_modules']
+      importer: tildeImporter
     }))
     .pipe(postcss([
       autoprefixer({
@@ -39,7 +40,7 @@ gulp.task('styles-build', () =>
     .pipe(plumber())
     .pipe(sass({
       outputStyle: 'compressed',
-      includePaths: ['node_modules']
+      importer: tildeImporter
     }))
     .pipe(postcss([
       cssnano({
