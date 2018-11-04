@@ -1,0 +1,10 @@
+mixin featured-publication(boolean)
+  article.featured-publication__item
+    .featured-publication__content
+      if boolean
+        img(src="https://ed.team/sites/default/files/styles/perfil_de_usuario_250x250_/public/pictures/2018-08/beto.jpg?itok=1iWHENQE", alt="Foto del usuario").featured-publication__user-photo
+      a(href="#").featured-publication__title.small simular un click en un select al momento de cargar la pagina
+    footer.featured-publication__footer
+      +vote-positive
+      +vote-negative
+      +comments

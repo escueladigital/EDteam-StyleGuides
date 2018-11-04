@@ -1,0 +1,56 @@
+// ----- Paginación ----- //
+.pagination {
+
+  // Padre de cada botón de la paginación
+  &__menu {
+    display         : flex;
+    justify-content : center;
+    margin-bottom   : 0;
+    padding-left    : 0;
+    list-style      : none;
+  }
+
+  &__item {
+    margin : 0 4px 8px;
+  }
+
+  // Botón de paginación
+  &__link {
+    @include round;
+    padding : 6px 10px;
+    color   : $textColor;
+    border  : 1px solid $borderColor;
+    
+    &:hover {
+      color            : #fff;
+      background-color : $firstColor;
+      border           : 1px solid $firstColor;
+      text-decoration  : none;
+    }
+    
+    // Cambia el fondo a los botones de siguiente, anterior y actual
+    &.current,
+    &--right,
+    &--left {
+      color            : #fff;
+      border           : 1px solid $firstColor;
+      background-color : $firstColor;
+
+      &:hover {
+        border           : 1px solid $firstColorAlt;
+        background-color : $firstColorAlt;
+      }
+
+    }
+
+    &--right::before {
+      content : '▶';
+    }
+
+    &--left::before {
+      content : '◀';
+    }
+
+  }
+
+}

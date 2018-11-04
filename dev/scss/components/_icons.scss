@@ -44,3 +44,9 @@ $icons: (
     margin-right : .3em;
   }
 }
+
+// ----- SVG con stroke y sin fill ----- //
+.svg-stroke {
+  fill   : none;
+  stroke : currentColor;
+}

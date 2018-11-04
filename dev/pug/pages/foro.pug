@@ -1,0 +1,46 @@
+extends ../includes/template
+include ../mixins/foro/atoms
+include ../mixins/foro/user
+include ../mixins/foro/top-user
+include ../mixins/foro/featured-publication
+include ../mixins/foro/publication
+include ../mixins/foro/sidebar
+append config
+  -topicsMenu = false
+  -currentPage = 'foro'
+
+block main
+  main.ed-container.l-section.l-section--main
+    //- Usuarios destacados
+    .top-user.ed-item.l-block.scroll
+      -for (let i = 0; i < 10; i++)
+        +top-user
+    //- Publicaciones destacadas
+    .ed-item
+      h3.foro-title.l-block Publicaciones destacadas
+      .featured-publication.scroll.l-section
+        .featured-publication__container
+          -for (let i = 0; i < 12; i++)
+            +featured-publication(true)
+    //- Publicaciones 
+    .ed-grid.cols-l-4
+      .span-l-3.l-block
+        section.l-section
+          h3.foro-title.l-block Últimas publicaciones
+          div
+            -for (let i = 0; i < 5; i++)
+              - let fixed = i == 0 ? 'publication--fixed' : ''
+              +publication(class=fixed)
+        //- Paginación
+        nav.pagination
+          ul.pagination__menu
+            li.pagination__item.pagination__item--left(title="Ir al inicio")
+              a(href="#").pagination__link.pagination__link--left
+            -for (let i = 1; i <= 6; i++)
+              li.pagination__item 
+                a(href="#" class=`${i == 3 ? 'current' : ''}`).pagination__link= i
+            li.pagination__item.pagination__item--right(title="Ir al final")
+              a(href="#").pagination__link.pagination__link--right
+      //- Sidebar categorías destacadas
+      .span-l-1
+        +foro-sidebar("Categorías destacadas", true)

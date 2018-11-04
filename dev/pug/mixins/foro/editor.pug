@@ -1,0 +1,18 @@
+mixin editor(main)
+  form.form-editor
+    textarea.form-editor__textarea(placeholder=`${main ? '' : 'Escribir respuesta'}`)
+    footer.form-editor__toolbar
+      .form-editor__action
+        .form-icon-section
+          +editor-button("bold")
+          +editor-button("italic")
+          +editor-button("underline")
+          +editor-button("emoji")
+        .form-editor__icon-section
+          +editor-button("code")
+          +editor-button("link")
+          +editor-button("picture")
+        .form-editor__icon-section
+          +editor-button("list-ol")
+          +editor-button("list-ul")
+      button.form-editor__button-post.button--cta.button--tiny Publicar respuesta
