@@ -1,0 +1,8 @@
+mixin meatballs(...items)
+  .meatballs-menu
+    button.meatballs-menu__button
+    nav.meatballs-menu__nav
+      ul.meatballs-menu__list
+        each item in items
+          li.meatballs-menu__item
+            button.meatballs-menu__link= item
