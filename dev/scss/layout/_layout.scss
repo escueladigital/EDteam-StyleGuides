@@ -95,11 +95,7 @@ main {
 .section-answer {
   display               : grid;
   grid-template-columns : 1fr;
-  grid-gap              : 1rem;
-  
-  @include from(l) {
-    grid-gap : 2rem;
-  }
+  grid-gap              : 2rem;
 }
 
 

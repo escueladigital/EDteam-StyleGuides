@@ -71,8 +71,10 @@
 
   // Enlace a un fragmento cuando la publicación está relacionada con una clase
   &__fragment {
-    margin-bottom : 1rem;
-    color         : $secondColor;
+    display               : grid;
+    grid-template-columns : max-content 1fr;
+    margin-bottom         : 1rem;
+    color                 : $secondColor;
 
     svg {
       margin-right : 0.25rem;

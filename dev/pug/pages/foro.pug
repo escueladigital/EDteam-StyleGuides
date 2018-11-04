@@ -12,12 +12,12 @@ append config
 block main
   main.ed-container.l-section.l-section--main
     //- Usuarios destacados
-    .top-user.ed-item.l-block.scroll
+    .top-user.ed-item.l-section.scroll
       -for (let i = 0; i < 10; i++)
         +top-user
     //- Publicaciones destacadas
     .ed-item
-      h3.foro-title.l-block Publicaciones destacadas
+      h3.foro-title.l-section Publicaciones destacadas
       .featured-publication.scroll.l-section
         .featured-publication__container
           -for (let i = 0; i < 12; i++)

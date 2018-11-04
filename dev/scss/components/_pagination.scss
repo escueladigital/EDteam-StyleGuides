@@ -1,6 +1,10 @@
 // ----- Paginación ----- //
 .pagination {
 
+  @include to(l) {
+    margin-bottom : 2rem;
+  }
+
   // Padre de cada botón de la paginación
   &__menu {
     display         : flex;

@@ -8,12 +8,18 @@
   grid-template-columns : repeat(10, var(--user-size));
   grid-template-rows    : var(--user-size);
   grid-gap              : var(--user-gap);
-  padding               : 1rem;
+  margin-right          : 1rem;
+  margin-left           : 1rem;
+  padding               : 0.5rem 0.5rem 1rem;
   overflow-x            : auto;
   
   @include from(m) {
     --user-size : 3rem;
     --user-gap  : 1.5rem;
+  }
+
+  @include from(l) {
+    padding : 0.5rem;
   }
 
   // Estilos para cada contenedor de los usuarios
