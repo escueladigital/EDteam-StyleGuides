@@ -1,0 +1,21 @@
+extends ../includes/template
+append config
+  -currentPage = 'scroll'
+
+block banner
+  block banner
+    +banner("https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb", 'Scroll', '', 'tertiary')
+
+block main
+  :markdown-it
+    - Para cambiar el scroll de un contenedor basta con agregar la clase `scroll`
+    - Hay tres colores de scroll: white (default), dark con la clase `scroll--dark` y dark-alt con la clase `scroll--dark-alt`
+    - Para eliminar el fondo de un scroll se usa la clase `no-background`
+    - Existen tres formas de ocultar el scroll: para ocultarlo todo el tiempo se agrega la clase `hidden`, para ocultarlo sólo en celulares se agrega la clase `mobile` y para ocultarlo y mostrarlo al hacer hover se agrega la clase `hover`
+
+  .ed-grid.cols-l-4
+    .span-l-1
+    .span-l-2.scroll(style="height: 300px; padding: 1rem; overflow: auto;")
+      -for (let i = 0; i <= 10; i++)
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex repellendus iusto fuga accusamus quos ipsa ea molestias, reiciendis consequuntur ipsam?
+    .span-l-1

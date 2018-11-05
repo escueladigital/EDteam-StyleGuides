@@ -1,0 +1,13 @@
+mixin pricingTable(color,plan,price,description,arrayFeatures,buttonUrl,buttonText)
+  .pricing-table.l-block(class=`color-${color}`)
+    header.pricing-table__header.center
+      span.pricing-table__title= plan
+    .pricing-table__price.center.t3= price
+    .pricing-table__description.smaller.center= description
+    ul.pricing-table__features.small
+      each feature in arrayFeatures
+        li.pricing-table__feature.icon-check
+          <svg class="svg-icon before"><use href="img/icons.svg#check"></svg>
+          span= feature
+    footer.pricing-table__footer
+      a.button--ghost.button--small.full.center(href= buttonUrl)= buttonText

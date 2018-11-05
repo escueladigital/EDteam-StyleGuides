@@ -62,7 +62,7 @@ body {
   @include to(l) {
     position   : fixed;
     top        : var(--header-height);
-    background : var(--first-color);
+    background : var(--dark-color);
     width      : 80%;
     right      : -80%;
     padding    : 1em 1em 2em;

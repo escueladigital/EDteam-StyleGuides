@@ -1,0 +1,55 @@
+// ----- Botones de votación ----- //
+.vote {
+  margin-bottom : 0.25rem;
+  color         : $textColor;
+
+  &:hover {
+    text-decoration : none;
+
+    svg {
+      transform : scale(1.15);
+    }
+
+  }
+
+  svg {
+    margin-right : 0.5rem;
+  }
+
+  &--positive {
+
+    svg {
+      stroke : $firstColor;
+    }
+
+    &.active svg {
+      fill : $firstColor;
+    }
+
+  }
+
+  &--negative {
+
+    svg {
+      stroke : $thirdColor;
+    }
+
+    &.active svg {
+      fill : $thirdColor;
+    }
+
+  }
+
+}
+
+
+// ----- Botones de comentarios ----- //
+.answer {
+  margin-right : 2rem;
+  color        : $textColor;
+
+  .svg-icon {
+    margin-right : 0.5rem;
+  }
+
+}

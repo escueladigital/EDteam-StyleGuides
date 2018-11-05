@@ -3,9 +3,78 @@
 * config/_typography.scss
 */
 
+// Typography config
+// This file doesn't generate any css
+// CSS for typography will be generate from theme/_typography.scss file.
+
+// Convert pixels to rem
+@function rem($px) {
+  @return ($px / 16px) * 1rem;
+}
+
+// Font families
+$body-font : Lato, 'sans-serif'; // only 400 and 400i
+$heading-font : 'Open Sans', 'sans-serif'; // only 700
+
+// CSS variables for typography
+:root {
+  --h1-font-size        : rem(24px);
+  --h2-font-size        : rem(20px);
+  --h3-font-size        : rem(16px);
+  --normal-font-size    : rem(15px);
+  --small-font-size     : rem(13px);
+  --smaller-font-size   : rem(12px);
+  --heading-line-height : 1.3;
+  --body-line-height    : 1.6;
+
+  @include from(l) {
+    --h1-font-size      : rem(36px);
+    --h2-font-size      : rem(24px);
+    --h3-font-size      : rem(20px);
+    --normal-font-size  : rem(16px);
+    --small-font-size   : rem(14px);
+    --smaller-font-size : rem(13px);
+  }
+}
+
+// Font sizes
+$fontSizes : (
+  title1 : rem(36px),
+  title2 : rem(24px),
+  title3 : rem(20px),
+  normal : rem(16px),
+  small : rem(14px),
+  smaller : rem(13px)
+);
+
+// Get font size from map
+@function fontSize($size) {
+  @if map-has-key($fontSizes, $size) {
+    @return map-get($fontSizes, $size)
+  } @else {
+    @error '$size is not valid, valid values are title1, title2, title3, normal, small, smaller'
+  }
+}
+
+// Mixins
+@mixin t1 {
+  font-size : fontSize(title1);
+  @include to(l) { font-size : fontSize(title2) }
+}
+
+@mixin t2 {
+  font-size : fontSize(title2);
+  @include to(l) { font-size : fontSize(title3) }
+}
+
+@mixin t3 {
+  font-size : fontSize(title3);
+  @include to(l) { font-size : fontSize(normal) }
+}
+
 body {
   font-family : $body-font;
-  font-size   : fontSize(normal);
+  font-size   : var(--normal-font-size);
   font-weight : 400;
   line-height : 1.6;
   color       : var(--text-color);
@@ -28,7 +97,7 @@ h1, h2, h3, h4, h5, h6,
   font-family    : $heading-font;
   font-weight    : 700;
   letter-spacing : -0.01em;
-  line-height    :  1.3;
+  line-height    : var(--heading-line-height);
 }
 
 // classes for font-family
@@ -36,12 +105,29 @@ h1, h2, h3, h4, h5, h6,
 .heading-font { font-family : $heading-font }
 
 // Set font sizes
-h1, .t1, .biggest { @include t1 }
-h2, .t2, .bigger  { @include t2 }
-h3, .t3, .big     { @include t3 }
-h4, .t4, .normal  { font-size : fontSize(normal)  }
-h5, .t5, .small   { font-size : fontSize(small)   }
-h6, .t6, .smaller { font-size : fontSize(smaller) }
+h1, .t1, .biggest {
+  font-size : var(--h1-font-size);
+}
+
+h2, .t2, .bigger {
+  font-size : var(--h2-font-size)
+}
+
+h3, .t3, .big {
+  font-size : var(--h3-font-size)
+}
+
+h4, .t4, .normal {
+  font-size : var(--normal-font-size)
+}
+
+h5, .t5, .small {
+  font-size : var(--small-font-size)
+}
+
+h6, .t6, .smaller {
+  font-size : var(--smaller-font-size)
+}
 
 // Blockquote
 blockquote {
@@ -84,5 +170,5 @@ a {
 
 ::selection {
   background : var(--second-color);
-  color      : #FFF;
+  color      : #FFF
 }

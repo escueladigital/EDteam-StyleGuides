@@ -1,0 +1,40 @@
+extends ../includes/template
+include ../mixins/meatballs
+append config
+  -currentPage = 'meatballs'
+
+block banner
+  block banner
+    +banner("https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb", 'Menú de tres puntos', '', 'tertiary')
+
+
+block main
+  :markdown-it
+
+    El menú de tres puntos es un menú desplegable tipo lista al cual puedes añadirle las opciones que desees. Su estructura es la siguiente:
+
+    ```markup
+    <div class="meatballs-menu">
+      <button class="meatballs-menu__button"></button>
+      <nav class="meatballs-menu__nav">
+        <ul class="meatballs-menu__list">
+          <li class="meatballs-menu__item">
+            <button class="meatballs-menu__link">Item 1</button>
+          </li>
+          <li class="meatballs-menu__item">
+            <button class="meatballs-menu__link">Item 2</button>
+          </li>
+          <li class="meatballs-menu__item">
+            <button class="meatballs-menu__link">Item 3</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    ```
+
+  .ed-container.main-center.l-block
+    +meatballs('Item 1', 'Item 2', 'Item 3')
+
+  :markdown-it
+
+    Por defecto la lista de items se muestra del lado izquierdo, para que sea del lado derecho se debe añadir la clase `meatballs-menu--right`. Para cambiar la orientación del ícono se utiliza la clase `meatballs-menu--horizontal` y para cambiar el color a blanco `meatballs-menu--white`. Para cerrar el menú se debe dar click en cualquier parte de la página o presionando la tecla ESC.

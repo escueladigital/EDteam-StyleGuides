@@ -1,0 +1,33 @@
+extends ../includes/template
+include ../mixins/meatballs
+include ../mixins/foro/atoms
+include ../mixins/foro/publication
+include ../mixins/foro/user
+include ../mixins/foro/featured-publication
+include ../mixins/foro/sidebar
+include ../mixins/foro/comment
+include ../mixins/foro/editor
+append config
+  -topicsMenu = false
+  -currentPage = 'foro'
+
+block main
+  main.ed-container.l-section.l-section--main
+    .ed-grid.cols-l-4
+      .span-l-3
+        section
+          +publication(true)
+            section.section-comments
+              +comment('comment')
+              +comment('answered')
+                section.l-block.section-answer
+                  +comment(class="comment--best-answer")
+                  +comment
+                  +editor
+              section#form-editor
+                h3 Escribir una respuesta
+                +editor(true)
+
+      .span-l-1
+        +foro-sidebar("Publicaciones destacadas")
+        +foro-sidebar("Publicaciones relacionadas")
