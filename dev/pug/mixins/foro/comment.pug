@@ -1,0 +1,20 @@
+mixin comment(type)
+  article.comment&attributes(attributes)
+    .comment__container
+      +user-foro
+      .comment__content
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin viverra augue ut bibendum. Aenean eleifend ut nibh sed elementum. Phasellus ante tortor, venenatis ac pulvinar eget, porta ac leo. Vestibulum congue lobortis nisi non ultricies. Proin vitae vulputate eros. Sed in erat sem. Vivamus lacinia, urna sed eleifend finibus, mauris nisi molestie ante, ut volutpat elit ante sed odio.
+      footer.comment__footer.small
+        .comment__information
+          +vote-positive
+          +vote-negative
+          case type
+            when 'comment'
+              a(href="#").comment__answer Responder
+            when 'answered'
+              +comments(true)
+        .comment__action
+          a(href="#").comment__best-answer Elegir como mejor respuesta
+          a(href="#").comment__report Reportar
+    if block
+      block

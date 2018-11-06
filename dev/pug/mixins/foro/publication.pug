@@ -1,0 +1,50 @@
+mixin publication(main)
+  article.publication(class=`${main ? 'publication--main' : ''}` id=`${main ? 'publication-main' : ''}`)&attributes(attributes)
+    .publication__votes.small
+        +vote-positive
+        +vote-negative
+    header.publication__header
+      if main
+        .publication__header-content
+          .publication__title-container
+            h1.publication__title Segmentación en página web
+            a.publication__fragment.cross-center(href="#" target="__blank")
+              +iconSVG("arrow-turn-right")
+              | Estilos de texto - CSS Desde Cero (2018)
+          .meatballs-menu.meatballs-menu--foro
+            button.meatballs-menu__button
+            nav.meatballs-menu__nav
+              ul.meatballs-menu__list
+                li.meatballs-menu__item
+                  button.meatballs-menu__link(title="Editar publicación")
+                    +iconSVG("edit")
+                    |  Editar
+                li.meatballs-menu__item
+                  button.meatballs-menu__link(title="Cerrar publicación")
+                    +iconSVG("close") 
+                    |  Cerrar
+                li.meatballs-menu__item
+                  button.meatballs-menu__link.meatballs-menu__link--delete(title="Eliminar publicación")
+                    +iconSVG("delete-stroke") 
+                    |  Eliminar
+      else
+        h4
+          a(href="#").publication__title Segmentación en página web
+      +user-foro
+    .publication__content
+        .publication__main
+          p Buen día, una pregunta a la comunidad ¿Como puedo realizar esta segmentación para una pagina web?. ☹️ , donde aparece sus otras pestañas de la pagina
+        footer.publication__footer
+          +comments(true)
+          .publication__tags 
+            -let tags = ['Frontend', 'CSS', 'HTML', 'JS', 'Pug']
+            each tag in tags
+              a(href="#").publication__tag.cross-center
+                +iconSVG("tag")
+                = tag
+          .publication__action
+            if main == true
+              a(href="#form-editor").publication__answer Responder
+            a(href="#").publication__report Reportar
+    if block
+      block

@@ -23,3 +23,11 @@
 @mixin circle {
   border-radius : 50%;
 }
+
+@mixin profile-photo {
+  @include round;
+  flex       : none;
+  height     : 2rem;
+  width      : 2rem;
+  object-fit : cover;
+}

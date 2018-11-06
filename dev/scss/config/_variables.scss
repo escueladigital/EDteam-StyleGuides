@@ -10,8 +10,10 @@ $gutter     : 1rem;
 //layout
 :root {
   --header-height : 3rem;
-  --max-width     : 1344px;
-  --gutter        : 1rem;
+
+  @include from(l) {
+    --header-height : 4rem;
+  }
 }
 
 // z-ndex

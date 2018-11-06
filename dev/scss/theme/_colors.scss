@@ -13,6 +13,7 @@ $color-dark-alt : #141618;
 $color-border : #DFE0E0;
 $color-light : #F6F6F6;
 $color-text : #53575A;
+$color-text-light : #BABDBF;
 $color-body-bg : #FAFDFF;
 
 $firstColor : $color-fisrt;
@@ -60,6 +61,7 @@ $bodyBg : $color-body-bg;
   --color-dark-alt   : #141618;
   --color-border     : #DFE0E0;
   --color-text       : #53575A;
+  --color-text-light : #BABDBF;
   --color-body-bg    : #FCFCFC;
   --color-button     : var(--color-first);
   --color-button-alt : var(--color-first-alt)
@@ -112,14 +114,6 @@ $bodyBg : $color-body-bg;
   .button--ghost:hover {
     color : var(--text-color)
   }
-}
-
-.colors {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-  grid-gap: 2rem;
-  margin-bottom: 2rem;
-
 }
 
 .color {

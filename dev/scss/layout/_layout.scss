@@ -2,64 +2,67 @@ body {
   margin         : var(--header-height) 0 0 0;
   display        : flex;
   flex-direction : column;
-  min-height     : calc(100vh - 64px);
+  min-height     : calc(100vh - var(--header-height));
 }
 
 // Vertical rhythm
 h1, h2, h3, h4, h5, h6 {
-  margin-top : 0;
-  margin-bottom : 1rem;
-
   & + .subtitle {
     margin-top : -.5rem;
     margin-bottom : 1rem;
   }
 }
 
-// Bloques de contenido
-section,
-p,
-blockquote,
-pre,
-article,
-figure,
-iframe,
-video,
-ul,
-ol {
-  margin-top : 0;
-  margin-bottom : 1rem;
 
-  + h2 {
-    padding-top : 1rem;
-  }
 
-}
 
-.l-block {
-  margin-top : 0;
-  margin-bottom : 1rem;
+// ----- Títulos del foro ----- //
+.foro-title {
+  position     : relative;
+  padding-left : 0.75rem;
 
   @include from(l) {
-    margin-bottom : 2rem;
+    padding-left : 1rem;
   }
-}
 
-// secciones principales
-.l-section {
-  margin-top : 0;
-  margin-bottom : 2rem;
+  &::before {
+    content          : '';
+    position         : absolute;
+    left             : 0;
+    height           : 100%;
+    width            : 0.35rem;
+    border-radius    : 0.25rem;
+    background-color : $firstColor;
 
-  @include from(l) {
-    margin-bottom : 4rem;
+    @include from(l) {
+      width : 0.5rem;
+    }
+
   }
+
 }
 
-// main-banner y top-bar no deben separarse verticalmente de su hermano anterior
-.topbar + .main-banner{
-  margin-top : -3rem;
+// ----- Layout de los comentarios y las respuestas dentro de una publicación ----- //
+.section-comments,
+.section-answer {
+  display               : grid;
+  grid-template-columns : 1fr;
+  grid-gap              : 2rem;
 }
 
-main {
-  padding-bottom : 4rem;
+
+// ----- Layout de los comentarios dentro de una publicación del foro ----- //
+.section-comments {
+  grid-column   : span 2;
+  margin-bottom : 0;
+    
+  @include from(m) {
+    grid-column : 2;
+  }
+  
+}
+
+// ----- Layout de las respuestas dentro de un comentario del foro ----- //
+.section-answer {
+  padding: 2rem 0 0 2rem; 
 }

@@ -1,10 +1,12 @@
 import {edModal} from '../../node_modules/ed-ui/src/js/modal'
 import {edTabs} from './modules/tabs'
 import {stickyCard} from './modules/sticky-card'
+import {meatballsMenu} from './modules/meatballs' 
 
 window.edModal = edModal
 window.edTabs = edTabs
 window.stickyCard = stickyCard
+window.meatballsMenu = meatballsMenu
 
 edTabs()
 
