@@ -116,14 +116,6 @@ $bodyBg : $color-body-bg;
   }
 }
 
-.colors {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-  grid-gap: 2rem;
-  margin-bottom: 2rem;
-
-}
-
 .color {
   box-shadow: 0 3px 6px -3px rgba(#000,.1);
 
