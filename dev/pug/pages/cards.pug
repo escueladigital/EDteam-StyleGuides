@@ -85,20 +85,43 @@ block main
   p Las tarjetas se usan para mostrar contenido resumido o destacado del resto. Por ejemplo, una cuadricula con posts recientes o un curso en el catalogo.
 
   h2 Tarjetas estándar
+  p El ancho de la tarjeta depende de su contenedor o del ancho que se le asigne. Por default es 100%
+
   .ed-grid.cols-l-2.l-block
     +card
-    +card
+
+  :markdown-it
+    ```markup
+    <div class="card">
+      <!-- imagen -->
+      <div class="card__img"><img src="img.jpg"></div>
+      <!-- contenido -->
+      <div class="card__content">
+        <div class="card__title">Título de la tarjeta</div>
+        <div class="card__subtitle">
+          <p>Subtitulo de la tarjeta</p>
+        </div>
+        <div class="card__body">
+          <p>Este el contenido de la tarjeta en caso lo requiera. Algunas tarjetas no requieren contenido pero otras sí.</p>
+        </div>
+        <!-- footer -->
+        <footer class="card__footer">
+          <div class="card__user">
+            <div class="card__user-img"><img src="autor.jpg"></div>
+            <div class="card__user-name"><a href="#">Alexys Lozada</a></div>
+          </div>
+          <div class="card__button"><a class="button--ghost--tertiary button--small" href="#">Etiqueta</a></div>
+        </footer>
+      </div>
+    </div>
+    ```
 
   h2 Minicards de cursos para App
   .ed-grid.cols-l-3.l-block
     +cardCourseApp
-    +cardCourseApp
-    +cardCourseApp
 
   h2 Minicards de cursos siguientes
   .ed-grid.cols-l-3.l-block
-    +cardCourseAppNext
-    +cardCourseAppNext
     +cardCourseAppNext
 
   h2 Continua estudiando
