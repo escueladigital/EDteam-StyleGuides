@@ -13,3 +13,7 @@ td [class*="button"] {
   width : 100%;
   max-width : 100%;
 }
+
+.main-sidebar {
+  border-right : 1px solid var(--border-color);
+}
