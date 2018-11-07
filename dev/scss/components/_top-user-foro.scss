@@ -8,8 +8,6 @@
   grid-template-columns : repeat(10, var(--user-size));
   grid-template-rows    : var(--user-size);
   grid-gap              : var(--user-gap);
-  margin-right          : 1rem;
-  margin-left           : 1rem;
   padding               : 0.5rem 0.5rem 1rem;
   overflow-x            : auto;
   
