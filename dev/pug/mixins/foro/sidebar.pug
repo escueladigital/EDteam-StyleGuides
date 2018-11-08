@@ -1,15 +1,14 @@
 mixin foro-sidebar(title, topCategory)
   aside.foro-sidebar(class=`${topCategory ? 'foro-sidebar--category' : ''}`)
     h4.foro-sidebar__title= title
-    if topCategory
-      ul.foro-sidebar__list
+    ul.foro-sidebar__list
+      if topCategory  
         -for (let i = 1; i <= 10; i++)
           li.foro-sidebar__item
             a(href="#").foro-sidebar__link.cross-center
               img(src="https://image.flaticon.com/icons/svg/148/148828.svg")
               span Cloud computing
-    else
-      ul.foro-sidebar__list
+      else
         -for (let i = 0; i < 5; i++)
           li.foro-sidebar__item
             +featured-publication

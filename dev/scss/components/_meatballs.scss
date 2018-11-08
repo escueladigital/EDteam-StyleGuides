@@ -11,7 +11,7 @@
     width            : 1rem;
     border           : none;
     outline          : none;
-    background-color : transparent;
+    background       : none;
     cursor           : pointer;
 
     .meatballs-menu--white & {
@@ -68,7 +68,9 @@
   }
 
   &__link {
-    background-color : transparent;
+    margin           : 0;
+    padding          : 0;
+    background       : none;
     border           : none;
     outline          : none;
     color            : $textColor;

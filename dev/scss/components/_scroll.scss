@@ -30,7 +30,9 @@
   }
 }
 
-[class*=scroll], body {
+[class*=scroll],
+.scroll,
+body {
   @include scroll;
 }
 
