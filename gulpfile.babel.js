@@ -4,7 +4,6 @@ import pug from 'gulp-pug'
 import browserSync from 'browser-sync'
 import sass from 'gulp-sass'
 import postcss from 'gulp-postcss'
-import cssnano from 'cssnano'
 import watch from 'gulp-watch'
 import browserify from 'browserify'
 import babelify from 'babelify'
@@ -43,16 +42,11 @@ gulp.task('styles-build', () =>
       importer: tildeImporter
     }))
     .pipe(postcss([
-      cssnano({
-        core: false,
-        autoprefixer: {
-          add: true,
-          browsers: '> 1%, last 2 versions, Firefox ESR, Opera 12.1'
-        }
+      autoprefixer({
+        browsers: '> 1%, last 2 versions, Firefox ESR, Opera 12.1'
       })
     ]))
     .pipe(gulp.dest('./public/css'))
-    .pipe(server.stream({match: '**/*.css'}))
 )
 
 
@@ -61,7 +55,7 @@ gulp.task('pug', () =>
     .pipe(plumber())
     .pipe(pug({
       pretty: true,
-      basedir: './dev/pug'
+      basedir: './dev'
     }))
     .pipe(gulp.dest('./public'))
 );
