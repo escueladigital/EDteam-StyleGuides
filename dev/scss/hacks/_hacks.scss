@@ -17,3 +17,9 @@ td [class*="button"] {
 .main-sidebar {
   border-right : 1px solid var(--border-color);
 }
+
+
+*:target {
+  display: block;
+  padding-top: var(--header-height);
+}
