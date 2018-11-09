@@ -103,6 +103,7 @@ gulp.task('dev', ['styles-dev', 'pug', 'scripts', 'images-dev'], () => {
   // imagenes
   watch('./dev/scss/**/**', () => gulp.start('styles-dev'))
   watch('./dev/js/**/**', () => gulp.start('scripts', server.reload))
+  watch('./dev/md/**/**', () => gulp.start('pug', server.reload))
   watch('./dev/pug/**/**', () => gulp.start('pug', server.reload))
   watch('./dev/img/**/**', () => gulp.start('images-dev'))
 });
