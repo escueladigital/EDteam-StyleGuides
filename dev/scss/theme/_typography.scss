@@ -14,23 +14,23 @@ $heading-font : 'Open Sans', 'sans-serif';
   --body-font    : Lato,        sans-serif;
 
   // Font sizes
-  --h1-font-size        : rem(24px);
-  --h2-font-size        : rem(20px);
-  --h3-font-size        : rem(16px);
-  --normal-font-size    : rem(15px);
-  --small-font-size     : rem(13px);
-  --smaller-font-size   : rem(12px);
+  --h1-font-size        : #{rem(24px)};
+  --h2-font-size        : #{rem(20px)};
+  --h3-font-size        : #{rem(16px)};
+  --normal-font-size    : #{rem(15px)};
+  --small-font-size     : #{rem(13px)};
+  --smaller-font-size   : #{rem(12px)};
   --heading-line-height : 1.3;
   --body-line-height    : 1.6;
 
   // Font sizes from lg breakpoint (64em ~ 1024px)
   @include from(lg) {
-    --h1-font-size      : rem(36px);
-    --h2-font-size      : rem(24px);
-    --h3-font-size      : rem(20px);
-    --normal-font-size  : rem(16px);
-    --small-font-size   : rem(14px);
-    --smaller-font-size : rem(13px);
+    --h1-font-size      : #{rem(36px)};
+    --h2-font-size      : #{rem(24px)};
+    --h3-font-size      : #{rem(20px)};
+    --normal-font-size  : #{rem(16px)};
+    --small-font-size   : #{rem(14px)};
+    --smaller-font-size : #{rem(13px)};
   }
 }
 
