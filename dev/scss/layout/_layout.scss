@@ -5,12 +5,9 @@ body {
   min-height     : calc(100vh - var(--header-height));
 }
 
-// Vertical rhythm
-h1, h2, h3, h4, h5, h6 {
-  & + .subtitle {
-    margin-top : -.5rem;
-    margin-bottom : 1rem;
-  }
+.subtitle {
+  margin-top    : -.5rem;
+  margin-bottom : 1rem;
 }
 
 
