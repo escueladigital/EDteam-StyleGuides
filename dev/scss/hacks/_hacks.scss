@@ -1,25 +1,5 @@
-td [class*="button"] {
-  display: inline;
-
-  &:last-child {
-    margin-right : 0;
-  }
-}
-
-
-// para ed-grid
-.ed-grid .ed-grid,
-.ed-grid.full{
-  width : 100%;
-  max-width : 100%;
-}
-
+// Agrega borde para separa indice de documentacion del contenido
 .main-sidebar {
   border-right : 1px solid var(--border-color);
 }
 
-
-*:target {
-  display: block;
-  padding-top: var(--header-height);
-}
