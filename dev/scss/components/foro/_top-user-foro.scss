@@ -3,7 +3,7 @@
 // Contenedor padre de los usuarios destacados
 .top-user {
   --user-size           : 2.5rem;
-  --user-gap            : 1rem;
+  --user-gap            : .5rem;
   display               : grid;
   grid-template-columns : repeat(10, var(--user-size));
   grid-template-rows    : var(--user-size);

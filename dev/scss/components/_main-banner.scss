@@ -1,10 +1,12 @@
 .main-banner {
   --color    : var(--first-color);
-  position   : fixed;
   width      : 100%;
   background : var(--color);
   color      : #FFF;
-  // clip-path  : polygon(0 0, 100% 0, 100% 100%, 0 94%);
+
+  &.diagonal {
+    clip-path : polygon(0 0, 100% 0, 100% 100%, 0 94%);
+  }
 
   // Separación del contenido
   padding-top    : 2rem;

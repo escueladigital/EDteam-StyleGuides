@@ -1,6 +1,6 @@
 block config
   include config
-  include /mixins/pricing-table
+  include /pug/mixins/pricing-table
 include main-banner
 doctype html
 html(lang="es")
@@ -19,13 +19,16 @@ html(lang="es")
     block banner
     main.main-root
       if(topicsMenu)
-        .ed-grid.cols-l-4.main-section.l-section
+        .l-block
+        .ed-grid.cols-l-4.main-section.l-big-section
           aside.span-l-1.main-sidebar.sidebar-first
             include topics-menu
           main.span-l-3.main-main
             block main
       else
-        block main
+        .l-block
+        .l-big-section
+          block main
     footer.main-footer
       .ed-grid
           p.small EDteam Style Guide por <a href="http://alvarofelipe.net" target="_blank">Álvaro Felipe</a>

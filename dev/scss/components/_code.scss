@@ -1,21 +1,10 @@
-code {
-  color       : var(--third-color);
-  display     : inline-block;
-  padding     : 0 .5em;
-  margin      : 0 .5em;
-  font-family : monospace;
-  line-height : 1.4;
-}
-
-pre code {
-  display : block;
-}
-
+// Código en línea
 :not(pre) code {
+  @include small;
   font-family : Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
   background  : var(--color-light);
   border      : 1px solid var(--color-border);
-  font-size   : fontSize(small);
+  color: var(--third-color);
   padding     : 0 .25em;
   margin      : 0 .1em;
   word-break  : break-all;
