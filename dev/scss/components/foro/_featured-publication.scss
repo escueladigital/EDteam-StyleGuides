@@ -6,9 +6,8 @@
   // Contenedor padre de las publicaciones destacadas
   &__container {
     display               : grid;
-    padding-bottom        : 1rem;
     grid-template-columns : repeat(12, 1fr);
-    grid-column-gap       : 1rem;
+    grid-gap              : 1rem;
     width                 : 1200%;
 
     @include from(m) {
@@ -23,23 +22,16 @@
 
   // Publicación destacada
   &__item {
-    @include round;
-    margin-bottom    : 0;
-    padding          : 1rem;
-    border           : 1px solid $borderColor;
     background-color : #fff;
   }
 
   // Contenido de la publicación destacada
   &__content {
-    display       : flex;
-    margin-bottom : 0.5rem;
+    display : flex;
   }
 
   &__user-photo {
     @include profile-photo;
-    flex         : none;
-    margin-right : 1rem;
   }
 
   &__title {
@@ -55,22 +47,13 @@
 
   }
 
-  // Se cambian los estilos de .featured-publication__item y .featured-publication__title cuando las publicaciones destacadas se muestran en un sidebar (.foro-sidebar__list) cuando el usuario está dentro de una publicación (.publication--main)
-  .foro-sidebar__list & {
-    
-    &__item {
-      padding       : 0 0 1rem 0;
-      border        : none;
-      border-bottom : 1px solid $borderColor ;
-      border-radius : 0;
-      font-family   : $body-font;
-      font-weight   : normal;
-    }
-    
-    &__title {
-      text-align : left;
-    }
-
+  // Se cambian los estilos de .featured-publication__item cuando las publicaciones destacadas se muestran en un sidebar (.foro-sidebar__list) cuando el usuario está dentro de una publicación (.publication--main)
+  .foro-sidebar__list &__item {
+    padding       : 0 0 1rem 0;
+    border        : none;
+    border-radius : 0;
+    font-family   : $body-font;
+    font-weight   : normal;
   }
   
 }

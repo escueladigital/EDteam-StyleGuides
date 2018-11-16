@@ -1,45 +1,31 @@
 extends /pug/includes/template
-include /pug/mixins/foro/atoms
-include /pug/mixins/foro/user
-include /pug/mixins/foro/top-user
-include /pug/mixins/foro/featured-publication
-include /pug/mixins/foro/publication
-include /pug/mixins/foro/sidebar
 append config
   -topicsMenu = false
   -currentPage = 'foro'
 
 block main
-  main.ed-grid
-    //- Usuarios destacados
-    .top-user.l-block.scroll.cancel-l-block
-      -for(let i = 0; i < 10; i++)
-        +top-user
-    //- Publicaciones destacadas
+  //- Usuarios destacados
+  section.top-user.l-section.ed-grid.grid-gap.gap-2
+    -for(let i = 0; i < 10; i++)
+      +top-user
+  //- Publicaciones destacadas
+  section.ed-grid.l-section
     h2.t3.foro-title Publicaciones destacadas
-    .featured-publication.scroll.l-section
+    .featured-publication.scroll.lg-pb-2
       .featured-publication__container
         -for(let i = 0; i < 12; i++)
           +featured-publication(true)
-    //- Publicaciones
-    .ed-grid.cols-l-4
-      .span-l-3.l-block
-        section.l-section
-          h2.t3.foro-title Últimas publicaciones
-          div
-            -for (let i = 0; i < 5; i++)
-              - let fixed = i === 0 ? 'publication--fixed' : ''
-                +publication(class=fixed)
-        //- Paginación
-        nav.pagination
-          ul.pagination__menu
-            li.pagination__item.pagination__item--left(title="Ir al inicio")
-              a(href="#").pagination__link.pagination__link--left
-            -for(let i = 1; i <= 6; i++)
-              li.pagination__item
-                a(href="#" class=`${i === 3 ? 'current' : ''}`).pagination__link= i
-              li.pagination__item.pagination__item--right(title="Ir al final")
-                a(href="#").pagination__link.pagination__link--right
-      //- Sidebar categorías destacadas
-      .span-l-1
-        +foro-sidebar("Categorías destacadas", true)
+  //- Publicaciones
+  .ed-grid.cols-l-4
+    section.span-l-3.lg-mb-0
+      main.l-section
+        h2.t3.foro-title Últimas publicaciones
+        div
+          -for (let i = 0; i < 5; i++)
+            - let fixed = i === 0 ? 'publication--fixed' : ''
+              +publication(class=fixed)
+      //- Paginación
+      +pagination
+    //- Sidebar categorías destacadas
+    .span-l-1
+      +foro-sidebar("Categorías destacadas", true)

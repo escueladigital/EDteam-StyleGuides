@@ -1,12 +1,12 @@
 mixin foro-sidebar(title, topCategory)
-  aside.foro-sidebar(class=`${topCategory ? 'foro-sidebar--category' : ''}`)
-    h4.foro-sidebar__title= title
-    ul.foro-sidebar__list
-      if topCategory  
+  aside.foro-sidebar.s-border.s-radius(class=`${topCategory ? 'foro-sidebar--category' : ''}`)
+    h4.foro-sidebar__title.s-bg-grey.s-pxy-2.s-mb-0= title
+    ul.foro-sidebar__list.ed-grid.row-gap.gap-2.s-pxy-2.s-mb-0
+      if topCategory
         -for (let i = 1; i <= 10; i++)
           li.foro-sidebar__item
-            a(href="#").foro-sidebar__link.cross-center
-              img(src="https://image.flaticon.com/icons/svg/148/148828.svg")
+            a(href="#").foro-sidebar__link.s-cross-center.small
+              img.s-mr-05(src="https://image.flaticon.com/icons/svg/148/148828.svg")
               span Cloud computing
       else
         -for (let i = 0; i < 5; i++)

@@ -1,7 +1,7 @@
 mixin editor(main)
-  form.form-editor
-    textarea.form-editor__textarea(placeholder=`${main ? '' : 'Escribir respuesta'}`)
-    footer.form-editor__toolbar
+  form.form-editor.s-border.s-pxy-2.s-radius
+    textarea.form-editor__textarea.s-border-none.s-pxy-0(placeholder=`${main ? '' : 'Escribir respuesta'}`)
+    footer.form-editor__toolbar.ed-grid.row-gap.s-border-top.s-pt-2
       .form-editor__action
         .form-editor__icon-section
           +editor-button("bold")
