@@ -30,12 +30,6 @@
   }
 }
 
-[class*=scroll],
-.scroll,
-body {
-  @include scroll;
-}
-
 .scroll {
 
   &--dark {
@@ -76,4 +70,12 @@ body {
 
   }
 
+}
+
+[class*=scroll],
+.scroll,
+body {
+  @include from(lg) {
+    @include scroll;
+  }
 }
