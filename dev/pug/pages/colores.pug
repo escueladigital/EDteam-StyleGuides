@@ -1,0 +1,39 @@
+extends /pug/includes/template
+mixin color(cname,code,sassName,cssName)
+  .color
+    div(class="color__sample " + sassName)
+    .color__info.smaller
+      p.color__name= cname
+      p.color__code= code
+      p.color__code Sass name: <code>$#{sassName}</code>
+      p.color__code CSS name: <code>--#{cssName}</code>
+
+append config
+  -currentPage = 'colores'
+
+block main
+  h1 Colores
+  p Esta guia define el concepto visual, patrones de diseño y estructura para proyectos web en EDteam.
+  p Esta guia se encuentra en constante actualización.
+
+  h2 Colores
+
+  .ed-grid.cols-s-2.cols-lg-3.rows-gap.l-block
+    +color('Principal', '#007BDF', 'firstColor', 'first-color')
+    +color('Principal Alt', '#006DC6', 'firstColorAlt', 'first-color-alt')
+
+    +color('Secundario', '#00CBFF', 'secondColor', 'second-color')
+    +color('Secundario Alt', '#00BFF0', 'secondColorAlt', 'second-color-alt')
+
+    +color('Terciario', '#FF3C32', 'thirdColor', 'third-color')
+    +color('Terciario Alt', '#FF2419', 'thirdColorAlt', 'third-color-alt')
+
+    +color('Enfásis', '#FBA905', 'accentColor', 'accent-color')
+    +color('Enfásis Alt', '#F1A000', 'accentColorAlt', 'accent-color-alt')
+
+    +color('Oscuro', '#282D31', 'darkColor', 'dark-color')
+    +color('Oscuro Alt', '#141618', 'darkColorAlt', 'dark-color-alt')
+
+    +color('Bordes', '#DFE0E0', 'borderColor', 'border-color')
+    +color('Texto', '#53575A', 'textColor', 'text-color')
+    +color('Body BG', '#FAFDFF', 'bodyBg', 'body-bg')

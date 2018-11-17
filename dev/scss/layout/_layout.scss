@@ -2,67 +2,16 @@ body {
   margin         : var(--header-height) 0 0 0;
   display        : flex;
   flex-direction : column;
-  min-height     : calc(100vh - 64px);
+  min-height     : calc(100vh - var(--header-height));
 }
 
-// Vertical rhythm
-h1, h2, h3, h4, h5, h6 {
-  margin-top : 0;
+.subtitle {
+  margin-top    : -.5rem;
   margin-bottom : 1rem;
-
-  & + .subtitle {
-    margin-top : -.5rem;
-    margin-bottom : 1rem;
-  }
 }
 
-// Bloques de contenido
-section,
-p,
-blockquote,
-pre,
-article,
-figure,
-iframe,
-video,
-ul,
-ol {
-  margin-top : 0;
-  margin-bottom : 1rem;
 
-  + h2 {
-    padding-top : 1rem;
-  }
 
-}
-
-.l-block {
-  margin-top : 0;
-  margin-bottom : 1rem;
-
-  @include from(l) {
-    margin-bottom : 2rem;
-  }
-}
-
-// secciones principales
-.l-section {
-  margin-top : 0;
-  margin-bottom : 2rem;
-
-  @include from(l) {
-    margin-bottom : 4rem;
-  }
-}
-
-// main-banner y top-bar no deben separarse verticalmente de su hermano anterior
-.topbar + .main-banner{
-  margin-top : -3rem;
-}
-
-main {
-  padding-bottom : 4rem;
-}
 
 // ----- Títulos del foro ----- //
 .foro-title {

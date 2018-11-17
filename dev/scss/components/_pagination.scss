@@ -1,29 +1,22 @@
 // ----- Paginación ----- //
 .pagination {
 
-  @include to(l) {
-    margin-bottom : 2rem;
-  }
-
   // Padre de cada botón de la paginación
   &__menu {
     display         : flex;
     justify-content : center;
-    margin-bottom   : 0;
-    padding-left    : 0;
     list-style      : none;
   }
 
-  &__item {
-    margin : 0 4px 8px;
+  &__item:not(:last-of-type) {
+    margin-right : 0.5rem;
   }
 
   // Botón de paginación
   &__link {
-    @include round;
-    padding : 6px 10px;
-    color   : $textColor;
-    border  : 1px solid $borderColor;
+    display     : block;
+    line-height : 1;
+    color       : $textColor;
     
     &:hover {
       color            : #fff;

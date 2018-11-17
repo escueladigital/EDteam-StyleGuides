@@ -4,7 +4,6 @@ import pug from 'gulp-pug'
 import browserSync from 'browser-sync'
 import sass from 'gulp-sass'
 import postcss from 'gulp-postcss'
-import cssnano from 'cssnano'
 import watch from 'gulp-watch'
 import browserify from 'browserify'
 import babelify from 'babelify'
@@ -13,6 +12,7 @@ import sourcemaps from 'gulp-sourcemaps'
 import buffer from 'vinyl-buffer'
 import imagemin from 'gulp-imagemin'
 import autoprefixer from 'autoprefixer'
+import tildeImporter from 'node-sass-tilde-importer'
 
 const server = browserSync.create()
 
@@ -22,7 +22,7 @@ gulp.task('styles-dev', () =>
     .pipe(plumber())
     .pipe(sass({
       outputStyle: 'expanded',
-      includePaths: ['node_modules']
+      importer: tildeImporter
     }))
     .pipe(postcss([
       autoprefixer({
@@ -39,19 +39,14 @@ gulp.task('styles-build', () =>
     .pipe(plumber())
     .pipe(sass({
       outputStyle: 'compressed',
-      includePaths: ['node_modules']
+      importer: tildeImporter
     }))
     .pipe(postcss([
-      cssnano({
-        core: false,
-        autoprefixer: {
-          add: true,
-          browsers: '> 1%, last 2 versions, Firefox ESR, Opera 12.1'
-        }
+      autoprefixer({
+        browsers: '> 1%, last 2 versions, Firefox ESR, Opera 12.1'
       })
     ]))
     .pipe(gulp.dest('./public/css'))
-    .pipe(server.stream({match: '**/*.css'}))
 )
 
 
@@ -60,7 +55,7 @@ gulp.task('pug', () =>
     .pipe(plumber())
     .pipe(pug({
       pretty: true,
-      basedir: './dev/pug'
+      basedir: './dev'
     }))
     .pipe(gulp.dest('./public'))
 );
@@ -108,6 +103,7 @@ gulp.task('dev', ['styles-dev', 'pug', 'scripts', 'images-dev'], () => {
   // imagenes
   watch('./dev/scss/**/**', () => gulp.start('styles-dev'))
   watch('./dev/js/**/**', () => gulp.start('scripts', server.reload))
+  watch('./dev/md/**/**', () => gulp.start('pug', server.reload))
   watch('./dev/pug/**/**', () => gulp.start('pug', server.reload))
   watch('./dev/img/**/**', () => gulp.start('images-dev'))
 });

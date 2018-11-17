@@ -1,4 +1,4 @@
-extends ../includes/template
+extends /pug/includes/template
 mixin color(cname,code,sassName,cssName)
   .color
     div(class="color__sample " + sassName)
@@ -15,41 +15,3 @@ block banner
 block main
   p Esta guia define el concepto visual, patrones de diseño y estructura para proyectos web en EDteam.
   p Esta guia se encuentra en constante actualización.
-
-  h2 Colores
-
-  .colors
-    +color('Principal', '#007BDF', 'firstColor', 'first-color')
-    +color('Principal Alt', '#006DC6', 'firstColorAlt', 'first-color-alt')
-
-    +color('Secundario', '#00CBFF', 'secondColor', 'second-color')
-    +color('Secundario Alt', '#00BFF0', 'secondColorAlt', 'second-color-alt')
-
-    +color('Terciario', '#FF3C32', 'thirdColor', 'third-color')
-    +color('Terciario Alt', '#FF2419', 'thirdColorAlt', 'third-color-alt')
-
-    +color('Enfásis', '#FBA905', 'accentColor', 'accent-color')
-    +color('Enfásis Alt', '#F1A000', 'accentColorAlt', 'accent-color-alt')
-
-    +color('Oscuro', '#282D31', 'darkColor', 'dark-color')
-    +color('Oscuro Alt', '#141618', 'darkColorAlt', 'dark-color-alt')
-
-    +color('Bordes', '#DFE0E0', 'borderColor', 'border-color')
-    +color('Texto', '#53575A', 'textColor', 'text-color')
-    +color('Body BG', '#FAFDFF', 'bodyBg', 'body-bg')
-
-  h2 Tipografía
-
-  p EDteam utiliza dos familias tipográficas en web, logotipo, posters y demás elementos gráficos
-
-  ul.data-list
-    li
-      strong Open Sans (700)
-      br
-      span.small Encabezados, logo de EDteam y otros logos (EDgrid p.ej.) <code>$body-font</code>
-    li
-      strong Lato (400, 400i, 700)
-      br
-      span.small Contenidos, párrafos <code>$heading-font</code>
-
-  p En la sección de <a href="tipografia.html">tipografía</a> se explica detalladamente su uso.

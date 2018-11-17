@@ -1,0 +1,10 @@
+mixin pagination
+  nav.pagination.lg-mb-0
+    ul.pagination__menu.s-pxy-0.s-mb-0
+      li.pagination__item.pagination__item--left(title="Ir al inicio")
+        a(href="#").pagination__link.pagination__link--left.s-radius.s-pxy-1
+      -for(let i = 1; i <= 6; i++)
+        li.pagination__item
+          a(href="#" class=`${i === 3 ? 'current' : ''}`).pagination__link.s-radius.s-border.s-pxy-1= i
+      li.pagination__item.pagination__item--right(title="Ir al final")
+        a(href="#").pagination__link.pagination__link--right.s-radius.s-pxy-1
