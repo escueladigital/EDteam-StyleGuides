@@ -1,7 +1,7 @@
 mixin banner(img, title, description, clase, boton, autor)
   div(class=`main-banner--${clase} main-banner diagonal`)
-    .ed-container
-      .ed-item.l-75.to-center
+    .ed-grid
+      .lg-75.s-to-center
         img(src=img).main-banner__img
         .main-banner__data
           h1= title
