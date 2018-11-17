@@ -1,8 +1,8 @@
 mixin featured-publication(boolean)
-  article.featured-publication__item
-    .featured-publication__content
+  article.featured-publication__item.s-border.s-radius.s-pxy-2.s-mb-0
+    .featured-publication__content.s-mb-1
       if boolean
-        img(src="https://ed.team/sites/default/files/styles/perfil_de_usuario_250x250_/public/pictures/2018-08/beto.jpg?itok=1iWHENQE", alt="Foto del usuario").featured-publication__user-photo
+        img.featured-publication__user-photo.s-mr-2(src="https://ed.team/sites/default/files/styles/perfil_de_usuario_250x250_/public/pictures/2018-08/beto.jpg?itok=1iWHENQE", alt="Foto del usuario")
       a(href="#").featured-publication__title.small simular un click en un select al momento de cargar la pagina
     footer.featured-publication__footer
       +vote-positive

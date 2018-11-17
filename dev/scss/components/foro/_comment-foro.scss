@@ -1,13 +1,12 @@
 
 // ----- Comentario ----- //
 .comment {
-  margin-bottom : 0;
 
   // Comentario que se elegió como mejor respuesta
   &--best-answer &__content::before {
     content               : 'Mejor respuesta';
     padding-left          : 1.25rem;
-    background-image      : url(/img/cup.svg);
+    background-image      : url(https://ux.ed.team/img/cup.svg);
     background-repeat     : no-repeat;
     background-position-y : center;
     background-size       : 1rem 1rem;
@@ -25,7 +24,7 @@
   &__information {
     display : flex;
 
-    * {
+    > * {
       margin: 0 1rem 0 0;
     }
 
@@ -38,8 +37,7 @@
 
   // Botón para seleccionar la mejor respuesta
   &__best-answer {
-    margin-right : 1rem; 
-    color        : $accentColor;
+    color : $accentColor;
   }
 
 }

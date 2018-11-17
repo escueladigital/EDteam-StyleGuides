@@ -12,10 +12,6 @@
 
   }
 
-  svg {
-    margin-right : 0.5rem;
-  }
-
   &--positive {
 
     svg {
@@ -45,11 +41,5 @@
 
 // ----- Botones de comentarios ----- //
 .answer {
-  margin-right : 2rem;
-  color        : $textColor;
-
-  .svg-icon {
-    margin-right : 0.5rem;
-  }
-
+  color : $textColor;
 }
