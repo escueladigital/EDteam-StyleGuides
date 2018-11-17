@@ -62,14 +62,6 @@
   margin-bottom : 0;
 }
 
-[class*=button].last {
-  @include button-last;
-}
-
-[class*=button]:last-of-type:not(.center) {
-  margin-right : 0;
-}
-
 @mixin button-second {
   --color-button     : var(--second-color);
   --color-button-alt : var(--second-color-alt);
