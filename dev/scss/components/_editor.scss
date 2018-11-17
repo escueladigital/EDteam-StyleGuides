@@ -1,27 +1,16 @@
 
 // ----- Estilos para el editor ----- //
 .form-editor {
-  margin-bottom    : 0;
-  padding          : 1rem;
-  border           : 1px solid $borderColor;
   background-color : #fff;
 
   &__textarea {
     height     : 200px; 
     max-height : 200px;
-    padding    : 0;
-    border     : none;
     outline    : none;
   }
 
-  // Barra de herramientas
+  // // Barra de herramientas
   &__toolbar {
-    display               : grid;
-    grid-template-columns : 1fr;
-    justify-content       : space-between;
-    grid-gap              : 1rem;
-    padding-top           : 1rem;
-    border-top            : 1px solid $borderColor;
     
     @include from(m) {
       grid-template-columns : 1fr max-content;

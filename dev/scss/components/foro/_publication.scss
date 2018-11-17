@@ -1,11 +1,10 @@
 // ----- Estilos para de las publicaciones en la página de inicio ----- //
 .publication {
-  display               : grid;
-  grid-template-columns : max-content 1fr;
-  grid-column-gap       : 1rem;
-  margin-bottom         : 0;
-  padding               : 2rem 0;
-  border-bottom         : 1px solid $borderColor;
+  grid-template-columns : 1fr max-content;
+  
+  @include from(m) {
+    grid-template-columns : max-content 1fr;
+ }
 
   &.publication--main {
     padding : 0;
@@ -26,6 +25,12 @@
   // Selecciona al primer elemento que no sea una publicación fijada
   &:first-of-type:not(&--fixed) {
     padding-top : 0;
+  }
+
+  &__header {
+    @include to(m) {
+      grid-row : 1; 
+    }
   }
 
   // Contenedor de título y botón de tres puntos cuando se está dentro de una publicación
@@ -57,7 +62,7 @@
       &::after {
         content             : 'Publicación fijada';
         padding-left        : 1rem;
-        background-image    : url(/img/pin.svg);
+        background-image    : url(https://ux.ed.team/img/pin.svg);
         background-repeat   : no-repeat;
         background-size     : 1rem 1rem;
         font-size           : fontSize(smaller);
@@ -71,31 +76,11 @@
 
   // Enlace a un fragmento cuando la publicación está relacionada con una clase
   &__fragment {
-    display               : grid;
     grid-template-columns : max-content 1fr;
-    margin-bottom         : 1rem;
     color                 : $secondColor;
-
-    svg {
-      margin-right : 0.25rem;
-    }
-
-  }
-
-  // Contenedor padre del contenido (.publication__main) y el footer (.publication__footer) de la publicación
-  &__content {
-    grid-column : span 2;
-    
-    @include from(m) {
-      grid-column : 2;
-    }
-
   }
 
   &__footer {
-    display               : grid;
-    grid-template-columns : 1fr;
-    grid-gap              : 0.5rem;
 
     @include from(m) {
       grid-template-columns : max-content 1fr max-content;
@@ -104,37 +89,19 @@
   }
   
   // tag individual
-  &__tag {
-    display   : inline-flex;
-    flex-wrap : nowrap;
-    color     : $color-text-light;
-
-    &:not(:last-child) {
-      margin-right : 1rem;
-    }
-
-    .svg-icon {
-      margin-right : 0.25rem;
-    }
-
-  }
-
-  &__report {
+  &__tag, 
+  &__report,
+  .tag-icon,
+  .answer {
     color : $color-text-light;
   }
 
-  // Enlace de responder en una publicación
   &__answer {
-    color        : $color-text;
-    margin-right : 0.75rem;
+    color : $color-text;
   }
 
   // Se cambian los estilos de .publication__footer y .publication__content cuando se está dentro de una publicación (.publication--main)
   .publication--main & {
-
-    &__title {
-      @include t1;
-    }
 
     &__footer {
       padding-bottom : 1rem;
@@ -146,8 +113,31 @@
 
     }
 
+    &__header {
+      
+      @include to(m) {
+        grid-column : span 2;
+      }
+
+    }
+
     &__content {
       margin-bottom : 2rem;
+    }
+
+    &__votes {
+
+      @include to(m) {
+        display        : flex;
+        flex-direction : row;
+        grid-column    : 1;
+  
+        a:first-child {
+          margin-right : 0.5rem;
+        }
+
+      }
+
     }
 
   }

@@ -1,16 +1,16 @@
 mixin publication(main)
-  article.publication(class=`${main ? 'publication--main' : ''}` id=`${main ? 'publication-main' : ''}`)&attributes(attributes)
-    .publication__votes.small
+  article.publication.ed-grid.gap-2.s-mb-0.s-px-4.s-border-bottom(class=`${main ? 'publication--main' : ''}` id=`${main ? 'publication-main' : ''}`)&attributes(attributes)
+    .publication__votes
         +vote-positive
         +vote-negative
     header.publication__header
       if main
         .publication__header-content
           .publication__title-container
-            h1.publication__title Segmentación en página web
-            a.publication__fragment.cross-center(href="#" target="__blank")
+            h1.publication__title.t2 Segmentación en página web
+            a.publication__fragment.ed-grid.gap-1.s-cross-center.s-mt-3.m-mt-2.s-mb-2.small(href="#" target="__blank")
               +iconSVG("arrow-turn-right")
-              | Estilos de texto - CSS Desde Cero (2018)
+              span Estilos de texto - CSS Desde Cero (2018)
           .meatballs-menu.meatballs-menu--foro
             button.meatballs-menu__button
             nav.meatballs-menu__nav
@@ -18,33 +18,32 @@ mixin publication(main)
                 li.meatballs-menu__item
                   button.meatballs-menu__link(title="Editar publicación")
                     +iconSVG("edit")
-                    |  Editar
+                    span Editar
                 li.meatballs-menu__item
                   button.meatballs-menu__link(title="Cerrar publicación")
                     +iconSVG("close") 
-                    |  Cerrar
+                    span Cerrar
                 li.meatballs-menu__item
                   button.meatballs-menu__link.meatballs-menu__link--delete(title="Eliminar publicación")
                     +iconSVG("delete-stroke") 
-                    |  Eliminar
+                    span Eliminar
       else
-        h4
+        h2.t4
           a(href="#").publication__title Segmentación en página web
       +user-foro
-    .publication__content
+    .publication__content.s-cols-2.s-x-1.m-cols-1.m-x-2
         .publication__main
           p Buen día, una pregunta a la comunidad ¿Como puedo realizar esta segmentación para una pagina web?. ☹️ , donde aparece sus otras pestañas de la pagina
-        footer.publication__footer
+        footer.publication__footer.ed-grid.gap-1
           +comments(true)
-          .publication__tags 
+          .publication__tags.s-cross-center.small
+            +iconSVG("tag")(class="s-mr-05 tag-icon")
             -let tags = ['Frontend', 'CSS', 'HTML', 'JS', 'Pug']
             each tag in tags
-              a(href="#").publication__tag.cross-center
-                +iconSVG("tag")
-                = tag
-          .publication__action
+              a(href="#").publication__tag.s-mr-2= tag
+          .publication__action.small
             if main == true
-              a(href="#form-editor").publication__answer Responder
+              a(href="#form-editor").publication__answer.s-mr-2 Responder
             a(href="#").publication__report Reportar
     if block
       block

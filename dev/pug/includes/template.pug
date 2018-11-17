@@ -1,7 +1,17 @@
 block config
   include config
+  include main-banner
   include /pug/mixins/pricing-table
-include main-banner
+  include /pug/mixins/meatballs
+  include /pug/mixins/foro/atoms
+  include /pug/mixins/foro/publication
+  include /pug/mixins/foro/user
+  include /pug/mixins/foro/featured-publication
+  include /pug/mixins/foro/sidebar
+  include /pug/mixins/foro/comment
+  include /pug/mixins/foro/editor
+  include /pug/mixins/foro/top-user
+  include /pug/mixins/foro/pagination
 doctype html
 html(lang="es")
   head
