@@ -1,161 +1,45 @@
-.card {
-  @include widget;
-  @include round;
-  display : flex;
-  height : 100%;
-  flex-direction: column;
-
-  p, [class*="button"]  {
-    margin : 0;
-  }
+.card__avatar {
+  width : 2rem;
 }
 
-.card__img {
-  flex: none;
-
-  img {
-    display : block;
-    border-radius : .25rem .25rem 0 0;
-  }
-}
-
-.card__content {
-  display : flex;
-  flex-direction : column;
-  flex: 1;
-  font-size : fontSize(small);
-  padding : 1rem;
-}
-
-.card__title {
-  font-family : $heading-font;
-  font-weight : 700;
-  margin-bottom : 1rem;
-
-  + .card__subtitle {
-    margin-top : -1rem;
-  }
-}
-
-.card__subtitle {
-  font-size : fontSize(small);
-  opacity : .5;
-  margin-bottom : .5rem;
-}
-
-.card__body {
-  margin-bottom : 1rem;
-}
-
-.card__footer {
-  margin-top : auto;
-  font-size : fontSize(small);
-  border-top : 1px solid var(--border-color);
-  padding-top : 1rem;
-  display : flex;
-  justify-content: space-between;
-  align-items: center;
+.card:hover {
+  @extend .s-shadow-bottom;
 }
 
 
-// Card standard de curso en App
-.card--course {
-  .card__footer {
-    border-top : none;
-    margin-top : -1.5rem;
-  }
-}
+.card__teachers {
+  .card__teacher {
+    position : relative;
 
-.card--course-next {
-  .card__footer {
-    padding-top : .5rem;
-  }
-}
-
-.card--next-class {
-  border : none;
-  box-shadow: none;
-  position : relative;
-  color: #fff;
-
-  a {
-    color: currentColor;
-    display : block;
+    &:hover span{
+      transform: scaleY(1);
+    }
   }
 
-  img {
-    display : block;
-  }
-
-  .card__content {
+  // Crea tooltip cuando hay varios profesores
+  span {
+    @extend .s-py-05, .s-px-1, .s-border, .s-radius;
     position : absolute;
-    bottom : 0;
-    background : rgba($darkColor,.8);
-    width : 100%;
-  }
+    top: calc(100% + .5rem);
+    left: 0;
+    background: #fff;
+    white-space: nowrap;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .2s;
 
-  .card__title {
-    font-size : fontSize(title3);
-    font-family : $body-font;
-    font-weight : 400;
-  }
-
-  .card__footer {
-    padding-top : 0;
-    border : none;
-    margin-top : -.5rem;
-  }
-}
-
-
-.card__user {
-  display : flex;
-  align-items: center;
-
-  a {
-    color: var(--text-color);
-  }
-}
-
-.card__user-img {
-  img {
-    @include circle;
-    width : 2rem;
-    height : 2rem;
-    display : block;
-    margin-right : .5rem;
-  }
-}
-
-// Card mini
-[class*="card--mini"] {
-  .card__title {
-    margin-bottom : .25rem;
-  }
-  .card__body {
-    font-size : fontSize(small);
-    padding-top : .5rem;
-    border-top : 1px solid var(--accent-color);
-  }
-
-  .card__footer {
-    border-top : none;
-    padding-top : 0;
-  }
-}
-
-// Card mini horizontal
-.card--mini-horizontal {
-  @include from(l) {
-    display : flex;
-    flex-direction: row;
-  }
-
-  .card__img {
-    flex: 1;
-
-    img {
-      border-radius : .25rem 0 0 .25rem;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      border: 1px solid var(--border-color);
+      width: .5rem;
+      height: .5rem;
+      background: #fff;
+      top: calc( -0.35rem + 1.5px); // Compensa los bordes
+      left: 0.65rem;
+      transform: rotate(45deg);
+      border-color: var(--border-color) transparent transparent var(--border-color);
     }
   }
 }
