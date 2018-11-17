@@ -1,14 +1,14 @@
 -var headerClasses = currentPage === 'Clase (video)' ? 'main-header--dark' : 'main-header'
 
 header(class=headerClasses)
-  .ed-grid.cols-s-5.cols-l-4
-    .span-s-4.span-l-1.cross-center
+  .ed-grid.s-grid-5.lg-grid-4
+    .s-cols-4.lg-cols-1.s-cross-center
       a(href="/")
         if currentPage === 'Clase (video)'
           img(src="img/edteam-logo-alt.svg").main-logo
         else
           img(src="img/edteam-ux-logo.svg").main-logo
-    .span-s-1.span-l-3.cross-center.main-end.header-links
+    .s-grid-1.lg-cols-3.s-cross-center.s-main-end.header-links
       nav.main-menu#main-menu
         ul
           li: a(href="https://ed.team" target="_blank") Ir a EDteam
