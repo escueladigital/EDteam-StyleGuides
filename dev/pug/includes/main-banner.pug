@@ -1,17 +1,11 @@
-mixin banner(img, title, description, clase, boton, autor)
-  div(class=`main-banner--${clase} main-banner diagonal`)
-    .ed-grid
-      .lg-75.s-to-center
+mixin banner(img, title, description, clase, boton)
+  div(class=`main-banner img-container`)
+    .ed-grid.lg-grid-6
+      .lg-cols-4.lg-x-2
         img(src=img).main-banner__img
-        .main-banner__data
-          h1= title
-          if (description !== '')
+        .main-banner__data.s-center
+          p.s-mb-0.t2= title
+          if (description)
             p.subtitle= description
           if (boton)
-            a(href="#").button--cta.small.center Modelo de botón
-          if (autor)
-            .main-banner__author
-              a(href="#")
-                img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2017-11/alexys_0.jpg?itok=MMRiEdrl").main-banner__author-img
-              a(href="#")
-                .main-banner__author-name Alexys Lozada
+            a(href="#").button Modelo de botón
