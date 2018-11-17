@@ -1,71 +1,31 @@
 .main-banner {
-  --color    : var(--first-color);
-  width      : 100%;
-  background : var(--color);
-  color      : #FFF;
+  --color     : var(--first-color);
+  --color-alt : var(--accent-color);
+  --padding   : 2rem;
+  background  : var(--color);
+  color       : #FFF;
 
   &.diagonal {
     clip-path : polygon(0 0, 100% 0, 100% 100%, 0 94%);
   }
 
   // Separación del contenido
-  padding-top    : 2rem;
-  padding-bottom : 2.5rem;
+  padding-top    : var(--padding);
+  padding-bottom : calc(var(--padding) * 1.25);
 
   @include from(l) {
-    padding-top    : 4rem;
-    padding-bottom : 5rem;
+    --padding : 4rem;
   }
 
-  h1, h2 {
-    margin-bottom : 0;
-    @include t2;
-
-    + .subtitle {
-      margin-top : .5rem;
-      margin-bottom : 0;
-    }
-  }
-
-  [class*=button] {
-    margin-top : 1rem;
+  .button {
+    --color-button : var(--color-alt);
   }
 }
 
 .main-banner__img {
-  position   : absolute;
-  top        : 0;
-  left       : 0;
-  width      : 100%;
-  height     : 100%;
-  object-fit : cover;
-  opacity    : .2;
-  filter     : blur(12px);
+  opacity : .1;
 }
 
 .main-banner__data {
-  text-align : center;
-  position   : relative;
-}
-
-.main-banner__author {
-  color      : #fff;
-  margin-top : .5rem;
-
-  a {
-    color: inherit;
-  }
-
-  &-img {
-    width         : 5rem;
-    height        : 5rem;
-    border-radius : 50%;
-    border        : 2px solid;
-    display       : block;
-    margin        : 0 auto;
-  }
-
-  &-name {
-    font-size : fontSize(small);
-  }
+  position : relative;
 }
