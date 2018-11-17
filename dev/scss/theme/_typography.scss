@@ -26,7 +26,7 @@ $heading-font : 'Open Sans', 'sans-serif';
   // Font sizes from lg breakpoint (64em ~ 1024px)
   @include from(lg) {
     --h1-font-size      : #{rem(36px)};
-    --h2-font-size      : #{rem(24px)};
+    --h2-font-size      : #{rem(28px)};
     --h3-font-size      : #{rem(20px)};
     --normal-font-size  : #{rem(16px)};
     --small-font-size   : #{rem(14px)};
@@ -78,17 +78,17 @@ $fontSizes : (
 
 @mixin t4 {
   @include heading-font;
-  font-size   : var(--h4-font-size);
+  font-size   : var(--normal-font-size);
 }
 
 @mixin t5 {
   @include heading-font;
-  font-size   : var(--h5-font-size);
+  font-size   : var(--small-font-size);
 }
 
 @mixin t6 {
   @include heading-font;
-  font-size   : var(--h6-font-size);
+  font-size   : var(--smaller-font-size);
 }
 
 
