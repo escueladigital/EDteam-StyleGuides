@@ -102,7 +102,7 @@ Ejemplo:
 <p class="t3">Soy un párrafo con la clase t3<p>
 <p class="t4">Soy un párrafo con la clase t4<p>
 <p class="t5">Soy un párrafo con la clase t5<p>
-<p class="t5">Soy un párrafo con la clase t5<p>
+<p class="t6">Soy un párrafo con la clase t6<p>
 
 ```html
 <p class="t1">Soy un párrafo con la clase t1<p>
@@ -110,7 +110,7 @@ Ejemplo:
 <p class="t3">Soy un párrafo con la clase t3<p>
 <p class="t4">Soy un párrafo con la clase t4<p>
 <p class="t5">Soy un párrafo con la clase t5<p>
-<p class="t5">Soy un párrafo con la clase t5<p>
+<p class="t6">Soy un párrafo con la clase t6<p>
 ```
 
 
@@ -139,15 +139,15 @@ Ejemplo:
 
 <a id="markdown-tabla-de-tamaños-de-fuente" name="tabla-de-tamaños-de-fuente"></a>
 ## Tabla de tamaños de fuente
-
-| Selectores                  | Tamaño en móvil       | Tamaño en desktop     |
-| --------------------------- | --------------------- | --------------------- |
-| `h1` `.t1` `.biggest`       | **1.5rem** (~24px)    | **2.25rem** (~36px)   |
-| `h2` `.t2` `.bigger`        | **1.25rem** (~20px)   | **1.5rem** (~24px)    |
-| `h3` `.t3` `.big`           | **1rem** (~16px)      | **1.25rem** (~20px)   |
-| `h4` `.t4` `.normal`        | **0.875rem** (~14px)  | **1rem** (~16px)      |
-| `h5` `.t5` `small` `.small` | **0.8125rem** (~13px) | **0.875rem** (~14px)  |
-| `h6` `.t6` `.smaller`       | **0.75rem** (~12px)   | **0.8125rem** (~13px) |
+Se indica entre paréntesis su equivalencia en pixeles (font-size / line-height títulos | line-height contenidos)
+| Selectores                  | Tamaño en móvil                          | Tamaño en desktop                        |
+| --------------------------- | ---------------------------------------- | ---------------------------------------- |
+| `h1` `.t1` `.biggest`       | **1.5rem** (~24px / 31.2px \| 38.4px)    | **2.25rem** (~36px / 46.8px \| 57.6px)   |
+| `h2` `.t2` `.bigger`        | **1.25rem** (~20px / 26px \| 32px)       | **1.75rem** (~28px / 36.4px \| 44.8px)   |
+| `h3` `.t3` `.big`           | **1rem** (~16px / 20.8px \| 25.6px)      | **1.25rem** (~20px / 26px \| 32px)       |
+| `h4` `.t4` `.normal`        | **0.875rem** (~14px / 18.2px \| 22.4px)  | **1rem** (~16px / 20.8px \| 25.6px)      |
+| `h5` `.t5` `small` `.small` | **0.8125rem** (~13px / 16.9px \| 20.8px) | **0.875rem** (~14px / 18.2px \| 22.4px)  |
+| `h6` `.t6` `.smaller`       | **0.75rem** (~12px / 15.6px \| 19.2px)   | **0.8125rem** (~13px / 16.9px \| 20.8px) |
 
 <a id="markdown-mixins-de-sass-para-tamaños-de-fuente" name="mixins-de-sass-para-tamaños-de-fuente"></a>
 ## Mixins de Sass para tamaños de fuente
