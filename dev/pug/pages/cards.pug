@@ -5,14 +5,126 @@ append config
   -currentPage = 'cards'
 
 block main
-  .ed-grid.lg-grid-3
-    .card
-      .img-container.lg-ratio-16-9.s-radius-tr.s-radius-tl
-        img(src="https://ed.team/sites/default/files/styles/large/public/courses/images/go_0.jpg?itok=k2amLhrN")
-      .card__data.s-border.s-radius-br.s-radius-bl.s-pxy-2
-        .t4.s-center.s-mb-2 Programación orientada a objetos con Go
-        .s-cross-center.s-main-center.s-mb-2
-          img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2018-11/tioalexys.jpg?itok=7vDpJuSh").s-mr-1.card__avatar
-          | Alexys Lozada
-        .s-main-center
-          a(href="#").button--ghost--alert.button--tiny $ 20USD
+  h1 Cards
+
+  p Cards de cursos
+
+  .ed-grid.lg-grid-4.gap-2.l-block
+    -for (let i = 1; i< 5; i++)
+      .card
+        .img-container.lg-ratio-16-9.s-radius-tr.s-radius-tl
+          img(src="https://ed.team/sites/default/files/styles/large/public/courses/images/go_0.jpg?itok=k2amLhrN")
+        .card__data.s-border.s-radius-br.s-radius-bl.s-pxy-2
+          .t5.s-mb-2.s-center Programación orientada a objetos con Go
+          .s-mb-2.s-main-center
+            .card__teacher.s-cross-center
+              .avatar-small.s-mr-1
+                .circle.img-container
+                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2018-11/tioalexys.jpg?itok=7vDpJuSh")
+              span.small Alexys Lozada
+          .s-main-center
+            a(href="#").button--ghost-alert.button--tiny $ 20USD
+
+  p Marcado
+
+  :markdown-it(html)
+
+    ```html
+    <article class="card">
+      <div class="img-container lg-ratio-16-9 s-radius-tr s-radius-tl">
+        <img src="path/img" alt="">
+      </div>
+      <div class="card__data s-border s-radius-br s-radius-bl s-pxy-2">
+        <h3 class="t5 s-mb-2 s-center">
+          Programación orientada a objetos con Go
+        </h3>
+        <div class="s-mb-2 s-main-center">
+          <div class="card__teacher s-cross-center">
+            <div class="avatar-small s-mr-1">
+              <div class="circle img-container">
+                <img src="path/img" alt="">
+              </div>
+            </div>
+            <span class="small">Alexys Lozada</span>
+          </div>
+        </div>
+        <div class="s-main-center">
+          <a class="button--ghost-alert button--tiny" href="#">$ 20USD</a>
+        </div>
+      </div>
+    </article>
+    ```
+
+  p Card de cursos con varios profesores
+
+  .ed-grid.lg-grid-4.gap-2.l-block
+    -for (let i = 1; i< 5; i++)
+      .card
+        .img-container.lg-ratio-16-9.s-radius-tr.s-radius-tl
+          img(src="https://ed.team/sites/default/files/styles/large/public/courses/images/go_0.jpg?itok=k2amLhrN")
+        .card__data.s-border.s-radius-br.s-radius-bl.s-pxy-2
+          .t5.s-mb-2.s-center Programación orientada a objetos con Go
+          .s-mb-2.s-main-center.card__teachers
+            .card__teacher.s-cross-center
+              .avatar-small.s-mr-1
+                .circle.img-container
+                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2018-11/tioalexys.jpg?itok=7vDpJuSh")
+              span.small Alexys Lozada
+            .card__teacher.s-cross-center
+              .avatar-small.s-mr-1
+                .circle.img-container
+                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2018-11/tioalexys.jpg?itok=7vDpJuSh")
+              span.small Alexys Lozada
+            .card__teacher.s-cross-center
+              .avatar-small.s-mr-1
+                .circle.img-container
+                  img(src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2018-11/tioalexys.jpg?itok=7vDpJuSh")
+              span.small Alexys Lozada
+          .s-main-center
+            a(href="#").button--ghost-alert.button--tiny $ 20USD
+
+  :markdown-it(html)
+    El marcado es idéntico al caso anterior, solo hay que encerrar a todos los profesores con la clase `.card__teachers`
+
+    ```html
+    <article class="card">
+      <div class="img-container lg-ratio-16-9 s-radius-tr s-radius-tl">
+        <img src="path/img" alt="">
+      </div>
+      <div class="card__data s-border s-radius-br s-radius-bl s-pxy-2">
+        <h3 class="t5 s-mb-2 s-center">
+          Programación orientada a objetos con Go
+        </h3>
+        <div class="s-mb-2 s-main-center card-teachers">
+          <div class="card__teacher s-cross-center">
+            <div class="avatar-small s-mr-1">
+              <div class="circle img-container">
+                <img src="path/img" alt="">
+              </div>
+            </div>
+            <span class="small">Alexys Lozada</span>
+          </div>
+          <div class="card__teacher s-cross-center">
+            <div class="avatar-small s-mr-1">
+              <div class="circle img-container">
+                <img src="path/img" alt="">
+              </div>
+            </div>
+            <span class="small">Alexys Lozada</span>
+          </div>
+          <div class="card__teacher s-cross-center">
+            <div class="avatar-small s-mr-1">
+              <div class="circle img-container">
+                <img src="path/img" alt="">
+              </div>
+            </div>
+            <span class="small">Alexys Lozada</span>
+          </div>
+        </div>
+        <div class="s-main-center">
+          <a class="button--ghost-alert button--tiny" href="#">$ 20USD</a>
+        </div>
+      </div>
+    </article>
+    ```
+
