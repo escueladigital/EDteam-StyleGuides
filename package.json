@@ -15,7 +15,7 @@
     "babelify": "^8.0.0",
     "browser-sync": "^2.23.6",
     "browserify": "^15.2.0",
-    "ed-grid": "^2.6.0",
+    "ed-grid": "^2.7.1",
     "ed-ui": "0.0.5",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
