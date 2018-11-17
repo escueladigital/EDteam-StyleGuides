@@ -1,14 +1,12 @@
 /*
-  This boilerplate is based in ITCSS and SMACSS
+This boilerplate is based in ITCSS and SMACSS
 */
 // Config
 @import "config/variables";
 @import "config/functions";
+@import "theme/typography";
 // Mixins
 @import "config/mixins";
-// Theme (colors and fonts)
-@import "theme/typography";
-@import "theme/colors";
 // Libraries
 // Base and elements (generic)
 @import "base/base";
@@ -64,6 +62,8 @@
 @import "components/pagination";
 @import "components/editor";
 //@import "theme/dark-theme";
+// Theme (colors and fonts)
+@import "theme/colors";
 // Utilities (hacks)
 // Todos los hacks que hayas necesitado para solucionar conflictos
 // o resolver situaciones extremas. Se espera poder mejorarlos luego.
