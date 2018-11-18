@@ -9,10 +9,10 @@ block main
 
   p Cards de cursos
 
-  .ed-grid.lg-grid-4.gap-2.l-block
+  .ed-grid.m-grid-2.lg-grid-4.gap-2.l-block.row-gap
     -for (let i = 1; i< 5; i++)
       .card
-        .img-container.lg-ratio-16-9.s-radius-tr.s-radius-tl
+        .img-container.s-ratio-16-9.s-radius-tr.s-radius-tl
           img(src="https://ed.team/sites/default/files/styles/large/public/courses/images/go_0.jpg?itok=k2amLhrN")
         .card__data.s-border.s-radius-br.s-radius-bl.s-pxy-2
           .t5.s-mb-2.s-center Programación orientada a objetos con Go
@@ -31,7 +31,7 @@ block main
 
     ```html
     <article class="card">
-      <div class="img-container lg-ratio-16-9 s-radius-tr s-radius-tl">
+      <div class="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
         <img src="path/img" alt="">
       </div>
       <div class="card__data s-border s-radius-br s-radius-bl s-pxy-2">
@@ -57,10 +57,10 @@ block main
 
   p Card de cursos con varios profesores
 
-  .ed-grid.lg-grid-4.gap-2.l-block
+  .ed-grid.lg-grid-4.gap-2.l-block.m-grid-2.row-gap
     -for (let i = 1; i< 5; i++)
       .card
-        .img-container.lg-ratio-16-9.s-radius-tr.s-radius-tl
+        .img-container.s-ratio-16-9.s-radius-tr.s-radius-tl
           img(src="https://ed.team/sites/default/files/styles/large/public/courses/images/go_0.jpg?itok=k2amLhrN")
         .card__data.s-border.s-radius-br.s-radius-bl.s-pxy-2
           .t5.s-mb-2.s-center Programación orientada a objetos con Go
@@ -88,7 +88,7 @@ block main
 
     ```html
     <article class="card">
-      <div class="img-container lg-ratio-16-9 s-radius-tr s-radius-tl">
+      <div class="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
         <img src="path/img" alt="">
       </div>
       <div class="card__data s-border s-radius-br s-radius-bl s-pxy-2">
