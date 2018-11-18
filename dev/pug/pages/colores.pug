@@ -1,12 +1,12 @@
 extends /pug/includes/template
 mixin color(cname,code,sassName,cssName)
-  .color
-    div(class="color__sample " + sassName)
-    .color__info.smaller
-      p.color__name= cname
-      p.color__code= code
-      p.color__code Sass name: <code>$#{sassName}</code>
-      p.color__code CSS name: <code>--#{cssName}</code>
+  .color-card.s-shadow-bottom(class=cssName)
+    .s-ratio-4-1.s-bg-blue.s-radius-tl.s-radius-tr
+    .s-border.s-pxy-2.small.s-center.s-radius-br.s-radius-bl
+      .t5= cname
+      .s-mb-1= code
+      .color__code Sass name: <code>$#{sassName}</code>
+      .color__code CSS name: <code>--#{cssName}</code>
 
 append config
   -currentPage = 'colores'
@@ -16,7 +16,7 @@ block main
   p Esta guia define el concepto visual, patrones de diseño y estructura para proyectos web en EDteam.
   p Esta guia se encuentra en constante actualización.
 
-  h2 Colores
+  p Tabla de colores:
 
   .ed-grid.cols-s-2.cols-lg-3.rows-gap.l-block
     +color('Principal', '#007BDF', 'firstColor', 'first-color')
