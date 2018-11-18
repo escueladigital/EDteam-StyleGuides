@@ -1,17 +1,5 @@
 # Botones
 
-<!-- TOC -->
-
-- [Colores de los botones](#colores-de-los-botones)
-- [Alinear botones](#alinear-botones)
-- [Botones fantasma (ghost)](#botones-fantasma-ghost)
-- [Tamaños de los botones](#tama%C3%B1os-de-los-botones)
-- [Uso de los colores](#uso-de-los-colores)
-- [Colores de botones heredados](#colores-de-botones-heredados)
-- [Boton cancelar](#boton-cancelar)
-
-<!-- /TOC -->
-
 Archivo `componentes/_buttons.scss` [(ver)](https://github.com/escueladigital/EDteam-StyleGuides/blob/master/dev/scss/components/_buttons.scss)
 
 --- 
@@ -59,47 +47,9 @@ Use las clases `button--second`, `button--alert`, `button--cta`, `button--dark` 
 <a id="markdown-alinear-botones" name="alinear-botones"></a>
 ## Alinear botones
 
-La alineación de los botones depende del elemento padre pues se comportan como texto. Es decir, si el elemento padre tiene la propiedad `text-align: right` el botón (o botones) se alinearán a la derecha. Esta guia de estilos tiene la clase `.center` que centra todo el contenido del elemento. Ejemplo:
+Los botones pueden alinearse por su contenedor o por ellos mismos. Por el contedor use las clase de EDgrid para alienar contenido, y para alinear al mismo botón use las clases de EDgrid de alineación de elementos.
 
-```html
-<div class="center">
-  <div class="button">Soy un boton</div>
-  <div class="button">Soy otro boton</div>
-  <div class="button">Soy un tercer boton</div>
-</div>
-```
-
-<div class="center l-block">
-<div class="button">Soy un boton</div>
-<div class="button">Soy otro boton</div>
-<div class="button">Soy un tercer boton</div>
-</div>
-
-
-Si desea centrar un único boton, puede agregarle la clase `.center`
-
-```html
-<a class="button center">Soy un botón centrado</a>
-```
-<div class="l-block">
-<a class="button center">Soy un botón centrado</a>
-</div>
-
-
-Los botones tiene un margin a la derecha y hacia abajo de `1rem` por defecto. Sin embargo, de un grupo de botones el último no tiene el margen derecho. Si desea forzar el borrado de ambos márgenes en un botón específico use la clase `.last`
-
-```html
-<div class="button">Soy un boton</div>
-<div class="button">Soy otro boton</div>
-<div class="button last">Soy un tercer boton sin margenes</div>
-```
-
-<div class="l-block">
-<div class="button">Soy un boton</div>
-<div class="button">Soy otro boton</div>
-<div class="button last">Soy un tercer boton sin margenes</div>
-</div>
-
+<a href="https://ed-grid.com/documentacion/alineacion.html" target="_blank" class="button">Ver alineación en EDgrid</a>
 
 Si desea que un botón ocupe todo el ancho disponible, agregue la clase `.full`
 
