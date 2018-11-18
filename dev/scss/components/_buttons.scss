@@ -33,18 +33,9 @@
 }
 
 .button--tiny,
-[class*=button].tiny {
+[class*=button].tiny,
+.button-tiny {
   @include button-tiny;
-}
-
-@mixin button-center {
-  display      : table;
-  margin-left  : auto;
-  margin-right : auto;
-}
-
-[class*=button].center {
-  @include button-center;
 }
 
 @mixin button-full {
