@@ -1,35 +1,3 @@
-// Variables de color Sass
-// Colors
-$color-fisrt : #007BDF;
-$color-first-alt : #006DC6;
-$color-second : #00CBFF;
-$color-second-alt : #00BFF0;
-$color-third : #FF3C32;
-$color-third-alt : #FF2419;
-$color-accent : #FBA905;
-$color-accent-alt : #F1A000;
-$color-dark : #282D31;
-$color-dark-alt : #141618;
-$color-border : #DFE0E0;
-$color-light : #F6F6F6;
-$color-text : #53575A;
-$color-text-light : #BABDBF;
-$color-body-bg : #FAFDFF;
-
-$firstColor : $color-fisrt;
-$firstColorAlt : $color-first-alt;
-$secondColor : $color-second;
-$secondColorAlt : $color-second-alt;
-$thirdColor : $color-third;
-$thirdColorAlt : $color-third-alt;
-$accentColor : $color-accent;
-$accentColorAlt : $color-accent-alt;
-$darkColor : $color-dark;
-$darkColorAlt : $color-dark-alt;
-$borderColor : $color-border;
-$textColor : $color-text;
-$bodyBg : $color-body-bg;
-
 // Variables de color CSS
 :root {
   --first-color      : #007BDF;
@@ -116,58 +84,43 @@ $bodyBg : $color-body-bg;
   }
 }
 
-.color {
-  box-shadow: 0 3px 6px -3px rgba(#000,.1);
 
-  $sassColorsMap: (
-    firstColor     : $firstColor,
-    firstColorAlt  : $firstColorAlt,
-    secondColor    : $secondColor,
-    secondColorAlt : $secondColorAlt,
-    thirdColor     : $thirdColor,
-    thirdColorAlt  : $thirdColorAlt,
-    accentColor    : $accentColor,
-    accentColorAlt : $accentColorAlt,
-    darkColor      : $darkColor,
-    darkColorAlt   : $darkColorAlt,
-    borderColor    : $borderColor,
-    textColor      : $textColor,
-    bodyBg         : $bodyBg
-  );
+.first-color-alt {
+  --color: var(--first-color-alt);
+}
 
-  &__sample {
-    padding-bottom: 56.25%;
-    height: 0;
-    border-radius : .25rem .25rem 0 0;
+.second-color-alt {
+  --color: var(--second-color-alt);
+}
 
-    &.bodyBg {
-      border : 1px solid var(--border-color);
-    }
+.third-color-alt {
+  --color: var(--third-color-alt);
+}
 
-    @each $colorName,$colorVar in $sassColorsMap {
-      &.#{$colorName} {
-        background: $colorVar;
-      }
-    }
-  }
+.accent-color-alt {
+  --color: var(--accent-color-alt);
+}
 
-  &__info {
-    text-align: center;
-    border: 1px solid var(--border-color);
-    border-top: none;
-    padding: 1em;
-    background : #fff;
-    border-radius : 0 0 .25rem .25rem;
-  }
+.dark-color-alt {
+  --color: var(--dark-color-alt);
+}
 
-  &__name,
-  &__code {
-    margin: 0;
-  }
+.border-color {
+  --color: var(--border-color);
+}
 
-  &__name {
-    font-weight: 700;
-  }
+.text-color {
+  --color: var(--text-color);
 }
 
 
+.body-bg {
+  --color: var(--body-bg);
+
+  &.color-card {
+    [class*=ratio] {
+      border: 1px solid var(--border-color);
+      border-bottom: none;
+    }
+  }
+}
