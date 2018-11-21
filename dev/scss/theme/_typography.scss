@@ -57,8 +57,7 @@ $fontSizes : (
 @mixin heading-font {
   line-height    : var(--heading-line-height);
   font-family    : var(--heading-font);
-  font-weight    : 700;
-  letter-spacing : -0.01em;
+  font-weight    : 600;
 }
 
 @mixin t1 {
