@@ -13,7 +13,7 @@
   --dark-color-alt   : #141618;
   --border-color     : #DFE0E0;
   --text-color       : #53575A;
-  --body-bg          : #FCFCFC;
+  --body-bg          : #F6F6F6;
   /* Usar nombres de color que comiencen con --color
      se conservan los anteriores nombres por compatibilidad
   */
@@ -31,7 +31,7 @@
   --color-border     : #DFE0E0;
   --color-text       : #53575A;
   --color-text-light : #BABDBF;
-  --color-body-bg    : #FCFCFC;
+  --color-body-bg    : #F6F6F6;
 }
 
 // aplicar color
@@ -68,6 +68,10 @@
 .dark-color, .color-dark {
   --color            : var(--dark-color);
   --color-alt        : var(--dark-color-alt);
+}
+
+.white-color, .color-white {
+  --color : #FFF;
 }
 
 .text-color, .color-text {
@@ -107,7 +111,6 @@
 .text-color {
   --color: var(--text-color);
 }
-
 
 .body-bg {
   --color: var(--body-bg);

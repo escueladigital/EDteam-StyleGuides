@@ -2,7 +2,7 @@ extends /pug/includes/template
 mixin color(cname,code,sassName,cssName)
   .color-card.s-shadow-bottom(class=cssName)
     .s-ratio-2-1.s-bg-blue.s-radius-tl.s-radius-tr
-    .s-border.s-pxy-2.small.s-center.s-radius-br.s-radius-bl
+    .s-border.s-pxy-2.small.s-center.s-radius-br.s-radius-bl.s-bg-white
       .t4= cname
       .s-mb-1.s-opacity-7= code
       .color__code Sass name: <code>$#{sassName}</code>
