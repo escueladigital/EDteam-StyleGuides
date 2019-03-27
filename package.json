@@ -1,6 +1,6 @@
 {
   "name": "edteam-style-guides",
-  "version": "0.0.50",
+  "version": "0.0.52",
   "description": "Guias de estilo de EDteam, construidas sobre EDboilerplate",
   "main": "gulpfile.babel.js",
   "scripts": {
@@ -31,5 +31,8 @@
     "node-sass-tilde-importer": "^1.0.2",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "natives": "^1.1.6"
   }
 }

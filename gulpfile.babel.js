@@ -101,11 +101,11 @@ gulp.task('dev', ['styles-dev', 'pug', 'scripts', 'images-dev'], () => {
   });
 
   // imagenes
-  watch('./dev/scss/**/**', () => gulp.start('styles-dev'))
-  watch('./dev/js/**/**', () => gulp.start('scripts', server.reload))
-  watch('./dev/md/**/**', () => gulp.start('pug', server.reload))
-  watch('./dev/pug/**/**', () => gulp.start('pug', server.reload))
-  watch('./dev/img/**/**', () => gulp.start('images-dev'))
+  gulp.watch('./dev/scss/**/**', () => gulp.start('styles-dev'))
+  gulp.watch('./dev/js/**/**', () => gulp.start('scripts', server.reload))
+  gulp.watch('./dev/md/**/**', () => gulp.start('pug', server.reload))
+  gulp.watch('./dev/pug/**/**', () => gulp.start('pug', server.reload))
+  gulp.watch('./dev/img/**/**', () => gulp.start('images-dev'))
 });
 
 gulp.task('build', ['styles-build', 'pug', 'scripts', 'images-build'])
