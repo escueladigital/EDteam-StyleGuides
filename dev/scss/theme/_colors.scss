@@ -13,13 +13,13 @@
   --color-fourth-alt : hsl(125, 60%, 53%);
   --color-accent     : hsl(43, 93%, 52%);
   --color-accent-alt : hsl(41, 93%, 50%);
-  --color-light      : #F0F0F0;
+  --color-light      : hsl(0, 0%, 94%);
   --color-dark       : hsl(207, 30%, 17%);
   --color-dark-alt   : hsl(208, 29%, 10%);
   --color-border     : hsl(180, 5%, 88%);
   --color-text       : hsl(206, 4%, 34%);
-  --color-text-light : #BABDBF;
-  --color-body-bg    : #FFF;
+  --color-text-light : hsl(204, 4%, 74%);
+  --color-body-bg    : hsl(0, 0%, 100%);
 
   --first-color      : var(--color-first);
   --first-color-alt  : var(--color-first-alt);
@@ -37,6 +37,9 @@
   --border-color     : var(--color-border);
   --text-color       : var(--color-text);
   --body-bg          : var(--color-body-bg);
+
+  --color            : var(--color-first);
+  --color-alt        : var(--color-first-alt);
 }
 
 // aplicar color
@@ -90,8 +93,8 @@
 }
 
 .light-color, .color-light {
-  --color            : var(--light-color);
-  --color-alt        : var(--border-color);
+  --color     : var(--light-color);
+  --color-alt : var(--border-color);
 }
 
 .first-color-alt {
