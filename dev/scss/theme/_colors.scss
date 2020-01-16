@@ -73,11 +73,11 @@ $grey: (
 );
 
 @mixin color($name-color, $map-color) {
-  
+
   @each $name, $value in $map-color {
 
     $color: "";
-    @if $name == "" { $color: "-color";} 
+    @if $name == "" { $color: "-color";}
     @else { $color: "-color-"; }
 
     $color-string: $name-color + $color + $name;
@@ -90,9 +90,9 @@ $grey: (
     :root {
       --#{$color-string} : #{nth($value, 1)};
     }
-    
+
   }
-  
+
 }
 
 @include color("first", $first);
@@ -107,7 +107,7 @@ $grey: (
 
 :root {
   --light-color      : var(--grey-color-lighter);
-  --border-color     : var(--grey-color-light);
+  --border-color     : #{$color-border};
   --text-color       : var(--grey-color-darker);
   --text-color-light : var(--grey-color);
 
@@ -116,7 +116,7 @@ $grey: (
   --color-text       : var(--text-color);
   --color-text-light : var(--text-color-light);
 
-  --body-bg          : #FFF;
+  --body-bg          : #FCFCFE;
   --color            : var(--first-color);
   --color-alt        : var(--first-color-alt);
 }
