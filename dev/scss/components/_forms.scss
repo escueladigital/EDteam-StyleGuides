@@ -12,8 +12,10 @@
 [type="password"],
 [type="number"],
 [type="date"],
+[type="datetime-local"],
 [type="search"],
 [type="tel"],
+[type="url"],
 select,
 textarea {
   display       : block;
