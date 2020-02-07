@@ -160,3 +160,65 @@ $grey: (
 @include color-palette($red);
 @include color-palette($black);
 @include color-palette($grey);
+
+
+// shorthands
+:root {
+  --light-color      : var(--grey-300);
+  --border-color     : var(--grey-300);
+  --text-color       : var(--grey-800);
+  --text-color-light : var(--grey-700);
+  --color-light      : var(--light-color);
+  --color-border     : var(--border-color);
+  --color-text       : var(--text-color);
+  --color-text-light : var(--color-text-light);
+  --body-bg          : var(--grey-100);
+  --color            : var(--blue-500);
+  --color-alt        : var(--blue-600);
+}
+
+.white-color, .color-white {
+  --color : #FFF;
+}
+
+.text-color, .color-text {
+  --color     : var(--text-color);
+  --color-alt : var(--dark-color);
+}
+
+.light-color, .color-light {
+  --color     : var(--light-color);
+  --color-alt : var(--border-color);
+}
+
+.border-color {
+  --color : var(--border-color);
+}
+
+.body-bg {
+  --color : var(--body-bg);
+}
+
+.color {
+  color : var(--color)
+}
+
+.background {
+  background-color : var(--color);
+}
+
+.fill {
+  fill : var(--color);
+}
+
+.border {
+  --border-color : var(--color);
+}
+
+.hover-bg:hover {
+  background-color: var(--color-alt);
+}
+
+.hover-text:hover {
+  color : var(--color-alt);
+}
