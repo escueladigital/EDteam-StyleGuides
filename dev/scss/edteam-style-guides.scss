@@ -64,6 +64,10 @@ This boilerplate is based in ITCSS and SMACSS
 //@import "theme/dark-theme";
 // Theme (colors and fonts)
 @import "theme/colors";
+
+// Legacy
+// Código antiguo que no se elimina para no perder la compatibilidad con proyectos que lo hayan utilizado
+@import "legacy/colors";
 // Utilities (hacks)
 // Todos los hacks que hayas necesitado para solucionar conflictos
 // o resolver situaciones extremas. Se espera poder mejorarlos luego.
