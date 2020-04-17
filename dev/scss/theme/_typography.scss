@@ -3,14 +3,16 @@
   @return ($px / 16px) * 1rem;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@700;900&display=swap');
+
 // Font families
-$body-font    : 'Open Sans', 'sans-serif';
-$heading-font : 'Open Sans', 'sans-serif';
+$heading-font : 'Raleway', sans-serif;
+$body-font    : 'Open Sans', sans-serif;
 
 // CSS variables for typography
 :root {
   // Font families
-  --heading-font : 'Open Sans', sans-serif;
+  --heading-font : 'Raleway', sans-serif;
   --body-font    : 'Open Sans', sans-serif;
 
   // Font sizes
@@ -26,7 +28,7 @@ $heading-font : 'Open Sans', 'sans-serif';
   // Font sizes from lg breakpoint (64em ~ 1024px)
   @include from(lg) {
     --h1-font-size      : #{rem(36px)};
-    --h2-font-size      : #{rem(28px)};
+    --h2-font-size      : #{rem(24px)};
     --h3-font-size      : #{rem(20px)};
     --normal-font-size  : #{rem(16px)};
     --small-font-size   : #{rem(14px)};
@@ -54,20 +56,20 @@ $fontSizes : (
 };
 
 // Mixins for heading styles
-@mixin heading-font {
+@mixin heading-font($extrabold : false) {
   line-height    : var(--heading-line-height);
   font-family    : var(--heading-font);
-  font-weight    : 700;
-  letter-spacing : -0.01em;
+  font-weight    : if($extrabold, 900, 700);
+  letter-spacing : 0.015em;
 }
 
 @mixin t1 {
-  @include heading-font;
+  @include heading-font(true);
   font-size   : var(--h1-font-size);
 }
 
 @mixin t2 {
-  @include heading-font;
+  @include heading-font(true);
   font-size   : var(--h2-font-size);
 }
 

@@ -1,0 +1,104 @@
+// Variables de color CSS
+
+
+//----- Mapas de colores -----//
+$first: (
+  lighter : (hsl(205, 87, 74), hsl(202, 90, 62)),
+  light   : (hsl(202, 90, 62), hsl(205, 87, 50)),
+  normal  : (hsl(205, 87, 50), hsl(205, 87, 43)),
+  dark    : (hsl(205, 87, 43), hsl(205, 87, 38)),
+  darker  : (hsl(205, 87, 38), hsl(205, 87, 38)),
+  ""      : (hsl(205, 87, 50), hsl(205, 87, 43)),
+  alt     : (hsl(205, 87, 43), hsl(205, 87, 38))
+);
+
+$second: (
+  lighter : (hsl(198, 85, 82),  hsl(198, 92, 77)),
+  light   : (hsl(198, 92, 77),  hsl(198, 100, 70)),
+  normal  : (hsl(198, 100, 70), hsl(198, 84, 62)),
+  dark    : (hsl(198, 84, 62),  hsl(198, 77, 47)),
+  darker  : (hsl(198, 77, 47),  hsl(198, 77, 47)),
+  ""      : (hsl(198, 100, 70), hsl(198, 84, 62)),
+  alt     : (hsl(198, 84, 62),  hsl(198, 77, 47))
+);
+
+$third: (
+  lighter : (hsl(360, 79, 77), hsl(360, 79, 70)),
+  light   : (hsl(360, 79, 70), hsl(0, 79, 63)),
+  normal  : (hsl(0, 79, 63),   hsl(360, 65, 56)),
+  dark    : (hsl(360, 65, 56), hsl(360, 54, 49)),
+  darker  : (hsl(360, 54, 49), hsl(360, 54, 49)),
+  ""      : (hsl(0, 79, 63),   hsl(360, 65, 56)),
+  alt     : (hsl(360, 65, 56), hsl(360, 54, 49)),
+);
+
+$fourth: (
+  lighter : (hsl(150, 88, 74), hsl(150, 71, 60)),
+  light   : (hsl(150, 71, 60), hsl(150, 66, 50)),
+  normal  : (hsl(150, 66, 50), hsl(150, 61, 46)),
+  dark    : (hsl(150, 61, 46), hsl(150, 53, 41)),
+  darker  : (hsl(150, 53, 41), hsl(150, 53, 41)),
+  ""      : (hsl(150, 66, 50), hsl(150, 61, 46)),
+  alt     : (hsl(150, 61, 46), hsl(150, 53, 41))
+);
+
+$accent: (
+  lighter : (hsl(40, 100, 76), hsl(40, 100, 67)),
+  light   : (hsl(40, 100, 67), hsl(38, 100, 63)),
+  normal  : (hsl(38, 100, 63), hsl(39, 100, 50)),
+  dark    : (hsl(39, 100, 50), hsl(40, 100, 46)),
+  darker  : (hsl(40, 100, 46), hsl(40, 100, 46)),
+  ""      : (hsl(38, 100, 63), hsl(39, 100, 50)),
+  alt     : (hsl(39, 100, 50), hsl(40, 100, 46))
+);
+
+$dark: (
+  smoother : (hsl(205, 26, 42), hsl(205, 26, 32)),
+  smooth   : (hsl(205, 26, 32), hsl(205, 26, 22)),
+  dark     : (hsl(205, 26, 22), hsl(205, 26, 18)),
+  darker   : (hsl(205, 26, 18), hsl(205, 26, 14)),
+  darkest  : (hsl(205, 26, 14), hsl(205, 26, 14)),
+  ""       : (hsl(205, 26, 22), hsl(205, 26, 18)),
+  alt      : (hsl(205, 26, 18), hsl(205, 26, 14))
+);
+
+$grey: (
+  lighter : (hsl(0, 0, 95),   hsl(180, 2, 88)),
+  light   : (hsl(180, 2, 88), hsl(0, 0, 74)),
+  normal  : (hsl(0, 0, 74),   hsl(0, 0, 51)),
+  dark    : (hsl(0, 0, 51),   hsl(206, 4, 34)),
+  darker  : (hsl(206, 4, 34), hsl(206, 4, 34)),
+  ""      : (hsl(0, 0, 74),   hsl(0, 0, 51)),
+  alt     : (hsl(0, 0, 51),   hsl(206, 4, 34))
+);
+
+@mixin color($name-color, $map-color) {
+
+  @each $name, $value in $map-color {
+
+    $color: "";
+    @if $name == "" { $color: "-color";}
+    @else { $color: "-color-"; }
+
+    $color-string: $name-color + $color + $name;
+
+    .#{$color-string} {
+      --color     : #{nth($value, 1)};
+      --color-alt : #{nth($value, 2)};
+    }
+
+    :root {
+      --#{$color-string} : #{nth($value, 1)};
+    }
+
+  }
+
+}
+
+@include color("first", $first);
+@include color("second", $second);
+@include color("third", $third);
+@include color("fourth", $fourth);
+@include color("accent", $accent);
+@include color("dark", $dark);
+@include color("grey", $grey);
