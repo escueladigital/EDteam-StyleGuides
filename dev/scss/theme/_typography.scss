@@ -3,7 +3,7 @@
   @return ($px / 16px) * 1rem;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@700;800&display=swap');
 
 // Font families
 $heading-font : 'Raleway', sans-serif;
@@ -16,6 +16,7 @@ $body-font    : 'Open Sans', sans-serif;
   --body-font    : 'Open Sans', sans-serif;
 
   // Font sizes
+  --bigger-font-size    : #{rem(28px)};
   --h1-font-size        : #{rem(24px)};
   --h2-font-size        : #{rem(20px)};
   --h3-font-size        : #{rem(16px)};
@@ -27,7 +28,8 @@ $body-font    : 'Open Sans', sans-serif;
 
   // Font sizes from lg breakpoint (64em ~ 1024px)
   @include from(lg) {
-    --h1-font-size      : #{rem(36px)};
+    --bigger-font-size  : #{rem(36px)};
+    --h1-font-size      : #{rem(32px)};
     --h2-font-size      : #{rem(24px)};
     --h3-font-size      : #{rem(20px)};
     --normal-font-size  : #{rem(16px)};
@@ -38,6 +40,7 @@ $body-font    : 'Open Sans', sans-serif;
 
 // Font sizes
 $fontSizes : (
+  bigger  : var(--bigger-font-size),
   title1  : var(--h1-font-size),
   title2  : var(--h2-font-size),
   title3  : var(--h3-font-size),
@@ -59,8 +62,13 @@ $fontSizes : (
 @mixin heading-font($extrabold : false) {
   line-height    : var(--heading-line-height);
   font-family    : var(--heading-font);
-  font-weight    : if($extrabold, 900, 700);
+  font-weight    : if($extrabold, 800, 700);
   letter-spacing : 0.015em;
+}
+
+@mixin bigger-title {
+  @include heading-font(true);
+  font-size : var(--bigger-font-size);
 }
 
 @mixin t1 {
@@ -132,6 +140,7 @@ $fontSizes : (
 }
 
 // Assign heading styles
+.bigger-title { @include bigger-title }
 h1, .t1 { @include t1 }
 h2, .t2 { @include t2 }
 h3, .t3 { @include t3 }
