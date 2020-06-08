@@ -64,6 +64,12 @@ $fontSizes : (
   font-family    : var(--heading-font);
   font-weight    : if($extrabold, 800, 700);
   letter-spacing : 0.015em;
+  color          : var(--title-color);
+
+  .main-banner & {
+    color : var(--white-color);
+  }
+
 }
 
 @mixin bigger-title {

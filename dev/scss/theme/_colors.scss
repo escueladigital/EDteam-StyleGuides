@@ -71,33 +71,18 @@ $red: (
   )
 );
 
-$black: (
-  names   : ('black'),
-  colors : (
-    '100' : hsl(0, 0, 71),
-    '200' : hsl(203, 6, 58),
-    '300' : hsl(205, 13, 46),
-    '400' : hsl(205, 19, 34),
-    '500' : hsl(205, 26, 22),
-    '600' : hsl(205, 26, 18),
-    '700' : hsl(204, 15, 15),
-    '800' : hsl(204, 8, 12),
-    '900' : hsl(210, 6, 7)
-  )
-);
-
 $grey: (
   names   : ('grey'),
   colors : (
-    '100' : hsl(240, 50, 99),
-    '200' : hsl(225, 40, 98),
+    '100' : hsl(240, 60, 99),
+    '200' : hsl(0, 0, 99),
     '300' : hsl(200, 23, 95),
-    '400' : hsl(207, 24, 85),
-    '500' : hsl(209, 24, 74),
-    '600' : hsl(210, 16, 63),
-    '700' : hsl(210, 9, 52),
-    '800' : hsl(210, 8, 37),
-    '900' : hsl(207, 8, 12)
+    '400' : hsl(203, 8, 80),
+    '500' : hsl(205, 7, 65),
+    '600' : hsl(193, 6, 44),
+    '700' : hsl(205, 26, 22),
+    '800' : hsl(205, 26, 18),
+    '900' : hsl(205, 27, 14)
   )
 );
 
@@ -158,35 +143,54 @@ $grey: (
 @include color-palette($green);
 @include color-palette($accent);
 @include color-palette($red);
-@include color-palette($black);
 @include color-palette($grey);
 
 
 // shorthands
 :root {
-  --light-color      : var(--grey-300);
-  --border-color     : var(--grey-300);
-  --text-color       : var(--grey-800);
-  --text-color-light : var(--grey-700);
-  --color-light      : var(--light-color);
-  --color-border     : var(--border-color);
-  --color-text       : var(--text-color);
-  --color-text-light : var(--color-text-light);
-  --body-bg          : var(--grey-100);
-  --color            : var(--blue-500);
-  --color-alt        : var(--blue-600);
+  --light-color        : var(--grey-300);
+  --border-color       : var(--grey-300);
+  --title-color        : var(--grey-700);
+  --text-color         : var(--grey-600);
+  --text-color-light   : var(--grey-500);
+  --text-color-lighter : var(--grey-400);
+  --color-light        : var(--light-color);
+  --color-border       : var(--border-color);
+  --color-title        : var(--title-color);
+  --color-text         : var(--text-color);
+  --color-text-light   : var(--color-text-light);
+  --color-text-lighter : var(--text-color-lighter);
+  --body-bg            : var(--grey-100);
+  --color              : var(--blue-500);
+  --color-alt          : var(--blue-600);
+  --white-color        : #fff;
 }
 
-.white-color, .color-white {
-  --color : #FFF;
+.white-color,
+.color-white {
+  --color : var(--white-color);
 }
 
-.text-color, .color-text {
+.text-color,
+.color-text {
   --color     : var(--text-color);
   --color-alt : var(--dark-color);
 }
 
-.light-color, .color-light {
+.text-color-light,
+.color-text-light {
+  --color     : var(--text-color-light);
+  --color-alt : var(--text-color);
+}
+
+.text-color-lighter,
+.color-text-lighter {
+  --color     : var(--text-color-lighter);
+  --color-alt : var(--text-color-light);
+}
+
+.light-color,
+.color-light {
   --color     : var(--light-color);
   --color-alt : var(--border-color);
 }
