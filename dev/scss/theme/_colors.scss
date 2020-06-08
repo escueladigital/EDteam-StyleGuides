@@ -1,167 +1,214 @@
-// Variables de color CSS
+/*
+  Map structure
+  $map-name : (
+    // -- Css classes will build with this names -- //
+    names : ('name', 'nameTwo'),
+    // -- Color variations -- //
+    colors : (
+      'variation' : hsl(value),
+      'variation' : hsl(value)
+    )
+  );
+*/
 
-
-//----- Mapas de colores -----//
-$first: (
-  lighter : (hsl(205, 87, 74), hsl(202, 90, 62)),
-  light   : (hsl(202, 90, 62), hsl(205, 87, 50)),
-  normal  : (hsl(205, 87, 50), hsl(205, 87, 43)),
-  dark    : (hsl(205, 87, 43), hsl(205, 87, 38)),
-  darker  : (hsl(205, 87, 38), hsl(205, 87, 38)),
-  ""      : (hsl(205, 87, 50), hsl(205, 87, 43)),
-  alt     : (hsl(205, 87, 43), hsl(205, 87, 38))
+$primary : (
+  names   : ('blue', 'primary'),
+  colors : (
+    '100' : hsl(205, 85, 95),
+    '200' : hsl(205, 87, 85),
+    '300' : hsl(205, 87, 75),
+    '400' : hsl(205, 87, 65),
+    '500' : hsl(205, 87, 50),
+    '600' : hsl(205, 86, 45),
+    '700' : hsl(205, 86, 35),
+    '800' : hsl(205, 86, 25),
+    '900' : hsl(205, 87, 15)
+  )
 );
 
-$second: (
-  lighter : (hsl(198, 85, 82),  hsl(198, 92, 77)),
-  light   : (hsl(198, 92, 77),  hsl(198, 100, 70)),
-  normal  : (hsl(198, 100, 70), hsl(198, 84, 62)),
-  dark    : (hsl(198, 84, 62),  hsl(198, 77, 47)),
-  darker  : (hsl(198, 77, 47),  hsl(198, 77, 47)),
-  ""      : (hsl(198, 100, 70), hsl(198, 84, 62)),
-  alt     : (hsl(198, 84, 62),  hsl(198, 77, 47))
-);
-
-$third: (
-  lighter : (hsl(360, 79, 77), hsl(360, 79, 70)),
-  light   : (hsl(360, 79, 70), hsl(0, 79, 63)),
-  normal  : (hsl(0, 79, 63),   hsl(360, 65, 56)),
-  dark    : (hsl(360, 65, 56), hsl(360, 54, 49)),
-  darker  : (hsl(360, 54, 49), hsl(360, 54, 49)),
-  ""      : (hsl(0, 79, 63),   hsl(360, 65, 56)),
-  alt     : (hsl(360, 65, 56), hsl(360, 54, 49)),
-);
-
-$fourth: (
-  lighter : (hsl(150, 88, 74), hsl(150, 71, 60)),
-  light   : (hsl(150, 71, 60), hsl(150, 66, 50)),
-  normal  : (hsl(150, 66, 50), hsl(150, 61, 46)),
-  dark    : (hsl(150, 61, 46), hsl(150, 53, 41)),
-  darker  : (hsl(150, 53, 41), hsl(150, 53, 41)),
-  ""      : (hsl(150, 66, 50), hsl(150, 61, 46)),
-  alt     : (hsl(150, 61, 46), hsl(150, 53, 41))
+$green : (
+  names   : ('green'),
+  colors : (
+    '100' : hsl(148, 68, 95),
+    '200' : hsl(150, 66, 85),
+    '300' : hsl(150, 65, 75),
+    '400' : hsl(150, 65, 65),
+    '500' : hsl(150, 65, 50),
+    '600' : hsl(150, 65, 45),
+    '700' : hsl(150, 65, 35),
+    '800' : hsl(150, 66, 25),
+    '900' : hsl(150, 66, 15)
+  )
 );
 
 $accent: (
-  lighter : (hsl(40, 100, 76), hsl(40, 100, 67)),
-  light   : (hsl(40, 100, 67), hsl(38, 100, 63)),
-  normal  : (hsl(38, 100, 63), hsl(39, 100, 50)),
-  dark    : (hsl(39, 100, 50), hsl(40, 100, 46)),
-  darker  : (hsl(40, 100, 46), hsl(40, 100, 46)),
-  ""      : (hsl(38, 100, 63), hsl(39, 100, 50)),
-  alt     : (hsl(39, 100, 50), hsl(40, 100, 46))
+  names   : ('accent', 'yellow'),
+  colors : (
+    '100' : hsl(38, 100, 96),
+    '200' : hsl(38, 100, 89),
+    '300' : hsl(38, 100, 81),
+    '400' : hsl(38, 100, 74),
+    '500' : hsl(38, 100, 63),
+    '600' : hsl(38, 77, 56),
+    '700' : hsl(38, 60, 44),
+    '800' : hsl(38, 60, 31),
+    '900' : hsl(38, 60, 19)
+  )
 );
 
-$dark: (
-  smoother : (hsl(205, 26, 42), hsl(205, 26, 32)),
-  smooth   : (hsl(205, 26, 32), hsl(205, 26, 22)),
-  dark     : (hsl(205, 26, 22), hsl(205, 26, 18)),
-  darker   : (hsl(205, 26, 18), hsl(205, 26, 14)),
-  darkest  : (hsl(205, 26, 14), hsl(205, 26, 14)),
-  ""       : (hsl(205, 26, 22), hsl(205, 26, 18)),
-  alt      : (hsl(205, 26, 18), hsl(205, 26, 14))
+$red: (
+  names   : ('red'),
+  colors : (
+    '100' : hsl(0, 79, 96),
+    '200' : hsl(0, 79, 89),
+    '300' : hsl(0, 79, 82),
+    '400' : hsl(0, 79, 74),
+    '500' : hsl(0, 79, 63),
+    '600' : hsl(0, 61, 57),
+    '700' : hsl(0, 46, 44),
+    '800' : hsl(0, 46, 32),
+    '900' : hsl(0, 46, 19)
+  )
 );
 
 $grey: (
-  lighter : (hsl(0, 0, 95),   hsl(180, 2, 88)),
-  light   : (hsl(180, 2, 88), hsl(0, 0, 74)),
-  normal  : (hsl(0, 0, 74),   hsl(0, 0, 51)),
-  dark    : (hsl(0, 0, 51),   hsl(206, 4, 34)),
-  darker  : (hsl(206, 4, 34), hsl(206, 4, 34)),
-  ""      : (hsl(0, 0, 74),   hsl(0, 0, 51)),
-  alt     : (hsl(0, 0, 51),   hsl(206, 4, 34))
+  names   : ('grey'),
+  colors : (
+    '100' : hsl(240, 60, 99),
+    '200' : hsl(0, 0, 99),
+    '300' : hsl(200, 23, 95),
+    '400' : hsl(203, 8, 80),
+    '500' : hsl(205, 7, 65),
+    '600' : hsl(193, 6, 44),
+    '700' : hsl(205, 26, 22),
+    '800' : hsl(205, 26, 18),
+    '900' : hsl(205, 27, 14)
+  )
 );
 
-@mixin color($name-color, $map-color) {
+@mixin color-palette($map-color) {
 
-  @each $name, $value in $map-color {
+  $colors        : map-get($map-color, colors);
+  $colors-length : length($colors);
 
-    $color: "";
-    @if $name == "" { $color: "-color";}
-    @else { $color: "-color-"; }
+  // Get each colors names in the map
+  @each $name in map-get($map-color, names) {
 
-    $color-string: $name-color + $color + $name;
+    // Here we start to build the class name
+    .#{$name} {
 
-    .#{$color-string} {
-      --color     : #{nth($value, 1)};
-      --color-alt : #{nth($value, 2)};
-    }
+      // Create a for loop for get the code colors and their values
+      @for $index from 1 through $colors-length {
 
-    :root {
-      --#{$color-string} : #{nth($value, 1)};
+        // Get the code color in the map
+        &-#{nth(nth($colors, $index), 1)} {
+          $color : nth(nth($colors, $index), 2);
+          // Save selector for use it in :root.
+          // We need convert it in to string and delete de dot (.)
+          $selector : str-slice(& + '', 2);
+
+          // Set color value
+          --color : #{$color};
+          // Validate the index for set the alt color. If it's the last color, it will no have a alt color
+          --color-alt : #{if($index < $colors-length, nth(nth($colors, $index + 1), 2), #{$color})};
+
+          @at-root {
+
+            :root {
+              // Set color value en :root
+              --#{$selector} : #{$color};
+            }
+
+          }
+
+        }
+
+      }
+
     }
 
   }
 
+  /*
+    example result :
+    .blue-500 {
+      --color     : #1192ee;
+      --color-alt : #1083d5;
+    }
+  */
+
 }
 
-@include color("first", $first);
-@include color("second", $second);
-@include color("third", $third);
-@include color("fourth", $fourth);
-@include color("accent", $accent);
-@include color("dark", $dark);
-@include color("grey", $grey);
+@include color-palette($primary);
+@include color-palette($green);
+@include color-palette($accent);
+@include color-palette($red);
+@include color-palette($grey);
 
 
-
+// shorthands
 :root {
-  --light-color      : var(--grey-color-lighter);
-  --border-color     : #{$color-border};
-  --text-color       : var(--grey-color-darker);
-  --text-color-light : var(--grey-color);
-
-  --color-light      : var(--light-color);
-  --color-border     : var(--border-color);
-  --color-text       : var(--text-color);
-  --color-text-light : var(--text-color-light);
-
-  --body-bg          : #FCFCFE;
-  --color            : var(--first-color);
-  --color-alt        : var(--first-color-alt);
+  --light-color        : var(--grey-300);
+  --border-color       : var(--grey-300);
+  --title-color        : var(--grey-700);
+  --text-color         : var(--grey-600);
+  --text-color-light   : var(--grey-500);
+  --text-color-lighter : var(--grey-400);
+  --color-light        : var(--light-color);
+  --color-border       : var(--border-color);
+  --color-title        : var(--title-color);
+  --color-text         : var(--text-color);
+  --color-text-light   : var(--color-text-light);
+  --color-text-lighter : var(--text-color-lighter);
+  --body-bg            : var(--grey-100);
+  --color              : var(--blue-500);
+  --color-alt          : var(--blue-600);
+  --white-color        : #fff;
 }
 
-.white-color, .color-white {
-  --color : #FFF;
+.white-color,
+.color-white {
+  --color : var(--white-color);
 }
 
-.text-color, .color-text {
-  --color: var(--text-color);
-  --color-alt: var(--dark-color);
+.text-color,
+.color-text {
+  --color     : var(--text-color);
+  --color-alt : var(--dark-color);
 }
 
-.light-color, .color-light {
+.text-color-light,
+.color-text-light {
+  --color     : var(--text-color-light);
+  --color-alt : var(--text-color);
+}
+
+.text-color-lighter,
+.color-text-lighter {
+  --color     : var(--text-color-lighter);
+  --color-alt : var(--text-color-light);
+}
+
+.light-color,
+.color-light {
   --color     : var(--light-color);
   --color-alt : var(--border-color);
 }
 
 .border-color {
-  --color: var(--border-color);
-}
-
-.text-color {
-  --color: var(--text-color);
+  --color : var(--border-color);
 }
 
 .body-bg {
-  --color: var(--body-bg);
-
-  &.color-card {
-    [class*=ratio] {
-      border: 1px solid var(--border-color);
-      border-bottom: none;
-    }
-  }
+  --color : var(--body-bg);
 }
 
-// aplicar color
-
 .color {
-  color: var(--color)
+  color : var(--color)
 }
 
 .background {
-  background-color: var(--color);
+  background-color : var(--color);
 }
 
 .fill {
@@ -169,5 +216,13 @@ $grey: (
 }
 
 .border {
-  --border-color: var(--color);
+  --border-color : var(--color);
+}
+
+.hover-bg:hover {
+  background-color: var(--color-alt);
+}
+
+.hover-text:hover {
+  color : var(--color-alt);
 }
