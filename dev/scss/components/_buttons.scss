@@ -5,14 +5,15 @@
 **********************************************************************/
 @mixin button {
   display          : inline-block;
-  padding          : .5rem 1rem;
+  padding          : 0.5rem 1rem;
   background-color : var(--color);
   color            : #FFF;
+  font-weight      : 600;
   cursor           : pointer;
   text-decoration  : none;
   line-height      : inherit;
-  border-radius    : .25rem;
-  transition       : transform .05s;
+  border-radius    : 0.25rem;
+  transition       : transform 0.05s;
   border           : 1px solid var(--color);
   text-align       : center;
   user-select      : none;
@@ -23,12 +24,12 @@
   }
 
   &:active {
-    transform : scale(.99)
+    transform : scale(0.99)
   }
+
 }
 
-.button,
-[class*=button] {
+.button {
   @include button;
 }
 
@@ -38,15 +39,14 @@
 }
 
 @mixin button-micro {
-  padding: 0 .25rem;
-  font-size: var(--small-font-size);
-  line-height: var(--heading-line-height);
-  border-radius: 0;
+  padding       : 0 .25rem;
+  font-size     : var(--small-font-size);
+  line-height   : var(--heading-line-height);
+  border-radius : 0;
 }
 
 
-
-.button--tiny{
+.button--tiny {
   @include button-tiny;
 }
 
@@ -56,7 +56,7 @@
   width        : 100%;
 }
 
-[class*=button].full {
+.button.full {
   @include button-full;
 }
 
@@ -145,7 +145,7 @@
 .button--ghost--secondary,
 .button--ghost-second,
 .button--ghost--second,
-.buttton--ghost.second-color{
+.buttton--ghost.second-color {
   @include button-ghost-second;
 }
 
@@ -202,52 +202,55 @@
 
 // Ghost
 .button.light-color {
-  color: var(--text-color);
+  color : var(--text-color);
 }
 
 .disabled,
 .disabled:hover {
-  --color: var(--light-color);
-  background: var(--color);
-  cursor: default;
-  color: #888;
+  --color    : var(--light-color);
+  background : var(--color);
+  cursor     : default;
+  color      : #888;
 
   &:active {
-    transform: none;
+    transform : none;
   }
 }
 
 .ghost {
-  color: var(--color);
-  background: none;
+  color      : var(--color);
+  background : none;
 
   &:hover {
-    background: var(--color);
-    color: #fff;
+    background : var(--color);
+    color      : #fff;
   }
 
   &.color-light,
   &.light-color {
-    --color: var(--body-bg);
-    color: var(--color);
+    --color : var(--body-bg);
+    color   : var(--color);
 
     &:hover {
-      color: var(--color-text);
+      color : var(--color-text);
     }
+
   }
+
 }
 
-// Variaciones de tamaños:
-.tiny {
-  font-size: var(--small-font-size);
-  padding: .25rem .5rem;
+// Variaciones de tamaños
+.button.big {
+  font-size : var(--normal-font-size);
+  padding   :  0.75rem 1.5rem;
 }
 
-.micro {
-  font-size: var(--small-font-size);
-  padding: 0 .25rem;
+.button.tiny {
+  font-size : var(--small-font-size);
+  padding   : .25rem .5rem;
 }
 
-// Los botones se alinean con EDgrid
-// .button.bp-to-[left|center|right]
-
+.button.micro {
+  font-size : var(--small-font-size);
+  padding   : 0 .25rem;
+}
