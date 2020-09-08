@@ -1,5 +1,3 @@
-
-
 // Settings for EDgrid
 $dev        : false;
 $cssCore    : false;
@@ -15,6 +13,8 @@ $gutter     : 1rem;
     --header-height : 4rem;
   }
 }
+
+$directions : 'top', 'right', 'bottom', 'left';
 
 // z-ndex
 $z-back    : -10;

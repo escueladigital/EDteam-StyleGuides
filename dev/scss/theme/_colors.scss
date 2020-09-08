@@ -86,6 +86,28 @@ $grey: (
   )
 );
 
+// Prototipado de colores para dejar de usar la variable --color en bordes, fondos y texto
+@mixin color-prototype($variable, $selector : $variable) {
+  $value: var(--#{$variable});
+  // Fondos y fondos con hover
+  @include prototype(('bg-#{$selector}', 'hover-bg-#{$selector}:hover'), background, $value);
+  // textos y textos con hover
+  @include prototype(('text-#{$selector}', 'hover-text-#{$selector}:hover'), color, $value);
+  // Bordes en todos los lados
+  @include prototype('border-#{$selector}', border, 1px solid var(--#{$selector}));
+  // Bordes en cada lado independiente
+  @each $direction in $directions {
+    @include prototype('border-#{str-slice($direction, 0, 1)}-#{$selector}', border-#{$direction}, 1px solid $value);
+  }
+}
+
+@include color-prototype('white-color', 'white');
+@include color-prototype('title-color', 'title');
+@include color-prototype('text-color', 'text');
+@include color-prototype('text-color-light', 'text-light');
+@include color-prototype('text-color-lighter', 'text-lighter');
+@include color-prototype('transparent');
+
 @mixin color-palette($map-color) {
 
   $colors        : map-get($map-color, colors);
@@ -118,6 +140,8 @@ $grey: (
               // Set color value en :root
               --#{$selector} : #{$color};
             }
+
+            @include color-prototype($selector);
 
           }
 
@@ -164,6 +188,7 @@ $grey: (
   --color              : var(--blue-500);
   --color-alt          : var(--blue-600);
   --white-color        : #fff;
+  --transparent        : transparent;
 }
 
 .white-color,
