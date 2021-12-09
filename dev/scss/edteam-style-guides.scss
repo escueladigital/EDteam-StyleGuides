@@ -1,8 +1,11 @@
+$legacy-styles : true !default;
+
 /*
 This boilerplate is based in ITCSS and SMACSS
 */
 // Config
 @import "config/variables";
+@import 'theme/colors/colors';
 @import "config/functions";
 @import "theme/typography";
 // Mixins
@@ -61,13 +64,14 @@ This boilerplate is based in ITCSS and SMACSS
 @import "components/meatballs";
 @import "components/pagination";
 @import "components/editor";
-//@import "theme/dark-theme";
+
 // Theme (colors and fonts)
-@import "theme/colors";
+@import 'theme/colors/color-prototype';
 
 // Legacy
 // Código antiguo que no se elimina para no perder la compatibilidad con proyectos que lo hayan utilizado
 @import "legacy/colors";
+
 // Utilities (hacks)
 // Todos los hacks que hayas necesitado para solucionar conflictos
 // o resolver situaciones extremas. Se espera poder mejorarlos luego.

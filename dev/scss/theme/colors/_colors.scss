@@ -1,0 +1,180 @@
+// shorthands
+:root {
+  --light-color        : var(--grey-300);
+  --color-light        : var(--light-color);
+  --color-border       : var(--border-color);
+  --color-title        : var(--title-color);
+  --color-text         : var(--text-color);
+  --color-text-light   : var(--color-text-light);
+  --color-text-lighter : var(--text-color-lighter);
+  --body-bg            : var(--grey-100);
+  --color              : var(--blue-500);
+  --color-alt          : var(--blue-600);
+  --white-color        : #fff;
+  --transparent        : transparent;
+
+  body.#{$dark-theme} {
+    // Accents colors
+    --blue-accent   : var(--blue-400);
+    --red-accent    : var(--red-400);
+    --yellow-accent : var(--yellow-400);
+    --green-accent  : var(--green-400);
+
+    // Sobreescribe variables que vienen desde guía de estilos
+    --title-color         : var(--grey-300);
+    --text-color          : var(--grey-400);
+    --light-text-color    : var(--grey-500);
+    --lighter-text-color  : var(--grey-600);
+    --body-bg             : var(--dt-darker);
+  }
+}
+
+$blue : (
+  '100' : hsl(206, 88%, 94%),
+  '200' : hsl(205, 87%, 81%),
+  '300' : hsl(205, 87%, 75%),
+  '400' : hsl(205, 87%, 67%),
+  '500' : hsl(205, 87%, 50%),
+  '600' : hsl(205, 87%, 44%),
+  '700' : hsl(205, 87%, 37%),
+  '800' : hsl(205, 87%, 17%),
+  '900' : hsl(205, 42%, 15%)
+);
+
+$green   : (
+  '100' : hsl(162, 62%, 92%),
+  '200' : hsl(161, 63%, 78%),
+  '300' : hsl(162, 63%, 66%),
+  '400' : hsl(161, 63%, 55%),
+  '500' : hsl(161, 80%, 44%),
+  '600' : hsl(161, 80%, 35%),
+  '700' : hsl(160, 81%, 26%),
+  '800' : hsl(161, 80%, 12%),
+  '900' : hsl(161, 80%, 10%)
+);
+
+$yellow  : (
+  '100' : hsl(39, 100%, 95%),
+  '200' : hsl(38, 100%, 89%),
+  '300' : hsl(38, 100%, 81%),
+  '400' : hsl(38, 100%, 74%),
+  '500' : hsl(38, 100%, 63%),
+  '600' : hsl(38, 77%, 56%),
+  '700' : hsl(38, 60%, 44%),
+  '800' : hsl(38, 60%, 15%),
+  '900' : hsl(38, 100%, 10%)
+);
+
+$red     : (
+  '100' : hsl(350, 82%, 91%),
+  '200' : hsl(350, 80%, 82%),
+  '300' : hsl(350, 81%, 74%),
+  '400' : hsl(350, 80%, 65%),
+  '500' : hsl(350, 80%, 56%),
+  '600' : hsl(350, 80%, 45%),
+  '700' : hsl(350, 80%, 34%),
+  '800' : hsl(350, 81%, 13%),
+  '900' : hsl(350, 81%, 7%)
+);
+
+$grey    : (
+  '100' : hsl(205, 60%, 99%),
+  '200' : hsl(205, 20%, 98%),
+  '300' : hsl(205, 23%, 94%),
+  '400' : hsl(205, 13%, 75%),
+  '500' : hsl(205, 11%, 60%),
+  '600' : hsl(205, 11%, 46%),
+  '700' : hsl(205, 30%, 22%),
+  '800' : hsl(205, 22%, 20%),
+  '900' : hsl(205, 24%, 13%)
+);
+
+$accent  : (
+  'blue-accent'   : var(--blue-500),
+  'yellow-accent' : var(--yellow-500),
+  'green-accent'  : var(--green-500),
+  'red-accent'    : var(--red-500),
+);
+
+$text    : (
+  'title-color'        : var(--grey-700),
+  'text-color'         : var(--grey-600),
+  'text-light-color'   : var(--grey-500),
+  'text-lighter-color' : var(--grey-400),
+);
+
+$black : (
+  'black-color'       : #212E36,
+  'black-light-color' : var(--grey-700),
+  'black-dark-color'  : #1B2831,
+  'blacker-color'     : #192229,
+  'blackest-color'    : #121a21,
+);
+
+$others  : (
+  'border-color'      : var(--grey-300),
+  'white-color'       : #FFF,
+  'current-color'     : currentColor,
+  'transparent-color' : transparent,
+);
+
+.white-color,
+.color-white {
+  --color : var(--white-color);
+}
+
+.text-color,
+.color-text {
+  --color     : var(--text-color);
+  --color-alt : var(--dark-color);
+}
+
+.text-color-light,
+.color-text-light {
+  --color     : var(--text-color-light);
+  --color-alt : var(--text-color);
+}
+
+.text-color-lighter,
+.color-text-lighter {
+  --color     : var(--text-color-lighter);
+  --color-alt : var(--text-color-light);
+}
+
+.light-color,
+.color-light {
+  --color     : var(--light-color);
+  --color-alt : var(--border-color);
+}
+
+.border-color {
+  --color : var(--border-color);
+}
+
+.body-bg {
+  --color : var(--body-bg);
+}
+
+.color {
+  color : var(--color)
+}
+
+.background {
+  background-color : var(--color);
+}
+
+.fill {
+  fill : var(--color);
+}
+
+.border {
+  --border-color : var(--color);
+}
+
+.hover-bg:hover {
+  background-color : var(--color-alt);
+}
+
+.hover-text:hover {
+  color : var(--color-alt);
+}

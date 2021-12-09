@@ -1,0 +1,71 @@
+// Prototipado de colores para dejar de usar la variable --color en bordes, fondos y texto
+@mixin color-prototype($variable, $selector : $variable) {
+  $value : var(--#{$variable});
+  // Fondos y fondos con hover
+  @include prototype(('bg-#{$selector}', 'hover-bg-#{$selector}:hover'), background, $value);
+  @include prototype(('dark-bg-#{$selector}', 'dark-hover-bg-#{$selector}:hover'), background, $value, 'body.#{$dark-theme} ');
+
+  // textos y textos con hover
+  @include prototype(('color-#{$selector}', 'hover-color-#{$selector}:hover'), color, $value);
+  @include prototype(('dark-color-#{$selector}', 'dark-hover-color-#{$selector}:hover'), color, $value, 'body.#{$dark-theme} ');
+
+
+  // Bordes en todos los lados
+  @include prototype(('border-#{$selector}', 'hover-border-#{$selector}:hover'), border, 1px solid $value);
+  @include prototype(('dark-border-#{$selector}', 'dark-hover-border-#{$selector}:hover'), border, 1px solid $value, 'body.#{$dark-theme} ');
+
+  // Bordes en cada lado independiente
+  @each $direction in $directions {
+    @include prototype(('border-#{$direction}-#{$selector}', 'hover-border-#{$direction}-#{$selector}:hover'), border-#{$direction}, 1px solid $value);
+    @include prototype(('dark-border-#{$direction}-#{$selector}', 'dark-hover-border-#{$direction}-#{$selector}:hover'), border-#{$direction}, 1px solid $value, 'body.#{$dark-theme} ');
+  }
+}
+
+@mixin color-palette($color-map, $name: '', $replace : '') {
+  $colors-length : length($color-map);
+  $has-custom-name : $name != '';
+
+  :root {
+    @for $index from 1 through $colors-length {
+      // Número que está en el nombre del color
+      $key : nth(nth($color-map, $index), 1);
+
+      // Código del color en HEX
+      $value : nth(nth($color-map, $index), 2);
+
+      // Selector construído
+      // Si se le pasa un nombre como parámetro construirá por ejemplo 'blue-500'
+      // En caso contrario sólo utiliza el nombre de la llave
+      $selector : if($has-custom-name, $name + '-' + $key, $key);
+
+      // Variable CSS
+      --#{$selector} : #{$value};
+
+      // Prototipado de colores (fondos y textos)
+      @at-root {
+        .#{$selector} {
+          --color : #{$value};
+          --color-alt :#{if($index < $colors-length, nth(nth($color-map, $index + 1), 2), $value)};
+        }
+
+        @if $has-custom-name {
+          @include color-prototype($selector);
+        } @else {
+          @include color-prototype($selector, str-replace($selector, $replace, ''));
+        }
+      }
+    }
+  }
+}
+
+@include color-palette($accent, '', '-accent');
+@include color-palette($blue, blue);
+@include color-palette($blue, primary);
+@include color-palette($yellow, 'yellow');
+@include color-palette($red, red);
+@include color-palette($green, green);
+@include color-palette($grey, grey);
+@include color-palette($text, '', '-color');
+@include color-palette($black, '', '-color');
+@include color-palette($others, '', '-color');
+

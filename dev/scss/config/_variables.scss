@@ -2,8 +2,10 @@
 $dev        : false;
 $cssCore    : false;
 $cssHelpers : true;
-$max-width : 1200px;
+$max-width  : 1200px;
 $gutter     : 1rem;
+
+$dark-theme: 'dark-theme';
 
 //layout
 :root {
@@ -33,7 +35,6 @@ $z-modal   : 1000;
 
 // Images path
 $images-path: 'https://ux.ed.team/img';
-
 
 // Variables de color Sass
 // Colors

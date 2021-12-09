@@ -1,6 +1,6 @@
 {
   "name": "edteam-style-guides",
-  "version": "0.0.69",
+  "version": "0.0.90",
   "description": "Guias de estilo de EDteam, construidas sobre EDboilerplate",
   "main": "gulpfile.babel.js",
   "scripts": {
@@ -33,6 +33,10 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
+    "edteam-style-guides": "0.0.79",
     "natives": "^1.1.6"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
   }
 }
