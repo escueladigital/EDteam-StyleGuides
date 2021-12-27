@@ -65,7 +65,7 @@
         justify-content  : center;
         align-items      : center;
         position         : absolute;
-        top              : -($size / 2);
+        top              : -($size * 0.5);
         right            : 1rem;
         width            : $size;
         height           : $size;
