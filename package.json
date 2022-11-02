@@ -17,7 +17,7 @@
     "browserify": "^15.2.0",
     "ed-grid": "3.0.0",
     "ed-ui": "0.0.5",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-babel": "^7.0.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-plumber": "^1.2.0",
